@@ -17,5 +17,4 @@
 -navegação na mémoria
 
 -substituir memória baseado na estação
-https://user-images.githubusercontent.com/79720614/109359250-e42a3980-7863-11eb-8aeb-6df4e301f710.png
-https://user-images.githubusercontent.com/65169791/109358301-4da94880-7862-11eb-9447-169bc562c049.jpg
+![image](https://user-images.githubusercontent.com/65169791/109363911-70405f00-786c-11eb-9927-c71aa64ced22.png)
