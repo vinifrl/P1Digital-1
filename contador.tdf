@@ -35,5 +35,4 @@ BEGIN
 			saida_aux[] = q[];
 		END IF;			
 			
-END;  teste
-escrevi
+END;
