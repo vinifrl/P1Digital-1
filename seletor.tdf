@@ -1,0 +1,21 @@
+subdesign seletor
+(  
+    s3, s4          : input; %seletor crescente decrescente% 
+    clock1s         : input; %clock de 1 s para entrar no modo dos favoritos%
+    modofav         : output; %saber se o modo favoritos está ativado%
+)
+begin
+    if s3 & s4 == VCC
+
+    ;
+
+
+
+
+
+
+
+CASE  IS 
+    WHEN 0
+        []
+    WHEN

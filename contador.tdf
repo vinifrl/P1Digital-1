@@ -1,0 +1,38 @@
+subdesign contador
+(
+	clock1s : input; %clock de entrada do contador%
+	seletor : input; %seletor de controle(0 crescente/1 decrescente)%
+	clock_Placa : input; %clock da placa%
+	saida[3..0] : output; %valor de Saida%
+)
+
+VARIABLE
+	ff[3..0] : DFF; %flip flops tipo D%
+	d[3..0] : NODE; %entradas Ds dos Flip Flops%
+	q[3..0] : NODE; %saidas Qs dos Flip Flops%
+	saida_aux[3..0]: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
+BEGIN
+		ff[].clk = clock; %clock de entrada como clock dos flip flops%
+		ff[].d = d[]; %entradas dos flip flops%
+		q[] = ff[].q; %saidas dos flip flops%
+		saida[] = saida_aux[]; %saida do sistema%
+		
+		
+		%CASE que seleciona o tipo de operacao a ser feita de acordo com o controle%
+		CASE controle IS
+		WHEN 0 => %caso crescente%
+			d[] = saida_aux[] + 1;
+		WHEN 1 => %caso decrescente%
+			d[] = saida_aux[] - 1;
+		END CASE;
+		
+		%IF que garante a saida modulo 60 e alimenta a entrada do detector de borda somente quando a contagem vai de 59->0%
+		IF q[] == 10 THEN %caso de contagem crescente de 9 -> 0%
+			saida_aux[] = 0;
+		ELSIF q[] == 15 THEN %caso de contagem decrescente de 0->9%
+			saida_aux[] = 9;
+		ELSE %caso padrao%
+			saida_aux[] = q[];
+		END IF;			
+			
+END; 
