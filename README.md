@@ -1,4 +1,3 @@
-![Pinagem-RZ-EasyFPGA](https://user-images.githubusercontent.com/65169791/109363952-851cf280-786c-11eb-9887-cc266da2bfc3.jpg)
 #Objetivos ->contador(0.5s) baseado em chaveamento(sw1)( 1-> 540/1600 0-> 87.5->108.0) ordens crescentes(S4) e decrescentes(S3) onde o segundo acionamento do botão deve parar a contagem.
 
 ->se S3 e S4 apertados simultaneos mostrar estações salvas e navegar a lista de salvos até a desejada(dependendo do sw1).
