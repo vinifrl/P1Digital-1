@@ -35,4 +35,4 @@ BEGIN
 			saida_aux[] = q[];
 		END IF;			
 			
-END; 
+END;  teste
