@@ -1,7 +1,7 @@
 subdesign contador
 (
 	clock1s : input; %clock de entrada do contador%
-	seletor : input; %seletor de controle(0 crescente/1 decrescente)%
+	s3, s4 : input; %seletor de controle( decrescente/crescente)%
 	clock_Placa : input; %clock da placa%
 	saida[3..0] : output; %valor de Saida%
 )
@@ -16,6 +16,7 @@ BEGIN
 		ff[].d = d[]; %entradas dos flip flops%
 		q[] = ff[].q; %saidas dos flip flops%
 		saida[] = saida_aux[]; %saida do sistema%
+		
 		
 		
 		%CASE que seleciona o tipo de operacao a ser feita de acordo com o controle%
