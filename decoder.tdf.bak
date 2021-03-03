@@ -1,0 +1,48 @@
+SUBDESIGN decoder
+(
+a[3..0], b[3..0], c[3..0], d[3..0] 	: INPUT;
+seletor 							: INPUT;
+out[6..0]							: OUTPUT;
+dig[0..3]							: OUTPUT;
+)
+
+VARIABLE
+	ff[24..0] 	: DFF;
+	aux[1..0]	: NODE;
+	BEGIN
+	ff[].clk = clkPlaca;
+	CASE q[] IS
+		WHEN 50000 => 
+			aux[] = aux[] + 1;
+			ff[].d = 0;
+		WHEN OTHERS =>
+			ff[].d = q[] + 1;
+	END CASE;
+
+BEGIN
+	CASE aux[] IS 
+		WHEN B"00" => 	dig[0] = ENABLE; 
+		WHEN B"01" =>	dig[1] = ENABLE;
+		WHEN B"10" =>	dig[2] = ENABLE;
+		WHEN B"11" =>	dig[3] = ENABLE;
+
+
+	if seletor == 1 then
+		
+		TABLE
+		b[] => out[];
+
+		B"0000"  =>	B"0000001"; 
+		B"0001"  =>	B"1001111"; 
+		B"0010"  =>	B"0010010";
+		B"0011"  =>	B"0000110"; 
+		B"0100"  =>	B"1001100"; 
+		B"0101"  =>	B"0100100"; 
+		B"0110"  =>	B"1100000"; 
+		B"0111"  =>	B"0001111"; 
+		B"1000"  =>	B"0000000"; 
+		B"1001"  =>	B"0001100"; 
+		
+		END TABLE;
+	
+END;

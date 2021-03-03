@@ -1,0 +1,31 @@
+|decoder
+clock => ff[15].CLK
+clock => ff[14].CLK
+clock => ff[13].CLK
+clock => ff[12].CLK
+clock => ff[11].CLK
+clock => ff[10].CLK
+clock => ff[9].CLK
+clock => ff[8].CLK
+clock => ff[7].CLK
+clock => ff[6].CLK
+clock => ff[5].CLK
+clock => ff[4].CLK
+clock => ff[3].CLK
+clock => ff[2].CLK
+clock => ff[1].CLK
+clock => ff[0].CLK
+out[7] <= <VCC>
+out[6] <= <GND>
+out[5] <= <GND>
+out[4] <= <VCC>
+out[3] <= <GND>
+out[2] <= <GND>
+out[1] <= <GND>
+out[0] <= <GND>
+dig[3] <= <GND>
+dig[2] <= <GND>
+dig[1] <= <GND>
+dig[0] <= <GND>
+
+

@@ -1,0 +1,11 @@
+subdesign teste
+(
+a1										: INPUT;
+out									: OUTPUT;
+dig									: OUTPUT;
+)
+BEGIN
+	dig = VCC;
+	out = a1;
+	
+END;
