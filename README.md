@@ -17,5 +17,6 @@
 -navegação na mémoria
 
 -substituir memória baseado na estação
-![image](https://user-images.githubusercontent.com/65169791/109363911-70405f00-786c-11eb-9927-c71aa64ced22.png)
+![image](https://user-images.githubusercontent.com/79720614/109546890-7ff8b700-7aa9-11eb-9076-307a10a2d0e9.png)
+
 ![Pinagem-RZ-EasyFPGA](https://user-images.githubusercontent.com/65169791/109363955-8a7a3d00-786c-11eb-93cb-839e31f6144b.jpg)

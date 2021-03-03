@@ -1,7 +1,5 @@
 Vamos utilzar os switches realmente? Tem q tirar o acrílico ou como é?
-Quanto é o incremente das frequencias?
-Pode usar o bloco do 7seg da altera?
-
+Quanto é o incremente das frequencias? 250 ms
 
 
 Como se implementa uma memória?
