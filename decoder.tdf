@@ -1,8 +1,8 @@
 SUBDESIGN decoder
 (
-a[3..0], b[3..0], c[3..0], d[3..0] : INPUT;
+a[3..0], b[3..0], c[3..0], d[3..0]			: INPUT;
 seletor 									: INPUT;
-clock											: INPUT;
+clock										: INPUT;
 out[0..7]									: OUTPUT;
 dig[0..3]									: OUTPUT;
 )
