@@ -20,3 +20,6 @@
 ![image](https://user-images.githubusercontent.com/79720614/109546890-7ff8b700-7aa9-11eb-9076-307a10a2d0e9.png)
 
 ![Pinagem-RZ-EasyFPGA](https://user-images.githubusercontent.com/65169791/109363955-8a7a3d00-786c-11eb-93cb-839e31f6144b.jpg)
+
+BLOCO DE MODO DE EXIBIÇÃO:
+começar um contador para s3&s4==vcc ficar somando uma var (e zerá-la no else), qnd chegar no valor de 2s, ativar uma auxiliar, a depender dela, entra no modo
