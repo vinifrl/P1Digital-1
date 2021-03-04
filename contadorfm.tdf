@@ -15,7 +15,8 @@ VARIABLE
 	fft					: TFF;
 	
 BEGIN
-		
+	%if 1dfm[] == GND then
+		1dfm[] = B"0110"%	
 	ff[].clk = clock; %clock de entrada como clock dos flip flops%
 	ff[].d = d[]; %entradas dos flip flops%
 	q[] = ff[].q; %saidas dos flip flops%
