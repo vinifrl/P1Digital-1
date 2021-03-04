@@ -1,0 +1,27 @@
+SUBDESIGN debounce
+(
+	clock, button	:INPUT;
+	out:OUTPUT;
+)
+
+VARIABLE
+	cont[23..0]:DFF;
+	toggle	  :TFF;
+	cout		  :NODE;
+
+BEGIN
+	cont[].clk=clock;
+	IF cont[].q==4999999 THEN
+		cont[].d=0;
+		cout=VCC;
+	ELSIF cont[].q>=2500000 THEN
+		cont[].d=cont[].q+1;
+		cout=VCC;
+	ELSIF cont[].q<2500000 THEN
+		cont[].d=cont[].q+1;
+		cout=GND;
+	END IF;
+	toggle.t=button;
+	toggle.clk=cout;
+	out=toggle.q;
+END;	

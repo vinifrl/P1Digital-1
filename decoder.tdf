@@ -35,7 +35,7 @@ BEGIN
 	END CASE;
 	
 	if seletor == 1 then
-		
+
 		TABLE
 		b[] => out[];
 
@@ -49,7 +49,7 @@ BEGIN
 		B"0111"  =>	B"00011111"; 
 		B"1000"  =>	B"00000001"; 
 		B"1001"  =>	B"00001001"; 
-		
+
 		END TABLE;
-	
+
 END;

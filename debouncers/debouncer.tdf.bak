@@ -1,0 +1,22 @@
+SUBDESIGN debounce
+(
+	clock, button :INPUT;
+	saida :OUTPUT;
+)
+
+VARIABLE
+	cont[6..0] :DFF;
+
+BEGIN
+	count.clk=clock;
+	count.clrn=button;
+	
+	IF cont.q<=126 & button THEN
+		cont.d=cont.q+1;
+	END IF;
+	IF cont.q==126 THEN
+		saida=VCC;
+	ELSE
+		saida=GND;
+	END IF;
+END;

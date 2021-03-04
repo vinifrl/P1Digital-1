@@ -1,0 +1,22 @@
+SUBDESIGN debouncer
+(
+	clock, button :INPUT;
+	saida :OUTPUT;
+)
+
+VARIABLE
+	cont[20..0] :DFF;
+
+BEGIN
+	cont[].clk=clock;
+	cont[].clrn=!button;
+	
+	IF (cont[].q<=100) & !button THEN
+		cont[].d=cont[].q+1;
+	END IF;
+	IF cont[].q==100 THEN
+		saida=VCC;
+	ELSE
+		saida=GND;
+	END IF;
+END;
