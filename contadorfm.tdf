@@ -8,14 +8,14 @@ subdesign contadorfm
 )
 
 VARIABLE
-	ff[10..0] 			: DFF; %flip flops tipo D%
-	d[10..0] 			: NODE; %entradas Ds dos Flip Flops%
-	q[10..0] 			: NODE; %saidas Qs dos Flip Flops%
-	saida_aux[10..0]	: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
-	fft					: TFF;
-	
+	v1[3..0] =, v2[3..0], v3[3..0], v4[3..0]	: DFF; %flip flops tipo D para os digitos%
+	d[3..0] 								: NODE; %entradas Ds dos Flip Flops%
+	q[3..0] 								: NODE; %saidas Qs dos Flip Flops%
+	saida_aux[3..0]							: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
+	fft										: TFF;
+
 BEGIN
-	%IF count2_cA == 1 & count2_dA == 8 & count2_uA == 0 THEN
+	%IF v1[] < 5 & v2[] < 7 & v3[] < 8 & v4[] == 0 THEN
     sinal_2max = VCC;%	
 	ff[].clk = clock; %clock de entrada como clock dos flip flops%
 	ff[].d = d[]; %entradas dos flip flops%
