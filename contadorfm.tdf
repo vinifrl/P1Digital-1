@@ -15,8 +15,8 @@ VARIABLE
 	fft					: TFF;
 	
 BEGIN
-	%if 1dfm[] == GND then
-		1dfm[] = B"0110"%	
+	%IF count2_cA == 1 & count2_dA == 8 & count2_uA == 0 THEN
+    sinal_2max = VCC;%	
 	ff[].clk = clock; %clock de entrada como clock dos flip flops%
 	ff[].d = d[]; %entradas dos flip flops%
 	q[] = ff[].q; %saidas dos flip flops%
