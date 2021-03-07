@@ -82,5 +82,6 @@ BEGIN
 			B"1000"  =>	B"00000001"; 
 			B"1001"  =>	B"00001001"; 
 			END TABLE;
+		end if;
 	end if;
 END;

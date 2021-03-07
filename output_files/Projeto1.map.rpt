@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto1
-Sun Mar 07 19:24:47 2021
+Sun Mar 07 19:50:40 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 07 19:24:47 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 07 19:50:40 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
-; Top-level Entity Name              ; seletor                                     ;
+; Top-level Entity Name              ; contadoram                                  ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 7                                           ;
-;     Total combinational functions  ; 7                                           ;
+; Total logic elements               ; 62                                          ;
+;     Total combinational functions  ; 62                                          ;
 ;     Dedicated logic registers      ; 4                                           ;
 ; Total registers                    ; 4                                           ;
-; Total pins                         ; 6                                           ;
+; Total pins                         ; 23                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; seletor            ; Projeto1           ;
+; Top-level entity name                                            ; contadoram         ; Projeto1           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -159,50 +160,49 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; seletor.tdf                      ; yes             ; User AHDL File  ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                          ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
+; contadoram.tdf                   ; yes             ; User AHDL File  ; D:/Estudo/Eletrônica Digital/P1/contadoram.tdf ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 7     ;
-;                                             ;       ;
-; Total combinational functions               ; 7     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 4     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 3     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 7     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 4     ;
-;     -- Dedicated logic registers            ; 4     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 6     ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; ffta  ;
-; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 36    ;
-; Average fan-out                             ; 1.57  ;
-+---------------------------------------------+-------+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 62      ;
+;                                             ;         ;
+; Total combinational functions               ; 62      ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 45      ;
+;     -- 3 input functions                    ; 11      ;
+;     -- <=2 input functions                  ; 6       ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 62      ;
+;     -- arithmetic mode                      ; 0       ;
+;                                             ;         ;
+; Total registers                             ; 4       ;
+;     -- Dedicated logic registers            ; 4       ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 23      ;
+;                                             ;         ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; v2[0]~4 ;
+; Maximum fan-out                             ; 10      ;
+; Total fan-out                               ; 272     ;
+; Average fan-out                             ; 2.43    ;
++---------------------------------------------+---------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,9 +210,32 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |seletor                   ; 7 (7)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |seletor            ; seletor     ; work         ;
+; |contadoram                ; 62 (62)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |contadoram         ; contadoram  ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; v2[0]~2                                                ;    ;
+; rtl~1                                                  ;    ;
+; rtl~2                                                  ;    ;
+; v2[2]~1                                                ;    ;
+; v2[3]~0                                                ;    ;
+; v3[0]~6                                                ;    ;
+; v3[1]~4                                                ;    ;
+; v3[2]~2                                                ;    ;
+; v3[3]~0                                                ;    ;
+; v4[0]~4                                                ;    ;
+; v4[1]~2                                                ;    ;
+; v4[2]~1                                                ;    ;
+; v4[3]~0                                                ;    ;
+; Number of logic cells representing combinational loops ; 13 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -235,17 +258,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 6                           ;
+; boundary_port         ; 23                          ;
 ; cycloneiii_ff         ; 4                           ;
 ;     plain             ; 4                           ;
-; cycloneiii_lcell_comb ; 8                           ;
-;     normal            ; 8                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 1                           ;
-;         4 data inputs ; 4                           ;
+; cycloneiii_lcell_comb ; 62                          ;
+;     normal            ; 62                          ;
+;         2 data inputs ; 6                           ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 45                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.56                        ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.86                        ;
 +-----------------------+-----------------------------+
 
 
@@ -264,26 +287,38 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Mar 07 19:24:36 2021
+    Info: Processing started: Sun Mar 07 19:50:31 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file contadoram.tdf
+    Info (12023): Found entity 1: contadoram File: D:/Estudo/Eletrônica Digital/P1/contadoram.tdf Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file contadorfm.tdf
+    Info (12023): Found entity 1: contadorfm File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 1
+Warning (287002): Group MSB out7 overrides BIT0 = LSB in actual or default Options Statement File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file display.tdf
+    Info (12023): Found entity 1: display File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file divisor.tdf
+    Info (12023): Found entity 1: divisor File: D:/Estudo/Eletrônica Digital/P1/divisor.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seletor.tdf
     Info (12023): Found entity 1: seletor File: D:/Estudo/Eletrônica Digital/P1/seletor.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file muxamfm.tdf
     Info (12023): Found entity 1: MUXamfm File: D:/Estudo/Eletrônica Digital/P1/MUXamfm.tdf Line: 1
-Info (12127): Elaborating entity "seletor" for the top level hierarchy
+Info (12127): Elaborating entity "contadoram" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 13 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 4 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4765 megabytes
-    Info: Processing ended: Sun Mar 07 19:24:47 2021
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "s3" File: D:/Estudo/Eletrônica Digital/P1/contadoram.tdf Line: 5
+    Warning (15610): No output dependent on input pin "s4" File: D:/Estudo/Eletrônica Digital/P1/contadoram.tdf Line: 5
+Info (21057): Implemented 85 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 62 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4764 megabytes
+    Info: Processing ended: Sun Mar 07 19:50:40 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:19
 
 

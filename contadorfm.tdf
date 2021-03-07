@@ -2,7 +2,7 @@ subdesign contadorfm %modo quando sel == GND%
 (
 	clock1s			: input; %clock de entrada do contador%
 	modofav			: INPUT;
-	s3, s4 		: input; %seletor de controle( decrescente/crescente)
+	s3, s4 		: input; %seletor de controle( decrescente/crescente)%
 	sw1, sw2, sel	: INPUT; %switches amfm, modo gravação e seletor de a/d%
 	1d[3..0], 2d[3..0], 3d[3..0], 4d[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
 )
@@ -82,22 +82,20 @@ BEGIN
 			ELSE %caso padrao%
 				saida_aux[] = q[];
 			END IF;		
-		end if;
 	end if;	
 	if sw2 == VCC & sw1 == GND & modofav == GND then %entrando no modo de gravação%
-		if s3 == VCC & s4 = GND then 	%botão s3 apertado para gravar um favorito%
+		if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
 			fav31[] = v1[];
 			fav32[] = v2[];
 			fav33[] = v3[];
 			fav34[] = v4[];
-		end if;
-		if s4 == VCC & s3 = GND then 	%botão s4 apertado para gravar um favorito%
+		elsif s4 == VCC & s3 == GND then 	%botão s4 apertado para gravar um favorito%
 			fav41[] = v1[];
 			fav42[] = v2[];
 			fav43[] = v3[];
 			fav44[] = v4[];
 		end if;
-
+	end if;
 	if modofav == VCC then    			%entrando no modo favorito%
 		if clock1s == VCC then			%alternará qual favorito será mostrado a cada 1s%
 			1d[] = fav31[];

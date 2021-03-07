@@ -1,9 +1,3 @@
-%
-
-CODIGO DE UM GERADOR DE CLOCK DE 1s A PARTIR DE UM CLOCK DE 50MHz
-
-%
-
 subdesign divisor
 (
 	clkPlaca : input; %clock de 50MHz da placa%
