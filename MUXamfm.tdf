@@ -1,9 +1,9 @@
 subdesign MUXamfm
 (
 	sw1	: INPUT; %switches amfm%
-    1dfm[3..0], 2dfm[3..0], 3dfm[3..0], 4dfm[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
-    1dam[3..0], 2dam[3..0], 3dam[3..0], 4dam[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
-    out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
+   1dfm[3..0], 2dfm[3..0], 3dfm[3..0], 4dfm[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
+   1dam[3..0], 2dam[3..0], 3dam[3..0], 4dam[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
+   out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
 )
 BEGIN
     if sw1 == VCC then

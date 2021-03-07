@@ -6,36 +6,37 @@ subdesign seletor
     sel                  : output;      %define se é a/d%
 )
 VARIABLE
-    ffta , fftd          :TFF;          %fft usado para criar sinal constante após apertar botão(acresimo e decrescimo)%
-    ffd[1..0]            :DFF;          %flip flops que irao fazer a contagem%
-    q[1..0]              :NODE;
+    ffta , fftd         :TFF;          %fft usado para criar sinal constante após apertar botão(acresimo e decrescimo)%
+    ffd[1..0]           :DFF;          %flip flops que irao fazer a contagem%
+    q[1..0]             :NODE;
+	 dec, ac					:NODE;   %indicam se o acrescimo ou decrescimo estao ativados%
 begin
-    fftd.clk = s3;
+   fftd.clk = s3;
 	fftd.t = VCC;
-    saidafftd = !fftd.q;                %começa a contagem em VCC%
-    dec = !fftd.q;                      %ativado o sinal decrescente%
+   %saidafftd = !fftd.q;  %              %começa a contagem em VCC%
+   dec = !fftd.q;                      %ativado o sinal decrescente%
     
-    ffta.clk = s4;
+   ffta.clk = s4;
 	ffta.t = VCC;
-    saidaffta = !ffta.q;                %começa a contagem em VCC%
-    ac = !ffta.q;                       %ativado o sinal crescente%
+   %saidaffta = !ffta.q;%                %começa a contagem em VCC%
+   ac = !ffta.q;                       %ativado o sinal crescente%
 
-    ffd[].clk = clock1s;
-    q[] = ff[].q;
+   ffd[].clk = clock1s;
+   q[] = ffd[].q;
     
-    IF (dec == VCC & ac == GND) THEN                  %seletor para os casos decrescentes%
+   IF (dec == VCC & ac == GND) THEN                  %seletor para os casos decrescentes%
 		sel = GND;
-    ELSIF (ac == VCC & dec == GND) THEN               %seletor para os casos crescentes%
-        sel = VCC;
-    ELSIF (s3 & s4 == VCC & sw2 == GND) THEN                     %caso para entrar na memória%
-        CASE q[] IS
+	ELSIF (ac == VCC & dec == GND) THEN               %seletor para os casos crescentes%
+		sel = VCC;
+   ELSIF (s3 & s4 == VCC & sw2 == GND) THEN                     %caso para entrar na memória%
+		CASE q[] IS
 		WHEN 2 => %contando 2 segundos com os botões precionados%
 			modofav = VCC;
 			ffd[].d = 0;
 		WHEN OTHERS =>
 			modofav = GND;
 			ffd[].d = q[] + 1;
-	END CASE;
-    end if;
+		END CASE;
+   end if;
 
  END;
