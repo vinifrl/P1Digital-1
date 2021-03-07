@@ -1,5 +1,11 @@
 Vamos utilzar os switches realmente? Tem q tirar o acrílico ou como é?
+Quando for selecionado o modo favorito, o q acontece se n tiver favoritos?
+     ___
+    / | \
+    |   |
+    |   |
+    |   |
+____|   |____
+|   |   |   |
+|___|   |___|
 Quanto é o incremente das frequencias? 250 ms
-
-
-Como se implementa uma memória?

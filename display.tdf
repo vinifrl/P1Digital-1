@@ -1,0 +1,86 @@
+SUBDESIGN display
+(
+a[3..0], b[3..0], c[3..0], d[3..0]			: INPUT;
+seletor, sw1 								: INPUT; 
+clock										: INPUT;
+out[0..7]									: OUTPUT;
+dig[3..0]									: OUTPUT;
+)
+
+VARIABLE
+	ff[15..0] 	: DFF;
+	aux[1..0]	: NODE;
+	q[15..0] 	: NODE;
+	disp[3..0]  : NODE;
+
+BEGIN
+	ff[].clk = clock;
+	q[] = ff[].q;
+	CASE q[] IS
+		WHEN 50000 => 
+			if aux[] == 3 then
+				aux[] = 0;
+			else
+				aux[] = aux[] + 1;
+			end if;
+			ff[].d = 0;
+		WHEN OTHERS =>
+			ff[].d = q[] + 1;
+	END CASE;
+
+	CASE aux[] IS 
+		WHEN B"00" => 	dig[0] = GND;
+						disp[] = a[]; 
+		WHEN B"01" =>	dig[1] = GND;
+						disp[] = b[];
+		WHEN B"10" =>	dig[2] = GND;
+						disp[] = c[];
+		WHEN B"11" =>	dig[3] = GND;
+						disp[] = d[];
+	END CASE;
+	
+	if sw1 == VCC then
+		TABLE
+		disp[] => out[];
+		B"0000"  =>	B"00000011"; 
+		B"0001"  =>	B"10011111"; 
+		B"0010"  =>	B"00100101";
+		B"0011"  =>	B"00001101"; 
+		B"0100"  =>	B"10011001"; 
+		B"0101"  =>	B"01001001"; 
+		B"0110"  =>	B"01000001"; 
+		B"0111"  =>	B"00011111"; 
+		B"1000"  =>	B"00000001"; 
+		B"1001"  =>	B"00001001"; 
+		END TABLE;
+	else
+		if aux[] == 2 then
+			TABLE
+				disp[] => out[];
+				B"0000"  =>	B"00000010"; 
+				B"0001"  =>	B"10011110"; 
+				B"0010"  =>	B"00100100";
+				B"0011"  =>	B"00001100"; 
+				B"0100"  =>	B"10011000"; 
+				B"0101"  =>	B"01001000"; 
+				B"0110"  =>	B"01000000"; 
+				B"0111"  =>	B"00011110"; 
+				B"1000"  =>	B"00000000"; 
+				B"1001"  =>	B"00001000"; 
+			END TABLE;
+		else
+			TABLE
+			disp[] => out[];
+			B"0000"  =>	B"00000011"; 
+			B"0001"  =>	B"10011111"; 
+			B"0010"  =>	B"00100101";
+			B"0011"  =>	B"00001101"; 
+			B"0100"  =>	B"10011001"; 
+			B"0101"  =>	B"01001001"; 
+			B"0110"  =>	B"01000001"; 
+			B"0111"  =>	B"00011111"; 
+			B"1000"  =>	B"00000001"; 
+			B"1001"  =>	B"00001001"; 
+			END TABLE;
+	end if;
+END;
