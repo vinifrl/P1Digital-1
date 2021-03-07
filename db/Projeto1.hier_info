@@ -1,4 +1,4 @@
-|contadoram
+|contadorfm
 clock1s => _.IN1
 clock1s => _.IN0
 clock1s => v1[3].CLK
@@ -14,8 +14,8 @@ s3 => _.IN0
 s3 => fft.CLK
 s4 => _.IN0
 s4 => _.IN0
-sw1 => _.IN1
-sw1 => _.IN1
+sw1 => _.IN0
+sw1 => _.IN0
 sw2 => _.IN0
 sw2 => _.IN0
 sel => _.IN1

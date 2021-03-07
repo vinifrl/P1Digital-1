@@ -68,7 +68,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw1",
+					"name" : "sel",
 					"strict" : false
 				},
 				{
@@ -76,11 +76,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "sw2",
+					"name" : "sw1",
 					"strict" : false
 				},
 				{
-					"name" : "sel",
+					"name" : "sw2",
 					"strict" : false
 				},
 				{
