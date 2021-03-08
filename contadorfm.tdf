@@ -28,7 +28,7 @@ BEGIN
 	fft.clk = s3;
 	fft.t = VCC;
 	if (sw2 == GND & sw1 == GND & modofav == GND) then 	%só acontece caso fora do modo gravação e sw1 em fm%
-		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%
+		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado%
 			if v4[] == 0 & v3[] < 8 then  %limite inferior%
 				v3[] = 8;
 				if v2[] < 7 then

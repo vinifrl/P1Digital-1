@@ -1,8 +1,8 @@
 SUBDESIGN display
 (
-a[3..0], b[3..0], c[3..0], d[3..0]			: INPUT;
+a[3..0], b[3..0], c[3..0], d[3..0]	: INPUT;
 seletor, sw1 								: INPUT; 
-clock										: INPUT;
+clock											: INPUT;
 out[0..7]									: OUTPUT;
 dig[3..0]									: OUTPUT;
 )
@@ -16,7 +16,7 @@ VARIABLE
 BEGIN
 	ff[].clk = clock;
 	q[] = ff[].q;
-	CASE q[] IS
+	CASE q[] IS        %criando contador interno para alternar entre os digitos do display%
 		WHEN 50000 => 
 			if aux[] == 3 then
 				aux[] = 0;
@@ -28,15 +28,15 @@ BEGIN
 			ff[].d = q[] + 1;
 	END CASE;
 
-	CASE aux[] IS 
+	CASE aux[] IS 								%alterna os digitos de display a partir de aux %
 		WHEN B"00" => 	dig[0] = GND;
-						disp[] = a[]; 
+							disp[] = a[]; 
 		WHEN B"01" =>	dig[1] = GND;
-						disp[] = b[];
+							disp[] = b[];
 		WHEN B"10" =>	dig[2] = GND;
-						disp[] = c[];
+							disp[] = c[];
 		WHEN B"11" =>	dig[3] = GND;
-						disp[] = d[];
+							disp[] = d[];
 	END CASE;
 	
 	if sw1 == VCC then
@@ -54,7 +54,7 @@ BEGIN
 		B"1001"  =>	B"00001001"; 
 		END TABLE;
 	else
-		if aux[] == 2 then
+		if aux[] == B"10" then
 			TABLE
 				disp[] => out[];
 				B"0000"  =>	B"00000010"; 

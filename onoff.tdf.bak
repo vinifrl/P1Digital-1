@@ -1,0 +1,12 @@
+subdesign onoff
+(
+	s3 : input;
+	dec : output;
+)
+variable
+	fft   		:TFF;
+BEGIN
+	fftd.clk = s3;
+	fftd.t = VCC;				
+	dec = fftd.q; 
+end;

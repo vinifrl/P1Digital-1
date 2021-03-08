@@ -1,0 +1,32 @@
+subdesign seletorteste
+(  
+    s3, s4, pulse   : input;       %seletor crescente decrescente e switch modo gravação% 
+    clock1s					 : input;       %clock de 1 s para entrar no modo dos favoritos%
+    modofav              : output;      %saber se o modo favoritos está ativado%
+    sel, pulso           : output;      %define se é a/d%
+)
+VARIABLE  
+    ffd[1..0]           :DFF;          %flip flops que irao fazer a contagem%
+    q[1..0]             :NODE;
+	 d[1..0]					:NODE;
+begin
+   ffd[].clk = clock1s;
+	if pulse == GND then
+		ffd[].d = d[];
+		q[] = ffd[].q;
+		modofav = VCC;
+		IF (s3 == VCC & s4 == GND) THEN                  %seletor para os casos decrescentes%
+			sel = GND;
+		ELSIF (s3 == VCC & s4 == GND) THEN               %seletor para os casos crescentes%
+			sel = VCC;
+		ELSIF (s3 == VCC & s4 == VCC) THEN                     %caso para entrar na memória%
+			pulso = VCC;
+		ELsif (s3 == gnd & s4 == gnd) then
+			ffd[].d = 0;
+		else
+			sel = GND;
+		end if;
+	else
+		modofav = GND;
+	end if;
+ END;

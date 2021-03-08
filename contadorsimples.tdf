@@ -1,0 +1,29 @@
+subdesign contadorsimples
+(
+	clock : input; %clock de entrada do contador%
+	pulso : input; %seletor de controle(0 crescente/1 decrescente)%
+	saida: output; %valor de Saida%
+)
+
+VARIABLE
+	ff[3..0] : DFF; %flip flops tipo D%
+	d[3..0] : NODE; %entradas Ds dos Flip Flops%
+	q[3..0] : NODE; %saidas Qs dos Flip Flops%
+BEGIN
+		ff[].clk = clock; %clock de entrada como clock dos flip flops%
+		ff[].d = d[]; %entradas dos flip flops%
+		q[] = ff[].q; %saidas dos flip flops%
+		if pulso == VCC then
+			IF q[] < 2 THEN %caso de contagem crescente de 9 -> 0%
+			saida = GND;
+			d[] = q[] + 1;
+			ELSE %caso padrao%
+				saida = VCC;
+			END IF;
+		else
+			d[] = 0;
+		end if;
+		%IF que garante a saida modulo 60 e alimenta a entrada do detector de borda somente quando a contagem vai de 59->0%
+				
+			
+END;

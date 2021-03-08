@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE6E22C8
-set_global_assignment -name TOP_LEVEL_ENTITY contadorfm
+set_global_assignment -name TOP_LEVEL_ENTITY TESTESELETOR
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:13:23  MARCH 01, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -56,6 +56,30 @@ set_global_assignment -name AHDL_FILE display.tdf
 set_global_assignment -name AHDL_FILE divisor.tdf
 set_global_assignment -name AHDL_FILE seletor.tdf
 set_global_assignment -name AHDL_FILE MUXamfm.tdf
+set_global_assignment -name BDF_FILE blocoproj.bdf
+set_location_assignment PIN_133 -to dig[0]
+set_location_assignment PIN_135 -to dig[1]
+set_location_assignment PIN_136 -to dig[2]
+set_location_assignment PIN_137 -to dig[3]
+set_location_assignment PIN_121 -to out[1]
+set_location_assignment PIN_125 -to out[2]
+set_location_assignment PIN_129 -to out[3]
+set_location_assignment PIN_128 -to out[0]
+set_location_assignment PIN_132 -to out[4]
+set_location_assignment PIN_126 -to out[5]
+set_location_assignment PIN_124 -to out[6]
+set_location_assignment PIN_127 -to out[7]
+set_location_assignment PIN_88 -to switch1
+set_location_assignment PIN_89 -to switch2
+set_location_assignment PIN_90 -to button3
+set_location_assignment PIN_91 -to button4
+set_global_assignment -name BDF_FILE TESTESELETOR.bdf
+set_location_assignment PIN_23 -to CLOCK_PLACA
+set_location_assignment PIN_87 -to FAV
+set_location_assignment PIN_86 -to SELETOR
+set_location_assignment PIN_85 -to pin_name1
+set_global_assignment -name AHDL_FILE onoff.tdf
+set_global_assignment -name AHDL_FILE contadorsimples.tdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

@@ -1,41 +1,66 @@
-|contadorfm
-clock1s => _.IN1
-clock1s => _.IN0
-clock1s => v1[3].CLK
-clock1s => v1[2].CLK
-clock1s => v1[1].CLK
-clock1s => v1[0].CLK
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
+|TESTESELETOR
+FAV <= seletor:inst.modofav
+button3 => inst54649784.IN0
+button4 => inst4.IN0
+CLOCK_PLACA => divisor:inst1.clkPlaca
+SELETOR <= seletor:inst.sel
+
+
+|TESTESELETOR|seletor:inst
 s3 => _.IN0
 s3 => _.IN0
-s3 => fft.CLK
+s3 => _.IN0
+s3 => _.IN0
 s4 => _.IN0
 s4 => _.IN0
-sw1 => _.IN0
-sw1 => _.IN0
-sw2 => _.IN0
-sw2 => _.IN0
-sel => _.IN1
-sel => _.IN0
-sel => _.IN0
-1d[0] <= 1d[0].DB_MAX_OUTPUT_PORT_TYPE
-1d[1] <= 1d[1].DB_MAX_OUTPUT_PORT_TYPE
-1d[2] <= 1d[2].DB_MAX_OUTPUT_PORT_TYPE
-1d[3] <= 1d[3].DB_MAX_OUTPUT_PORT_TYPE
-2d[0] <= 2d[0].DB_MAX_OUTPUT_PORT_TYPE
-2d[1] <= 2d[1].DB_MAX_OUTPUT_PORT_TYPE
-2d[2] <= 2d[2].DB_MAX_OUTPUT_PORT_TYPE
-2d[3] <= 2d[3].DB_MAX_OUTPUT_PORT_TYPE
-3d[0] <= 3d[0].DB_MAX_OUTPUT_PORT_TYPE
-3d[1] <= 3d[1].DB_MAX_OUTPUT_PORT_TYPE
-3d[2] <= 3d[2].DB_MAX_OUTPUT_PORT_TYPE
-3d[3] <= 3d[3].DB_MAX_OUTPUT_PORT_TYPE
-4d[0] <= 4d[0].DB_MAX_OUTPUT_PORT_TYPE
-4d[1] <= 4d[1].DB_MAX_OUTPUT_PORT_TYPE
-4d[2] <= 4d[2].DB_MAX_OUTPUT_PORT_TYPE
-4d[3] <= 4d[3].DB_MAX_OUTPUT_PORT_TYPE
+s4 => _.IN1
+s4 => _.IN0
+pulse => q[1].IN0
+clock1s => ffd[1].CLK
+clock1s => ffd[0].CLK
+modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
+sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
+pulso <= pulso.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTESELETOR|contadorsimples:inst6
+clock => ff[3].CLK
+clock => ff[2].CLK
+clock => ff[1].CLK
+clock => ff[0].CLK
+pulso => _.IN0
+pulso => saida~0.IN0
+pulso => _.IN0
+saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TESTESELETOR|divisor:inst1
+clkPlaca => ff[24].CLK
+clkPlaca => ff[23].CLK
+clkPlaca => ff[22].CLK
+clkPlaca => ff[21].CLK
+clkPlaca => ff[20].CLK
+clkPlaca => ff[19].CLK
+clkPlaca => ff[18].CLK
+clkPlaca => ff[17].CLK
+clkPlaca => ff[16].CLK
+clkPlaca => ff[15].CLK
+clkPlaca => ff[14].CLK
+clkPlaca => ff[13].CLK
+clkPlaca => ff[12].CLK
+clkPlaca => ff[11].CLK
+clkPlaca => ff[10].CLK
+clkPlaca => ff[9].CLK
+clkPlaca => ff[8].CLK
+clkPlaca => ff[7].CLK
+clkPlaca => ff[6].CLK
+clkPlaca => ff[5].CLK
+clkPlaca => ff[4].CLK
+clkPlaca => ff[3].CLK
+clkPlaca => ff[2].CLK
+clkPlaca => ff[1].CLK
+clkPlaca => ff[0].CLK
+clkPlaca => fft.CLK
+clock1HZ <= fft.DB_MAX_OUTPUT_PORT_TYPE
 
 

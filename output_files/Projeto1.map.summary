@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Sun Mar 07 19:54:13 2021
+Analysis & Synthesis Status : Successful - Mon Mar 08 19:43:44 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : Projeto1
-Top-level Entity Name : contadorfm
+Top-level Entity Name : TESTESELETOR
 Family : Cyclone IV E
-Total logic elements : 73
-    Total combinational functions : 73
-    Dedicated logic registers : 4
-Total registers : 4
-Total pins : 23
+Total logic elements : 39
+    Total combinational functions : 39
+    Dedicated logic registers : 28
+Total registers : 28
+Total pins : 5
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
