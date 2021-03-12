@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto1
-Fri Mar 12 17:44:12 2021
+Fri Mar 12 19:07:24 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -44,15 +44,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 12 17:44:12 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 12 19:07:24 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
 ; Top-level Entity Name              ; blocoproj                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 260                                         ;
-;     Total combinational functions  ; 260                                         ;
-;     Dedicated logic registers      ; 65                                          ;
-; Total registers                    ; 65                                          ;
+; Total logic elements               ; 264                                         ;
+;     Total combinational functions  ; 264                                         ;
+;     Dedicated logic registers      ; 77                                          ;
+; Total registers                    ; 77                                          ;
 ; Total pins                         ; 17                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -185,20 +185,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 260               ;
+; Estimated Total logic elements              ; 264               ;
 ;                                             ;                   ;
-; Total combinational functions               ; 260               ;
+; Total combinational functions               ; 264               ;
 ; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 157               ;
-;     -- 3 input functions                    ; 29                ;
-;     -- <=2 input functions                  ; 74                ;
+;     -- 4 input functions                    ; 166               ;
+;     -- 3 input functions                    ; 27                ;
+;     -- <=2 input functions                  ; 71                ;
 ;                                             ;                   ;
 ; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 214               ;
+;     -- normal mode                          ; 218               ;
 ;     -- arithmetic mode                      ; 46                ;
 ;                                             ;                   ;
-; Total registers                             ; 65                ;
-;     -- Dedicated logic registers            ; 65                ;
+; Total registers                             ; 77                ;
+;     -- Dedicated logic registers            ; 77                ;
 ;     -- I/O registers                        ; 0                 ;
 ;                                             ;                   ;
 ; I/O pins                                    ; 17                ;
@@ -206,8 +206,8 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; Clock_Placa~input ;
-; Maximum fan-out                             ; 53                ;
-; Total fan-out                               ; 1066              ;
+; Maximum fan-out                             ; 65                ;
+; Total fan-out                               ; 1114              ;
 ; Average fan-out                             ; 2.97              ;
 +---------------------------------------------+-------------------+
 
@@ -217,11 +217,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
-; |blocoproj                 ; 260 (0)             ; 65 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |blocoproj                  ; blocoproj   ; work         ;
-;    |MUXamfm:inst|          ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|MUXamfm:inst     ; MUXamfm     ; work         ;
+; |blocoproj                 ; 264 (0)             ; 77 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |blocoproj                  ; blocoproj   ; work         ;
 ;    |contadoram:inst1|      ; 56 (56)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contadoram:inst1 ; contadoram  ; work         ;
-;    |contadorfm:inst2|      ; 70 (70)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contadorfm:inst2 ; contadorfm  ; work         ;
-;    |display:inst3|         ; 91 (91)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|display:inst3    ; display     ; work         ;
+;    |contadorfm:inst7|      ; 75 (75)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contadorfm:inst7 ; contadorfm  ; work         ;
+;    |display:inst3|         ; 93 (93)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|display:inst3    ; display     ; work         ;
 ;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|divisor:inst4    ; divisor     ; work         ;
 ;    |seletor:inst5|         ; 6 (6)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|seletor:inst5    ; seletor     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
@@ -236,31 +235,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; contadoram:inst1|v2[0]~3                               ;    ;
 ; contadoram:inst1|v3[0]~6                               ;    ;
 ; contadoram:inst1|v4[0]~4                               ;    ;
-; contadorfm:inst2|v2[0]~4                               ;    ;
-; contadorfm:inst2|v2[3]~0                               ;    ;
-; contadorfm:inst2|v2[2]~1                               ;    ;
-; contadorfm:inst2|v2[1]~3                               ;    ;
-; rtl~14                                                 ;    ;
-; rtl~15                                                 ;    ;
-; contadorfm:inst2|v3[3]~4                               ;    ;
-; contadorfm:inst2|v4[0]~3                               ;    ;
 ; contadoram:inst1|v2[1]~2                               ;    ;
 ; contadoram:inst1|v3[1]~4                               ;    ;
 ; contadoram:inst1|v4[1]~2                               ;    ;
-; rtl~12                                                 ;    ;
-; rtl~13                                                 ;    ;
-; contadorfm:inst2|v4[1]~2                               ;    ;
 ; contadoram:inst1|v2[2]~1                               ;    ;
 ; contadoram:inst1|v3[2]~2                               ;    ;
 ; contadoram:inst1|v4[2]~1                               ;    ;
-; contadorfm:inst2|v3[2]~3                               ;    ;
-; contadorfm:inst2|v4[2]~1                               ;    ;
 ; contadoram:inst1|v2[3]~0                               ;    ;
 ; contadoram:inst1|v3[3]~0                               ;    ;
-; contadorfm:inst2|v3[3]~2                               ;    ;
 ; contadoram:inst1|v4[3]~0                               ;    ;
-; contadorfm:inst2|v4[3]~0                               ;    ;
-; Number of logic cells representing combinational loops ; 27 ;
+; Number of logic cells representing combinational loops ; 12 ;
 +--------------------------------------------------------+----+
 Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -270,7 +254,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 65    ;
+; Total registers                              ; 77    ;
 ; Number of registers using Synchronous Clear  ; 48    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -286,21 +270,21 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 17                          ;
-; cycloneiii_ff         ; 65                          ;
+; cycloneiii_ff         ; 77                          ;
 ;     SCLR              ; 48                          ;
-;     plain             ; 17                          ;
-; cycloneiii_lcell_comb ; 262                         ;
+;     plain             ; 29                          ;
+; cycloneiii_lcell_comb ; 266                         ;
 ;     arith             ; 46                          ;
 ;         2 data inputs ; 44                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 216                         ;
+;     normal            ; 220                         ;
 ;         1 data inputs ; 6                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 157                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 25                          ;
+;         4 data inputs ; 166                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.68                        ;
+; Average LUT depth     ; 4.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -319,14 +303,14 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Mar 12 17:44:02 2021
+    Info: Processing started: Fri Mar 12 19:07:14 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file contadoram.tdf
     Info (12023): Found entity 1: contadoram File: D:/Estudo/Eletrônica Digital/P1/contadoram.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contadorfm.tdf
-    Info (12023): Found entity 1: contadorfm File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 1
+    Info (12023): Found entity 1: contadorfm File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 3
 Warning (287002): Group MSB out7 overrides BIT0 = LSB in actual or default Options Statement File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file display.tdf
     Info (12023): Found entity 1: display File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 1
@@ -356,18 +340,18 @@ Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst5"
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
 Info (12128): Elaborating entity "MUXamfm" for hierarchy "MUXamfm:inst"
 Info (12128): Elaborating entity "contadoram" for hierarchy "contadoram:inst1"
-Info (12128): Elaborating entity "contadorfm" for hierarchy "contadorfm:inst2"
+Info (12128): Elaborating entity "contadorfm" for hierarchy "contadorfm:inst7"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 277 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 260 logic cells
+    Info (21061): Implemented 264 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Fri Mar 12 17:44:12 2021
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Fri Mar 12 19:07:24 2021
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+    Info: Total CPU time (on all processors): 00:00:19
 
 

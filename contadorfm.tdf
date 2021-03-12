@@ -1,17 +1,19 @@
+%SE CONTINUAR PULANDO DE 88.0 PRA 89.1 PODE TENTAR USAR UM AUXILIAR PRA RECEBER O .D DOS FF, ASSIM COMO NA UNIDADE%
+
 subdesign contadorfm %modo quando sel == GND%
 (
-	clock1s			: input; %clock de entrada do contador%
+	clock1s, clk_placa		: input; %clock de entrada do contador%
 	modofav			: INPUT;
 	s3, s4 		: input; %seletor de controle( decrescente/crescente)%
 	sw1, sw2, sel	: INPUT; %switches amfm, modo gravação e seletor de a/d%
-	d1[3..0], d2[3..0], d3[3..0], d4[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
+	dig1[3..0], dig2[3..0], dig3[3..0], dig4[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
 )
 
 VARIABLE
 	v1[3..0]											: DFF; %flip flops tipo D para os digitos%
 	v2[3..0], v3[3..0], v4[3..0]				: DFF;
 	d[3..0] 											: NODE; %entradas Ds dos Flip Flops%
-	q[3..0] 											: NODE; %saidas Qs dos Flip Flops%
+	q[3..0] 											: NODE;  %saidas Qs dos Flip Flops%
 	fav31[3..0], fav32[3..0], fav33[3..0], fav34[3..0]	: NODE; %valor armazenado do favorito 3 fm%
 	fav41[3..0], fav42[3..0], fav43[3..0], fav44[3..0]	: NODE; %valor armazenado do favorito 4 fm%
 	saida_aux[3..0]										: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
@@ -19,20 +21,20 @@ VARIABLE
 
 BEGIN
 	v1[].clk = clock1s; %clock de entrada como clock dos flip flops%
-	v2[].clk = clock1s;
-	v3[].clk = clock1s;
-	v4[].clk = clock1s;
+	v2[].clk = clk_placa;
+	v3[].clk = clk_placa;
+	v4[].clk = clk_placa;
 	v1[].d = d[]; %entradas dos flip flops%
 	q[] = v1[].q; %saidas dos flip flops%
-	d1[] = saida_aux[]; %saida do 1o digito%
-	d2[] = v2[].q;
-	d3[] = v3[].q;
-	d4[] = v4[].q;
+	%dig1[] = saida_aux[];% %saida do 1o digito%
+	%dig2[] = v2[].q;
+	dig3[] = v3[].q;
+	dig4[] = v4[].q;%
 	fft.clk = s3;
 	fft.t = VCC;
 	if (sw2 == GND & sw1 == GND & modofav == GND) then 	%só acontece caso fora do modo gravação e sw1 em fm%
 		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado%
-			if v4[].q == 0 & v3[].q < 8 then  %limite inferior%
+			%if v4[].q == 0 & v3[].q < 8 then  limite inferior
 				v3[].d = 8;
 				if v2[].q < 7 then
 					v2[].d = 7;
@@ -40,7 +42,7 @@ BEGIN
 						v1[].d = 5;
 					end if;
 				end if;
-			end if;
+			end if;%
 			if v4[].q == 1 & v3[].q == 0 & v2[].q == 8 & v1[].q == 0 then %limite superior%
 				v4[].d = 0;
 				v3[].d = 8;
@@ -48,37 +50,42 @@ BEGIN
 				v1[].d = 5;
 			end if;
 			d[] = saida_aux[] + 1;
-			IF q[] == 10 THEN %caso de contagem crescente de 9 -> 0%
+			IF v1[].q >= 10 THEN %caso de contagem crescente de 9 -> 0%
 				saida_aux[] = 0;
-				v2[] = v2[] + 1;
-				IF v2[] == 10 THEN
-					v2[] = 0;
-					v3[] = v3[] + 1;		
-					IF v3[] == 10 THEN
-						v3[] = 0;
-						v4[] = v4[] + 1;
+				v2[].d = v2[].q + 1;
+				IF v2[].q >= 10 THEN
+					v2[].d = 0;
+					v3[].d = v3[].q + 1;		
+					IF v3[].q >= 10 THEN
+						v3[].d = 0;
+						v4[].d = v4[].q + 1;
+					else
+						v4[].d = v4[].q;
 					end if;
+				else
+					v3[].d = v3[].q;
 				end if;
 			ELSE
-				saida_aux[] = q[];
+				saida_aux[] = v1[].q;
+				v2[].d = v2[].q;
 			end if;
 		ELSIF sel == GND then
-			if v4[] == 0 & v3[] == 8 & v2[] == 7 & v1[] == 5 then %limite superior%
-				v4[] = 1;
-				v3[] = 0;
-				v2[] = 8;
-				v1[] = 0;
+			if v4[].q == 0 & v3[].q == 8 & v2[].q == 7 & v1[].q == 5 then %limite superior%
+				v4[].d = 1;
+				v3[].d = 0;
+				v2[].d = 8;
+				v1[].d = 0;
 			end if;
 			d[] = saida_aux[] - 1;
 			IF q[] == 0 THEN %caso de contagem decrescente de 0->9%
 				saida_aux[] = 9;
-				v2[] = v2[] - 1;
-				IF v2[] == 0 then
-					v2[] = 9;
-					v3[] = v3[] -1;
-					if v3[] == 0 then
-						v3[] = 9;
-						v4[] = v4[] - 1; 
+				v2[].d = v2[].q - 1;
+				IF v2[].q == 0 then
+					v2[].d = 9;
+					v3[].d = v3[].q -1;
+					if v3[].q == 0 then
+						v3[].d = 9;
+						v4[].d = v4[].q - 1; 
 					end if;
 				end if;
 			end if;
@@ -88,28 +95,33 @@ BEGIN
 	end if;	
 	if sw2 == VCC & sw1 == GND & modofav == GND then %entrando no modo de gravação%
 		if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
-			fav31[] = v1[];
-			fav32[] = v2[];
-			fav33[] = v3[];
-			fav34[] = v4[];
+			fav31[] = v1[].q;
+			fav32[] = v2[].q;
+			fav33[] = v3[].q;
+			fav34[] = v4[].q;
 		elsif s4 == VCC & s3 == GND then 	%botão s4 apertado para gravar um favorito%
-			fav41[] = v1[];
-			fav42[] = v2[];
-			fav43[] = v3[];
-			fav44[] = v4[];
+			fav41[] = v1[].q;
+			fav42[] = v2[].q;
+			fav43[] = v3[].q;
+			fav44[] = v4[].q;
 		end if;
 	end if;
 	if modofav == VCC then    			%entrando no modo favorito%
 		if clock1s == VCC then			%alternará qual favorito será mostrado a cada 1s%
-			d1[] = fav31[];
-			d2[] = fav32[];
-			d3[] = fav33[];
-			d4[] = fav34[];
+			dig1[] = fav31[];
+			dig2[] = fav32[];
+			dig3[] = fav33[];
+			dig4[] = fav34[];
 		else
-			d1[] = fav41[];
-			d2[] = fav42[];
-			d3[] = fav43[];
-			d4[] = fav44[];
+			dig1[] = fav41[];
+			dig2[] = fav42[];
+			dig3[] = fav43[];
+			dig4[] = fav44[];
 		end if;
+	else 
+		dig1[] = saida_aux[]; %saida do 1o digito%
+		dig2[] = v2[].q;
+		dig3[] = v3[].q;
+		dig4[] = v4[].q;
 	end if;
 END;
