@@ -157,7 +157,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :      
 SELETOR                      : 86        : output : 2.5 V             :         : 5         : Y              
 FAV                          : 87        : output : 2.5 V             :         : 5         : Y              
 GND+                         : 88        :        :                   :         : 5         :                
-GND+                         : 89        :        :                   :         : 5         :                
+switch2                      : 89        : input  : 2.5 V             :         : 5         : Y              
 button3                      : 90        : input  : 2.5 V             :         : 6         : Y              
 button4                      : 91        : input  : 2.5 V             :         : 6         : Y              
 CONF_DONE                    : 92        :        :                   :         : 6         :                

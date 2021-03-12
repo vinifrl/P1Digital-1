@@ -8,6 +8,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "SELETOR",
+					"strict" : false
+				},
+				{
+					"name" : "switch2",
+					"strict" : false
+				},
+				{
 					"name" : "button3",
 					"strict" : false
 				},

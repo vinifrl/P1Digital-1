@@ -41,8 +41,8 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 0 64)
 		(input)
-		(text "pulse" (rect 0 0 20 12)(font "Arial" ))
-		(text "pulse" (rect 21 59 41 71)(font "Arial" ))
+		(text "sw2" (rect 0 0 15 12)(font "Arial" ))
+		(text "sw2" (rect 21 59 36 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
@@ -65,13 +65,6 @@ https://fpgasoftware.intel.com/eula.
 		(text "sel" (rect 0 0 10 12)(font "Arial" ))
 		(text "sel" (rect 137 43 147 55)(font "Arial" ))
 		(line (pt 168 48)(pt 152 48)(line_width 1))
-	)
-	(port
-		(pt 168 64)
-		(output)
-		(text "pulso" (rect 0 0 20 12)(font "Arial" ))
-		(text "pulso" (rect 127 59 147 71)(font "Arial" ))
-		(line (pt 168 64)(pt 152 64)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 152 96)(line_width 1))

@@ -2,6 +2,7 @@
 FAV <= seletor:inst.modofav
 button3 => inst54649784.IN0
 button4 => inst4.IN0
+switch2 => inst2.IN0
 CLOCK_PLACA => divisor:inst1.clkPlaca
 SELETOR <= seletor:inst.sel
 
@@ -9,29 +10,24 @@ SELETOR <= seletor:inst.sel
 |TESTESELETOR|seletor:inst
 s3 => _.IN0
 s3 => _.IN0
-s3 => _.IN0
-s3 => _.IN0
-s4 => _.IN0
-s4 => _.IN0
+s3 => fftd.CLK
 s4 => _.IN1
 s4 => _.IN0
-pulse => q[1].IN0
+s4 => ffta.CLK
+sw2 => _.IN0
+clock1s => ffd[10].CLK
+clock1s => ffd[9].CLK
+clock1s => ffd[8].CLK
+clock1s => ffd[7].CLK
+clock1s => ffd[6].CLK
+clock1s => ffd[5].CLK
+clock1s => ffd[4].CLK
+clock1s => ffd[3].CLK
+clock1s => ffd[2].CLK
 clock1s => ffd[1].CLK
 clock1s => ffd[0].CLK
 modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
 sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
-pulso <= pulso.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|TESTESELETOR|contadorsimples:inst6
-clock => ff[3].CLK
-clock => ff[2].CLK
-clock => ff[1].CLK
-clock => ff[0].CLK
-pulso => _.IN0
-pulso => saida~0.IN0
-pulso => _.IN0
-saida <= saida.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TESTESELETOR|divisor:inst1
