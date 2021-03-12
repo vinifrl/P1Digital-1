@@ -4,12 +4,12 @@ subdesign contadorfm %modo quando sel == GND%
 	modofav			: INPUT;
 	s3, s4 		: input; %seletor de controle( decrescente/crescente)%
 	sw1, sw2, sel	: INPUT; %switches amfm, modo gravação e seletor de a/d%
-	1d[3..0], 2d[3..0], 3d[3..0], 4d[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
+	d1[3..0], d2[3..0], d3[3..0], d4[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
 )
 
 VARIABLE
 	v1[3..0]											: DFF; %flip flops tipo D para os digitos%
-	v2[3..0], v3[3..0], v4[3..0]						: NODE;
+	v2[3..0], v3[3..0], v4[3..0]				: DFF;
 	d[3..0] 											: NODE; %entradas Ds dos Flip Flops%
 	q[3..0] 											: NODE; %saidas Qs dos Flip Flops%
 	fav31[3..0], fav32[3..0], fav33[3..0], fav34[3..0]	: NODE; %valor armazenado do favorito 3 fm%
@@ -19,30 +19,33 @@ VARIABLE
 
 BEGIN
 	v1[].clk = clock1s; %clock de entrada como clock dos flip flops%
+	v2[].clk = clock1s;
+	v3[].clk = clock1s;
+	v4[].clk = clock1s;
 	v1[].d = d[]; %entradas dos flip flops%
 	q[] = v1[].q; %saidas dos flip flops%
-	1d[] = saida_aux[]; %saida do 1o digito%
-	2d[] = v2[];
-	3d[] = v3[];
-	4d[] = v4[];
+	d1[] = saida_aux[]; %saida do 1o digito%
+	d2[] = v2[].q;
+	d3[] = v3[].q;
+	d4[] = v4[].q;
 	fft.clk = s3;
 	fft.t = VCC;
 	if (sw2 == GND & sw1 == GND & modofav == GND) then 	%só acontece caso fora do modo gravação e sw1 em fm%
 		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado%
-			if v4[] == 0 & v3[] < 8 then  %limite inferior%
-				v3[] = 8;
-				if v2[] < 7 then
-					v2[] = 7;
-					if v1[] < 5 then 
-						v1[] = 5;
+			if v4[].q == 0 & v3[].q < 8 then  %limite inferior%
+				v3[].d = 8;
+				if v2[].q < 7 then
+					v2[].d = 7;
+					if v1[].q < 5 then 
+						v1[].d = 5;
 					end if;
 				end if;
 			end if;
-			if v4[] == 1 & v3[] == 0 & v2[] == 8 & v1[] == 0 then %limite superior%
-				v4[] = 0;
-				v3[] = 8;
-				v2[] = 7;
-				v1[] = 5;
+			if v4[].q == 1 & v3[].q == 0 & v2[].q == 8 & v1[].q == 0 then %limite superior%
+				v4[].d = 0;
+				v3[].d = 8;
+				v2[].d = 7;
+				v1[].d = 5;
 			end if;
 			d[] = saida_aux[] + 1;
 			IF q[] == 10 THEN %caso de contagem crescente de 9 -> 0%
@@ -98,15 +101,15 @@ BEGIN
 	end if;
 	if modofav == VCC then    			%entrando no modo favorito%
 		if clock1s == VCC then			%alternará qual favorito será mostrado a cada 1s%
-			1d[] = fav31[];
-			2d[] = fav32[];
-			3d[] = fav33[];
-			4d[] = fav34[];
+			d1[] = fav31[];
+			d2[] = fav32[];
+			d3[] = fav33[];
+			d4[] = fav34[];
 		else
-			1d[] = fav41[];
-			2d[] = fav42[];
-			3d[] = fav43[];
-			4d[] = fav44[];
+			d1[] = fav41[];
+			d2[] = fav42[];
+			d3[] = fav43[];
+			d4[] = fav44[];
 		end if;
 	end if;
 END;

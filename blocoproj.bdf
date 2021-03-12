@@ -24,7 +24,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 144 120 160)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "Clock_Placa" (rect 5 0 67 12)(font "Arial" ))
+	(text "Clock_Placa" (rect 5 0 66 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -40 224 128 240)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "switch2" (rect 5 0 42 12)(font "Arial" ))
+	(text "switch2" (rect 5 0 41 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -40 176 128 192)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "switch1" (rect 5 0 41 17)(font "Intel Clear" ))
+	(text "switch1" (rect 5 0 40 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -75,7 +75,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -56 264 112 280)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "button3" (rect 5 0 42 12)(font "Arial" ))
+	(text "button3" (rect 5 0 41 12)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -92,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect -48 320 120 336)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "button4" (rect 5 0 42 17)(font "Intel Clear" ))
+	(text "button4" (rect 5 0 41 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -324,7 +324,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 416 176 584 352)
+	(rect 408 176 576 352)
 	(text "contadorfm" (rect 5 0 61 12)(font "Arial" ))
 	(text "inst2" (rect 8 160 30 177)(font "Intel Clear" ))
 	(port
@@ -652,41 +652,6 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (connector
-	(text "clk1s" (rect 370 192 394 209)(font "Intel Clear" ))
-	(pt 416 208)
-	(pt 360 208)
-)
-(connector
-	(text "s3" (rect 370 224 380 241)(font "Intel Clear" ))
-	(pt 416 240)
-	(pt 360 240)
-)
-(connector
-	(text "fav" (rect 378 208 393 225)(font "Intel Clear" ))
-	(pt 360 224)
-	(pt 416 224)
-)
-(connector
-	(text "s4" (rect 370 240 380 257)(font "Intel Clear" ))
-	(pt 416 256)
-	(pt 360 256)
-)
-(connector
-	(text "sw1" (rect 370 256 388 273)(font "Intel Clear" ))
-	(pt 416 272)
-	(pt 360 272)
-)
-(connector
-	(text "sw2" (rect 370 272 388 289)(font "Intel Clear" ))
-	(pt 416 288)
-	(pt 360 288)
-)
-(connector
-	(text "sel" (rect 370 288 384 305)(font "Intel Clear" ))
-	(pt 416 304)
-	(pt 360 304)
-)
-(connector
 	(text "clk1s" (rect 394 368 418 385)(font "Intel Clear" ))
 	(pt 416 384)
 	(pt 384 384)
@@ -782,28 +747,8 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 584 256)
-	(pt 704 256)
-	(bus)
-)
-(connector
-	(pt 704 256)
-	(pt 704 328)
-	(bus)
-)
-(connector
 	(pt 704 328)
 	(pt 776 328)
-	(bus)
-)
-(connector
-	(pt 584 240)
-	(pt 720 240)
-	(bus)
-)
-(connector
-	(pt 720 240)
-	(pt 720 312)
 	(bus)
 )
 (connector
@@ -812,28 +757,8 @@ https://fpgasoftware.intel.com/eula.
 	(bus)
 )
 (connector
-	(pt 584 224)
-	(pt 736 224)
-	(bus)
-)
-(connector
-	(pt 736 224)
-	(pt 736 296)
-	(bus)
-)
-(connector
 	(pt 736 296)
 	(pt 776 296)
-	(bus)
-)
-(connector
-	(pt 584 208)
-	(pt 752 208)
-	(bus)
-)
-(connector
-	(pt 752 208)
-	(pt 752 280)
 	(bus)
 )
 (connector
@@ -884,16 +809,6 @@ https://fpgasoftware.intel.com/eula.
 	(pt 1256 264)
 	(pt 1320 264)
 	(bus)
-)
-(connector
-	(pt 1256 280)
-	(pt 1320 280)
-	(bus)
-)
-(connector
-	(text "clock" (rect 1058 344 1082 361)(font "Intel Clear" ))
-	(pt 1096 360)
-	(pt 1048 360)
 )
 (connector
 	(text "clock" (rect 170 136 194 153)(font "Intel Clear" ))
@@ -975,4 +890,89 @@ https://fpgasoftware.intel.com/eula.
 (connector
 	(pt 120 328)
 	(pt 152 328)
+)
+(connector
+	(text "clock" (rect 1058 344 1082 361)(font "Intel Clear" ))
+	(pt 1096 360)
+	(pt 1048 360)
+)
+(connector
+	(pt 1256 280)
+	(pt 1320 280)
+	(bus)
+)
+(connector
+	(text "clk1s" (rect 362 192 386 209)(font "Intel Clear" ))
+	(pt 408 208)
+	(pt 352 208)
+)
+(connector
+	(text "s3" (rect 362 224 372 241)(font "Intel Clear" ))
+	(pt 408 240)
+	(pt 352 240)
+)
+(connector
+	(text "fav" (rect 370 208 385 225)(font "Intel Clear" ))
+	(pt 352 224)
+	(pt 408 224)
+)
+(connector
+	(text "s4" (rect 362 240 372 257)(font "Intel Clear" ))
+	(pt 408 256)
+	(pt 352 256)
+)
+(connector
+	(text "sw1" (rect 362 256 380 273)(font "Intel Clear" ))
+	(pt 408 272)
+	(pt 352 272)
+)
+(connector
+	(text "sw2" (rect 362 272 380 289)(font "Intel Clear" ))
+	(pt 408 288)
+	(pt 352 288)
+)
+(connector
+	(text "sel" (rect 362 288 376 305)(font "Intel Clear" ))
+	(pt 408 304)
+	(pt 352 304)
+)
+(connector
+	(pt 704 328)
+	(pt 704 256)
+	(bus)
+)
+(connector
+	(pt 720 312)
+	(pt 720 240)
+	(bus)
+)
+(connector
+	(pt 736 296)
+	(pt 736 224)
+	(bus)
+)
+(connector
+	(pt 752 280)
+	(pt 752 208)
+	(bus)
+)
+(connector
+	(pt 576 208)
+	(pt 752 208)
+	(bus)
+)
+(connector
+	(pt 576 224)
+	(pt 736 224)
+	(bus)
+)
+(connector
+	(pt 576 240)
+	(pt 720 240)
+	(bus)
+)
+(connector
+	(pt 576 256)
+	(pt 704 256)
+	(bus)
 )

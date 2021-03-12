@@ -1,4 +1,4 @@
-SUBDESIGN display
+SUBDESIGN dispv2
 (
 a[3..0], b[3..0], c[3..0], d[3..0]	: INPUT;
 seletor, sw1 								: INPUT; 
@@ -8,60 +8,35 @@ dig[3..0]									: OUTPUT;
 )
 
 VARIABLE
-	ff[24..0] 	: DFF;
-	ffaux[1..0]	: DFF;
-	aux[1..0]	: NODE; 
-	q[24..0] 	: NODE;
+	ff[15..0] 	: DFF;
+	aux[1..0]	: NODE;
+	q[15..0] 	: NODE;
 	disp[3..0]  : NODE;
 
 BEGIN
 	ff[].clk = clock;
-	ffaux[].clk = clock;
 	q[] = ff[].q;
-	aux[] = ffaux[].q;
 	CASE q[] IS        %criando contador interno para alternar entre os digitos do display%
 		WHEN 50000 => 
-			if ffaux[].q == 3 then
-				ffaux[].d = 0;
+			if aux[] == 3 then
+				aux[] = 0;
 			else
-				ffaux[].d = ffaux[].q + 1;
+				aux[] = aux[] + 1;
 			end if;
 			ff[].d = 0;
 		WHEN OTHERS =>
 			ff[].d = q[] + 1;
-			ffaux[].d = ffaux[].q;
-			
 	END CASE;
 
 	CASE aux[] IS 							%alterna os digitos de display a partir de aux %
-		WHEN B"00" =>  dig[0] = GND;
-							disp[] = a[];
-							dig[1] = VCC;
-							dig[2] = VCC;
-							dig[3] = VCC;
-		WHEN B"01" =>	dig[1] = GND;
-							disp[] = b[];
-							dig[0] = VCC;
-							dig[2] = VCC;
-							dig[3] = VCC;
-		WHEN B"10" =>	dig[2] = GND;
-							disp[] = c[];
-							dig[0] = VCC;
-							dig[1] = VCC;
-							dig[3] = VCC;
-		WHEN B"11" =>	dig[3] = GND;
-							disp[] = d[];
-							dig[0] = VCC;
-							dig[1] = VCC;
-							dig[2] = VCC;
-		%WHEN B"00" => 	dig[0] = GND;
+		WHEN B"00" => 	dig[0] = GND;
 							disp[] = a[]; 
 		WHEN B"01" =>	dig[1] = GND;
 							disp[] = b[];
 		WHEN B"10" =>	dig[2] = GND;
 							disp[] = c[];
 		WHEN B"11" =>	dig[3] = GND;
-							disp[] = d[];%
+							disp[] = d[];
 	END CASE;
 	
 	if sw1 == VCC then
@@ -79,7 +54,7 @@ BEGIN
 		B"1001"  =>	B"00001001"; 
 		END TABLE;
 	else
-		if aux[] == B"01" then     %possivel que o correto seja B"01"%
+		if aux[] == B"10" then
 			TABLE
 				disp[] => out[];
 				B"0000"  =>	B"00000010"; 

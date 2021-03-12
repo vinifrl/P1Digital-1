@@ -2,13 +2,13 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CLOCK_PLACA'
-Slack : -4.485
-TNS   : -87.384
+Type  : Slow 1200mV 85C Model Setup 'divisor:inst4|fft'
+Slack : -8.071
+TNS   : -51.180
 
-Type  : Slow 1200mV 85C Model Setup 'divisor:inst1|fft'
-Slack : -2.693
-TNS   : -28.781
+Type  : Slow 1200mV 85C Model Setup 'Clock_Placa'
+Slack : -4.738
+TNS   : -173.748
 
 Type  : Slow 1200mV 85C Model Setup 'button3'
 Slack : 0.114
@@ -18,12 +18,12 @@ Type  : Slow 1200mV 85C Model Setup 'button4'
 Slack : 0.114
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'divisor:inst1|fft'
-Slack : 0.453
+Type  : Slow 1200mV 85C Model Hold 'Clock_Placa'
+Slack : 0.432
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CLOCK_PLACA'
-Slack : 0.466
+Type  : Slow 1200mV 85C Model Hold 'divisor:inst4|fft'
+Slack : 0.453
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'button3'
@@ -34,9 +34,9 @@ Type  : Slow 1200mV 85C Model Hold 'button4'
 Slack : 0.497
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_PLACA'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -41.662
+TNS   : -81.811
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button3'
 Slack : -3.000
@@ -46,17 +46,17 @@ Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button4'
 Slack : -3.000
 TNS   : -4.487
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor:inst1|fft'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor:inst4|fft'
 Slack : -1.487
-TNS   : -16.357
+TNS   : -14.870
 
-Type  : Slow 1200mV 0C Model Setup 'CLOCK_PLACA'
-Slack : -4.167
-TNS   : -80.043
+Type  : Slow 1200mV 0C Model Setup 'divisor:inst4|fft'
+Slack : -7.581
+TNS   : -48.424
 
-Type  : Slow 1200mV 0C Model Setup 'divisor:inst1|fft'
-Slack : -2.484
-TNS   : -26.689
+Type  : Slow 1200mV 0C Model Setup 'Clock_Placa'
+Slack : -4.425
+TNS   : -158.940
 
 Type  : Slow 1200mV 0C Model Setup 'button3'
 Slack : 0.210
@@ -66,12 +66,12 @@ Type  : Slow 1200mV 0C Model Setup 'button4'
 Slack : 0.210
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'divisor:inst1|fft'
-Slack : 0.402
+Type  : Slow 1200mV 0C Model Hold 'Clock_Placa'
+Slack : 0.382
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CLOCK_PLACA'
-Slack : 0.417
+Type  : Slow 1200mV 0C Model Hold 'divisor:inst4|fft'
+Slack : 0.402
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'button3'
@@ -82,9 +82,9 @@ Type  : Slow 1200mV 0C Model Hold 'button4'
 Slack : 0.447
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_PLACA'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -41.662
+TNS   : -81.811
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button3'
 Slack : -3.000
@@ -94,17 +94,17 @@ Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button4'
 Slack : -3.000
 TNS   : -4.487
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor:inst1|fft'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor:inst4|fft'
 Slack : -1.487
-TNS   : -16.357
+TNS   : -14.870
 
-Type  : Fast 1200mV 0C Model Setup 'CLOCK_PLACA'
-Slack : -1.376
-TNS   : -21.099
+Type  : Fast 1200mV 0C Model Setup 'divisor:inst4|fft'
+Slack : -3.442
+TNS   : -22.234
 
-Type  : Fast 1200mV 0C Model Setup 'divisor:inst1|fft'
-Slack : -1.127
-TNS   : -12.039
+Type  : Fast 1200mV 0C Model Setup 'Clock_Placa'
+Slack : -1.458
+TNS   : -42.809
 
 Type  : Fast 1200mV 0C Model Setup 'button3'
 Slack : 0.624
@@ -114,12 +114,12 @@ Type  : Fast 1200mV 0C Model Setup 'button4'
 Slack : 0.624
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'divisor:inst1|fft'
-Slack : 0.187
+Type  : Fast 1200mV 0C Model Hold 'Clock_Placa'
+Slack : 0.178
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'CLOCK_PLACA'
-Slack : 0.194
+Type  : Fast 1200mV 0C Model Hold 'divisor:inst4|fft'
+Slack : 0.186
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'button3'
@@ -130,20 +130,20 @@ Type  : Fast 1200mV 0C Model Hold 'button4'
 Slack : 0.206
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_PLACA'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -30.677
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button4'
-Slack : -3.000
-TNS   : -4.069
+TNS   : -59.433
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button3'
 Slack : -3.000
-TNS   : -4.057
+TNS   : -4.064
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor:inst1|fft'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button4'
+Slack : -3.000
+TNS   : -4.060
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor:inst4|fft'
 Slack : -1.000
-TNS   : -11.000
+TNS   : -10.000
 
 ------------------------------------------------------------
