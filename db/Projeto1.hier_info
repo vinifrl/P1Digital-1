@@ -1,26 +1,25 @@
-|blocoproj
-dig[0] <= display:inst3.dig[0]
-dig[1] <= display:inst3.dig[1]
-dig[2] <= display:inst3.dig[2]
-dig[3] <= display:inst3.dig[3]
+|testecont
+dig[0] <= display:inst6.dig[0]
+dig[1] <= display:inst6.dig[1]
+dig[2] <= display:inst6.dig[2]
+dig[3] <= display:inst6.dig[3]
 button3 => inst10.IN0
 button4 => inst11.IN0
 switch2 => inst9.IN0
 Clock_Placa => divisor:inst4.clkPlaca
-Clock_Placa => display:inst3.clock
-Clock_Placa => contadorfm:inst7.clk_placa
+Clock_Placa => display:inst6.clock
 switch1 => inst8.IN0
-out[7] <= display:inst3.out[7]
-out[6] <= display:inst3.out[6]
-out[5] <= display:inst3.out[5]
-out[4] <= display:inst3.out[4]
-out[3] <= display:inst3.out[3]
-out[2] <= display:inst3.out[2]
-out[1] <= display:inst3.out[1]
-out[0] <= display:inst3.out[0]
+out[7] <= display:inst6.out[7]
+out[6] <= display:inst6.out[6]
+out[5] <= display:inst6.out[5]
+out[4] <= display:inst6.out[4]
+out[3] <= display:inst6.out[3]
+out[2] <= display:inst6.out[2]
+out[1] <= display:inst6.out[1]
+out[0] <= display:inst6.out[0]
 
 
-|blocoproj|display:inst3
+|testecont|display:inst6
 a[0] => disp[0].IN1
 a[1] => disp[1].IN1
 a[2] => disp[2].IN1
@@ -90,7 +89,7 @@ dig[2] <= dig[2].DB_MAX_OUTPUT_PORT_TYPE
 dig[3] <= dig[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|blocoproj|seletor:inst5
+|testecont|seletor:inst5
 s3 => _.IN0
 s3 => _.IN0
 s3 => fftd.CLK
@@ -104,7 +103,7 @@ modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
 sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|blocoproj|divisor:inst4
+|testecont|divisor:inst4
 clkPlaca => ff[24].CLK
 clkPlaca => ff[23].CLK
 clkPlaca => ff[22].CLK
@@ -134,166 +133,99 @@ clkPlaca => fft.CLK
 clock1HZ <= fft.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|blocoproj|MUXamfm:inst
-sw1 => out1[3]~0.IN0
-sw1 => out1[2]~1.IN0
-sw1 => out1[1]~2.IN0
-sw1 => out1[0]~3.IN0
-sw1 => out2[3]~0.IN0
-sw1 => out2[2]~1.IN0
-sw1 => out2[1]~2.IN0
-sw1 => out2[0]~3.IN0
-sw1 => out3[3]~0.IN0
-sw1 => out3[2]~1.IN0
-sw1 => out3[1]~2.IN0
-sw1 => out3[0]~3.IN0
-sw1 => out4[3]~0.IN0
-sw1 => out4[2]~1.IN0
-sw1 => out4[1]~2.IN0
-sw1 => out4[0]~3.IN0
-sw1 => _.IN0
-1dfm[0] => out1[0]~7.IN1
-1dfm[1] => out1[1]~6.IN1
-1dfm[2] => out1[2]~5.IN1
-1dfm[3] => out1[3]~4.IN1
-2dfm[0] => out2[0]~7.IN1
-2dfm[1] => out2[1]~6.IN1
-2dfm[2] => out2[2]~5.IN1
-2dfm[3] => out2[3]~4.IN1
-3dfm[0] => out3[0]~7.IN1
-3dfm[1] => out3[1]~6.IN1
-3dfm[2] => out3[2]~5.IN1
-3dfm[3] => out3[3]~4.IN1
-4dfm[0] => out4[0]~7.IN1
-4dfm[1] => out4[1]~6.IN1
-4dfm[2] => out4[2]~5.IN1
-4dfm[3] => out4[3]~4.IN1
-1dam[0] => out1[0]~3.IN1
-1dam[1] => out1[1]~2.IN1
-1dam[2] => out1[2]~1.IN1
-1dam[3] => out1[3]~0.IN1
-2dam[0] => out2[0]~3.IN1
-2dam[1] => out2[1]~2.IN1
-2dam[2] => out2[2]~1.IN1
-2dam[3] => out2[3]~0.IN1
-3dam[0] => out3[0]~3.IN1
-3dam[1] => out3[1]~2.IN1
-3dam[2] => out3[2]~1.IN1
-3dam[3] => out3[3]~0.IN1
-4dam[0] => out4[0]~3.IN1
-4dam[1] => out4[1]~2.IN1
-4dam[2] => out4[2]~1.IN1
-4dam[3] => out4[3]~0.IN1
-out1[0] <= out1[0].DB_MAX_OUTPUT_PORT_TYPE
-out1[1] <= out1[1].DB_MAX_OUTPUT_PORT_TYPE
-out1[2] <= out1[2].DB_MAX_OUTPUT_PORT_TYPE
-out1[3] <= out1[3].DB_MAX_OUTPUT_PORT_TYPE
-out2[0] <= out2[0].DB_MAX_OUTPUT_PORT_TYPE
-out2[1] <= out2[1].DB_MAX_OUTPUT_PORT_TYPE
-out2[2] <= out2[2].DB_MAX_OUTPUT_PORT_TYPE
-out2[3] <= out2[3].DB_MAX_OUTPUT_PORT_TYPE
-out3[0] <= out3[0].DB_MAX_OUTPUT_PORT_TYPE
-out3[1] <= out3[1].DB_MAX_OUTPUT_PORT_TYPE
-out3[2] <= out3[2].DB_MAX_OUTPUT_PORT_TYPE
-out3[3] <= out3[3].DB_MAX_OUTPUT_PORT_TYPE
-out4[0] <= out4[0].DB_MAX_OUTPUT_PORT_TYPE
-out4[1] <= out4[1].DB_MAX_OUTPUT_PORT_TYPE
-out4[2] <= out4[2].DB_MAX_OUTPUT_PORT_TYPE
-out4[3] <= out4[3].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|blocoproj|contadoram:inst1
-clock1s => _.IN1
-clock1s => _.IN0
-clock1s => v1[3].CLK
-clock1s => v1[2].CLK
-clock1s => v1[1].CLK
-clock1s => v1[0].CLK
+|testecont|cont:inst
 modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-s3 => _.IN0
-s3 => _.IN0
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
 s3 => fft.CLK
-s4 => _.IN0
-s4 => _.IN0
-sw1 => _.IN1
-sw1 => _.IN1
-sw2 => _.IN0
+s4 => ~NO_FANOUT~
+sw1 => _.IN0
 sw2 => _.IN0
 sel => _.IN1
 sel => _.IN0
-sel => _.IN0
-1d[0] <= 1d[0].DB_MAX_OUTPUT_PORT_TYPE
-1d[1] <= 1d[1].DB_MAX_OUTPUT_PORT_TYPE
-1d[2] <= 1d[2].DB_MAX_OUTPUT_PORT_TYPE
-1d[3] <= 1d[3].DB_MAX_OUTPUT_PORT_TYPE
-2d[0] <= 2d[0].DB_MAX_OUTPUT_PORT_TYPE
-2d[1] <= 2d[1].DB_MAX_OUTPUT_PORT_TYPE
-2d[2] <= 2d[2].DB_MAX_OUTPUT_PORT_TYPE
-2d[3] <= 2d[3].DB_MAX_OUTPUT_PORT_TYPE
-3d[0] <= 3d[0].DB_MAX_OUTPUT_PORT_TYPE
-3d[1] <= 3d[1].DB_MAX_OUTPUT_PORT_TYPE
-3d[2] <= 3d[2].DB_MAX_OUTPUT_PORT_TYPE
-3d[3] <= 3d[3].DB_MAX_OUTPUT_PORT_TYPE
-4d[0] <= 4d[0].DB_MAX_OUTPUT_PORT_TYPE
-4d[1] <= 4d[1].DB_MAX_OUTPUT_PORT_TYPE
-4d[2] <= 4d[2].DB_MAX_OUTPUT_PORT_TYPE
-4d[3] <= 4d[3].DB_MAX_OUTPUT_PORT_TYPE
+dig[0] <= saida_aux[0].DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= saida_aux[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[2] <= saida_aux[2].DB_MAX_OUTPUT_PORT_TYPE
+dig[3] <= saida_aux[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= maisum.DB_MAX_OUTPUT_PORT_TYPE
+menosum <= menosum.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|blocoproj|contadorfm:inst7
-clock1s => _.IN1
-clock1s => _.IN0
-clock1s => v1[3].CLK
-clock1s => v1[2].CLK
-clock1s => v1[1].CLK
-clock1s => v1[0].CLK
-clk_placa => v2[3].CLK
-clk_placa => v2[2].CLK
-clk_placa => v2[1].CLK
-clk_placa => v2[0].CLK
-clk_placa => v3[3].CLK
-clk_placa => v3[2].CLK
-clk_placa => v3[1].CLK
-clk_placa => v3[0].CLK
-clk_placa => v4[3].CLK
-clk_placa => v4[2].CLK
-clk_placa => v4[1].CLK
-clk_placa => v4[0].CLK
+|testecont|cont:inst15
 modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-s3 => _.IN0
-s3 => _.IN0
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
 s3 => fft.CLK
-s4 => _.IN0
-s4 => _.IN0
+s4 => ~NO_FANOUT~
 sw1 => _.IN0
-sw1 => _.IN0
-sw2 => _.IN0
 sw2 => _.IN0
 sel => _.IN1
 sel => _.IN0
+dig[0] <= saida_aux[0].DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= saida_aux[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[2] <= saida_aux[2].DB_MAX_OUTPUT_PORT_TYPE
+dig[3] <= saida_aux[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= maisum.DB_MAX_OUTPUT_PORT_TYPE
+menosum <= menosum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testecont|cont:inst17
+modofav => _.IN0
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+s3 => fft.CLK
+s4 => ~NO_FANOUT~
+sw1 => _.IN0
+sw2 => _.IN0
+sel => _.IN1
 sel => _.IN0
-dig1[0] <= dig1[0].DB_MAX_OUTPUT_PORT_TYPE
-dig1[1] <= dig1[1].DB_MAX_OUTPUT_PORT_TYPE
-dig1[2] <= dig1[2].DB_MAX_OUTPUT_PORT_TYPE
-dig1[3] <= dig1[3].DB_MAX_OUTPUT_PORT_TYPE
-dig2[0] <= dig2[0].DB_MAX_OUTPUT_PORT_TYPE
-dig2[1] <= dig2[1].DB_MAX_OUTPUT_PORT_TYPE
-dig2[2] <= dig2[2].DB_MAX_OUTPUT_PORT_TYPE
-dig2[3] <= dig2[3].DB_MAX_OUTPUT_PORT_TYPE
-dig3[0] <= dig3[0].DB_MAX_OUTPUT_PORT_TYPE
-dig3[1] <= dig3[1].DB_MAX_OUTPUT_PORT_TYPE
-dig3[2] <= dig3[2].DB_MAX_OUTPUT_PORT_TYPE
-dig3[3] <= dig3[3].DB_MAX_OUTPUT_PORT_TYPE
-dig4[0] <= dig4[0].DB_MAX_OUTPUT_PORT_TYPE
-dig4[1] <= dig4[1].DB_MAX_OUTPUT_PORT_TYPE
-dig4[2] <= dig4[2].DB_MAX_OUTPUT_PORT_TYPE
-dig4[3] <= dig4[3].DB_MAX_OUTPUT_PORT_TYPE
+dig[0] <= saida_aux[0].DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= saida_aux[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[2] <= saida_aux[2].DB_MAX_OUTPUT_PORT_TYPE
+dig[3] <= saida_aux[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= maisum.DB_MAX_OUTPUT_PORT_TYPE
+menosum <= menosum.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|testecont|cont:inst18
+modofav => _.IN0
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmais => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+clockmenos => _.IN1
+s3 => fft.CLK
+s4 => ~NO_FANOUT~
+sw1 => _.IN0
+sw2 => _.IN0
+sel => _.IN1
+sel => _.IN0
+dig[0] <= saida_aux[0].DB_MAX_OUTPUT_PORT_TYPE
+dig[1] <= saida_aux[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[2] <= saida_aux[2].DB_MAX_OUTPUT_PORT_TYPE
+dig[3] <= saida_aux[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= maisum.DB_MAX_OUTPUT_PORT_TYPE
+menosum <= menosum.DB_MAX_OUTPUT_PORT_TYPE
 
 

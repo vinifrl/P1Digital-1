@@ -25,9 +25,9 @@ begin
    %q[] = ffd[].q;%
     
    IF (dec == VCC & ac == GND) THEN                  %seletor para os casos decrescentes%
-		sel = GND;
-	ELSIF (ac == VCC & dec == GND) THEN               %seletor para os casos crescentes%
 		sel = VCC;
+	ELSIF (ac == VCC & dec == GND) THEN               %seletor para os casos crescentes%
+		sel = GND;
    ELSIF (s3 & s4 == VCC & sw2 == GND) THEN                     %caso para entrar na memória%
 		if ffd[].q > 2 then
 			modofav = VCC;

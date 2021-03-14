@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto1
-Fri Mar 12 19:07:24 2021
+Sun Mar 14 13:27:17 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,11 +13,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Logic Cells Representing Combinational Loops
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,13 +43,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 12 19:07:24 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 14 13:27:17 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
-; Top-level Entity Name              ; blocoproj                                   ;
+; Top-level Entity Name              ; testecont                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 264                                         ;
-;     Total combinational functions  ; 264                                         ;
+; Total logic elements               ; 218                                         ;
+;     Total combinational functions  ; 218                                         ;
 ;     Dedicated logic registers      ; 77                                          ;
 ; Total registers                    ; 77                                          ;
 ; Total pins                         ; 17                                          ;
@@ -67,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; blocoproj          ; Projeto1           ;
+; Top-level entity name                                            ; testecont          ; Projeto1           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -160,24 +159,22 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                             ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                   ; Library ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------+---------+
-; contadoram.tdf                   ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/contadoram.tdf ;         ;
-; contadorfm.tdf                   ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf ;         ;
-; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf    ;         ;
-; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf    ;         ;
-; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf    ;         ;
-; MUXamfm.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/MUXamfm.tdf    ;         ;
-; blocoproj.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/blocoproj.bdf  ;         ;
-+----------------------------------+-----------------+------------------------------------+------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                  ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
+; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf   ;         ;
+; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf   ;         ;
+; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf   ;         ;
+; cont.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/cont.tdf      ;         ;
+; testecont.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/testecont.bdf ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
@@ -185,16 +182,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 264               ;
+; Estimated Total logic elements              ; 218               ;
 ;                                             ;                   ;
-; Total combinational functions               ; 264               ;
+; Total combinational functions               ; 218               ;
 ; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 166               ;
-;     -- 3 input functions                    ; 27                ;
+;     -- 4 input functions                    ; 121               ;
+;     -- 3 input functions                    ; 26                ;
 ;     -- <=2 input functions                  ; 71                ;
 ;                                             ;                   ;
 ; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 218               ;
+;     -- normal mode                          ; 172               ;
 ;     -- arithmetic mode                      ; 46                ;
 ;                                             ;                   ;
 ; Total registers                             ; 77                ;
@@ -206,47 +203,27 @@ https://fpgasoftware.intel.com/eula.
 ; Embedded Multiplier 9-bit elements          ; 0                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; Clock_Placa~input ;
-; Maximum fan-out                             ; 65                ;
-; Total fan-out                               ; 1114              ;
-; Average fan-out                             ; 2.97              ;
+; Maximum fan-out                             ; 53                ;
+; Total fan-out                               ; 927               ;
+; Average fan-out                             ; 2.82              ;
 +---------------------------------------------+-------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
-; |blocoproj                 ; 264 (0)             ; 77 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |blocoproj                  ; blocoproj   ; work         ;
-;    |contadoram:inst1|      ; 56 (56)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contadoram:inst1 ; contadoram  ; work         ;
-;    |contadorfm:inst7|      ; 75 (75)             ; 16 (16)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contadorfm:inst7 ; contadorfm  ; work         ;
-;    |display:inst3|         ; 93 (93)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|display:inst3    ; display     ; work         ;
-;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|divisor:inst4    ; divisor     ; work         ;
-;    |seletor:inst5|         ; 6 (6)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|seletor:inst5    ; seletor     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
+; |testecont                 ; 218 (0)             ; 77 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |testecont               ; testecont   ; work         ;
+;    |cont:inst15|           ; 28 (28)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst15   ; cont        ; work         ;
+;    |cont:inst17|           ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst17   ; cont        ; work         ;
+;    |cont:inst18|           ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst18   ; cont        ; work         ;
+;    |cont:inst|             ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst     ; cont        ; work         ;
+;    |display:inst6|         ; 72 (72)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|display:inst6 ; display     ; work         ;
+;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|divisor:inst4 ; divisor     ; work         ;
+;    |seletor:inst5|         ; 7 (7)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|seletor:inst5 ; seletor     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+-------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                ;
-+--------------------------------------------------------+----+
-; Logic Cell Name                                        ;    ;
-+--------------------------------------------------------+----+
-; contadoram:inst1|v2[0]~3                               ;    ;
-; contadoram:inst1|v3[0]~6                               ;    ;
-; contadoram:inst1|v4[0]~4                               ;    ;
-; contadoram:inst1|v2[1]~2                               ;    ;
-; contadoram:inst1|v3[1]~4                               ;    ;
-; contadoram:inst1|v4[1]~2                               ;    ;
-; contadoram:inst1|v2[2]~1                               ;    ;
-; contadoram:inst1|v3[2]~2                               ;    ;
-; contadoram:inst1|v4[2]~1                               ;    ;
-; contadoram:inst1|v2[3]~0                               ;    ;
-; contadoram:inst1|v3[3]~0                               ;    ;
-; contadoram:inst1|v4[3]~0                               ;    ;
-; Number of logic cells representing combinational loops ; 12 ;
-+--------------------------------------------------------+----+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -273,18 +250,18 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; cycloneiii_ff         ; 77                          ;
 ;     SCLR              ; 48                          ;
 ;     plain             ; 29                          ;
-; cycloneiii_lcell_comb ; 266                         ;
+; cycloneiii_lcell_comb ; 220                         ;
 ;     arith             ; 46                          ;
 ;         2 data inputs ; 44                          ;
 ;         3 data inputs ; 2                           ;
-;     normal            ; 220                         ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 25                          ;
-;         4 data inputs ; 166                         ;
+;     normal            ; 174                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 24                          ;
+;         4 data inputs ; 121                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.00                       ;
-; Average LUT depth     ; 4.97                        ;
+; Average LUT depth     ; 5.22                        ;
 +-----------------------+-----------------------------+
 
 
@@ -293,7 +270,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -303,7 +280,7 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Mar 12 19:07:14 2021
+    Info: Processing started: Sun Mar 14 13:27:08 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -333,25 +310,32 @@ Info (12021): Found 1 design units, including 1 entities, in source file dispv2.
     Info (12023): Found entity 1: dispv2 File: D:/Estudo/Eletrônica Digital/P1/dispv2.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testedisplay.bdf
     Info (12023): Found entity 1: testedisplay
-Info (12127): Elaborating entity "blocoproj" for the top level hierarchy
-Info (12128): Elaborating entity "display" for hierarchy "display:inst3"
+Info (12021): Found 1 design units, including 1 entities, in source file divisormeio.tdf
+    Info (12023): Found entity 1: divisormeio File: D:/Estudo/Eletrônica Digital/P1/divisormeio.tdf Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cont.tdf
+    Info (12023): Found entity 1: cont File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file testecont.bdf
+    Info (12023): Found entity 1: testecont
+Info (12127): Elaborating entity "testecont" for the top level hierarchy
+Info (12128): Elaborating entity "display" for hierarchy "display:inst6"
 Warning (287013): Variable or input pin "seletor" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 4
 Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst5"
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
-Info (12128): Elaborating entity "MUXamfm" for hierarchy "MUXamfm:inst"
-Info (12128): Elaborating entity "contadoram" for hierarchy "contadoram:inst1"
-Info (12128): Elaborating entity "contadorfm" for hierarchy "contadorfm:inst7"
+Info (12128): Elaborating entity "cont" for hierarchy "cont:inst"
+Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 6
+Info (12128): Elaborating entity "cont" for hierarchy "cont:inst18"
+Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 6
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 235 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 264 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4765 megabytes
-    Info: Processing ended: Fri Mar 12 19:07:24 2021
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21061): Implemented 218 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4767 megabytes
+    Info: Processing ended: Sun Mar 14 13:27:17 2021
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:18
 
 
