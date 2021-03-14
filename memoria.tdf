@@ -1,0 +1,52 @@
+subdesign memoria %modo quando sel == GND%
+(
+	clock1s, clk_placa	: input; %clock de entrada do contador%
+	modofav			: INPUT;
+	s3, s4 		: input; %seletor de controle( decrescente/crescente)%
+	sw1, sw2, sel	: INPUT; %switches amfm, modo gravação e seletor de a/d%
+	dig1[3..0], dig2[3..0], dig3[3..0], dig4[3..0] 	: output; %valor de Saida, primeiro digito começando da direita%
+)
+
+VARIABLE
+	v1[3..0]													: DFF; %flip flops tipo D para os digitos%
+	v2[3..0], v3[3..0], v4[3..0]						: DFF;
+	d[3..0] 													: NODE; %entradas Ds dos Flip Flops%
+	q[3..0] 													: NODE;  %saidas Qs dos Flip Flops%
+	maisum													: NODE;
+	fav31[3..0], fav32[3..0], fav33[3..0], fav34[3..0]	: NODE; %valor armazenado do favorito 3 fm%
+	fav41[3..0], fav42[3..0], fav43[3..0], fav44[3..0]	: NODE; %valor armazenado do favorito 4 fm%
+	saida_aux[3..0]										: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
+	fft													: TFF;
+
+if sw2 == VCC & sw1 == GND & modofav == GND then %entrando no modo de gravação%
+		if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
+			fav31[] = v1[].q;
+			fav32[] = v2[].q;
+			fav33[] = v3[].q;
+			fav34[] = v4[].q;
+		elsif s4 == VCC & s3 == GND then 	%botão s4 apertado para gravar um favorito%
+			fav41[] = v1[].q;
+			fav42[] = v2[].q;
+			fav43[] = v3[].q;
+			fav44[] = v4[].q;
+		end if;
+	end if;
+	if modofav == VCC then    			%entrando no modo favorito%
+		if clock1s == VCC then			%alternará qual favorito será mostrado a cada 1s%
+			dig1[] = fav31[];
+			dig2[] = fav32[];
+			dig3[] = fav33[];
+			dig4[] = fav34[];
+		else
+			dig1[] = fav41[];
+			dig2[] = fav42[];
+			dig3[] = fav43[];
+			dig4[] = fav44[];
+		end if;
+	else 
+		dig1[] = saida_aux[]; %saida do 1o digito%
+		dig2[] = v2[].q;
+		dig3[] = v3[].q;
+		dig4[] = v4[].q;
+	end if;
+END;

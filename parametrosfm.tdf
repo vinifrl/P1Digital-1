@@ -1,0 +1,52 @@
+subdesign parametrosfm
+(
+   v1[3..0], v2[3..0], v3[3..0], v4[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
+	sel													: INPUT;
+   out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
+)
+BEGIN
+	if sel == VCC then    %crescente%
+		if v4[] == 0 & v3[] < 8 then  %limite inferior%
+					out3[] = 8;
+					if v2[] < 7 then
+						out2[] = 7;
+						if v1[] < 5 then 
+							out1[] = 5;
+						end if;
+					end if;
+		elsif v4[] == 1 & v3[] == 0 & v2[] == 8 & v1[] == 1 then %limite superior%
+			out4[] = 0;
+			out3[] = 8;
+			out2[] = 7;
+			out1[] = 5;
+		
+		else
+			out1[] = v1[];
+			out2[] = v2[];
+			out3[] = v3[];
+			out4[] = v4[];
+		end if;
+	else				%decrescente%
+		if v4[] == 1 & v3[] > 0 then  %limite inferior%
+					out3[] = 0;
+					if v2[] > 8 then
+						out2[] = 8;
+						if v1[] < 0 then 
+							out1[] = 0;
+						end if;
+					end if;
+		elsif v4[] == 0 & v3[] == 8 & v2[] == 7 & v1[] == 4 then %limite superior%
+			out4[] = 1;
+			out3[] = 0;
+			out2[] = 8;
+			out1[] = 0;
+		
+		else
+			out1[] = v1[];
+			out2[] = v2[];
+			out3[] = v3[];
+			out4[] = v4[];
+		end if;
+	end if;		
+end;
+		

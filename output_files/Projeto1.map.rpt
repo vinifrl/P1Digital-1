@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto1
-Sun Mar 14 13:27:17 2021
+Sun Mar 14 17:35:40 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 14 13:27:17 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 14 17:35:40 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
 ; Top-level Entity Name              ; testecont                                   ;
@@ -164,17 +164,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                  ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
-; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf   ;         ;
-; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf   ;         ;
-; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf   ;         ;
-; cont.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/cont.tdf      ;         ;
-; testecont.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/testecont.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                     ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
+; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf      ;         ;
+; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf      ;         ;
+; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf      ;         ;
+; cont.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/cont.tdf         ;         ;
+; testecont.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/testecont.bdf    ;         ;
+; parametrosfm.tdf                 ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/parametrosfm.tdf ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
@@ -215,9 +216,9 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+-------------+--------------+
 ; |testecont                 ; 218 (0)             ; 77 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |testecont               ; testecont   ; work         ;
-;    |cont:inst15|           ; 28 (28)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst15   ; cont        ; work         ;
-;    |cont:inst17|           ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst17   ; cont        ; work         ;
-;    |cont:inst18|           ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst18   ; cont        ; work         ;
+;    |cont:inst1|            ; 28 (28)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst1    ; cont        ; work         ;
+;    |cont:inst3|            ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst3    ; cont        ; work         ;
+;    |cont:inst7|            ; 26 (26)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst7    ; cont        ; work         ;
 ;    |cont:inst|             ; 25 (25)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|cont:inst     ; cont        ; work         ;
 ;    |display:inst6|         ; 72 (72)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|display:inst6 ; display     ; work         ;
 ;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |testecont|divisor:inst4 ; divisor     ; work         ;
@@ -280,7 +281,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Mar 14 13:27:08 2021
+    Info: Processing started: Sun Mar 14 17:35:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -313,18 +314,21 @@ Info (12021): Found 1 design units, including 1 entities, in source file testedi
 Info (12021): Found 1 design units, including 1 entities, in source file divisormeio.tdf
     Info (12023): Found entity 1: divisormeio File: D:/Estudo/Eletrônica Digital/P1/divisormeio.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file cont.tdf
-    Info (12023): Found entity 1: cont File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 3
+    Info (12023): Found entity 1: cont File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testecont.bdf
     Info (12023): Found entity 1: testecont
+Info (12021): Found 1 design units, including 1 entities, in source file parametrosfm.tdf
+    Info (12023): Found entity 1: parametrosfm File: D:/Estudo/Eletrônica Digital/P1/parametrosfm.tdf Line: 1
 Info (12127): Elaborating entity "testecont" for the top level hierarchy
 Info (12128): Elaborating entity "display" for hierarchy "display:inst6"
 Warning (287013): Variable or input pin "seletor" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 4
 Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst5"
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
 Info (12128): Elaborating entity "cont" for hierarchy "cont:inst"
-Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 6
-Info (12128): Elaborating entity "cont" for hierarchy "cont:inst18"
-Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 6
+Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 4
+Info (12128): Elaborating entity "cont" for hierarchy "cont:inst7"
+Warning (287013): Variable or input pin "s4" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/cont.tdf Line: 4
+Info (12128): Elaborating entity "parametrosfm" for hierarchy "parametrosfm:inst2"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -333,9 +337,9 @@ Info (21057): Implemented 235 device resources after synthesis - the final resou
     Info (21059): Implemented 12 output pins
     Info (21061): Implemented 218 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Sun Mar 14 13:27:17 2021
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Peak virtual memory: 4766 megabytes
+    Info: Processing ended: Sun Mar 14 17:35:40 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 

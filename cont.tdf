@@ -1,6 +1,4 @@
-%SE CONTINUAR PULANDO DE 88.0 PRA 89.1 PODE TENTAR USAR UM AUXILIAR PRA RECEBER O .D DOS FF, ASSIM COMO NA UNIDADE%
-
-subdesign cont %modo quando sel == GND%
+subdesign cont 
 (
 	modofav, clockmais, clockmenos		: INPUT;
 	s3, s4 					: input; %seletor de controle (decrescente/crescente)%

@@ -1,5 +1,5 @@
 Fitter report for Projeto1
-Sun Mar 14 13:27:23 2021
+Sun Mar 14 17:35:47 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -69,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Sun Mar 14 13:27:23 2021       ;
+; Fitter Status                      ; Successful - Sun Mar 14 17:35:47 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
 ; Top-level Entity Name              ; testecont                                   ;
@@ -161,7 +161,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   2.0%      ;
+;     Processor 2            ;   2.2%      ;
 ;     Processor 3            ;   1.4%      ;
 ;     Processor 4            ;   1.3%      ;
 +----------------------------+-------------+
@@ -602,9 +602,9 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name      ; Entity Name ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+--------------------------+-------------+--------------+
 ; |testecont                 ; 219 (0)     ; 77 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 17   ; 0            ; 142 (0)      ; 1 (0)             ; 76 (0)           ; |testecont               ; testecont   ; work         ;
-;    |cont:inst15|           ; 28 (28)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst15   ; cont        ; work         ;
-;    |cont:inst17|           ; 26 (26)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst17   ; cont        ; work         ;
-;    |cont:inst18|           ; 26 (26)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst18   ; cont        ; work         ;
+;    |cont:inst1|            ; 28 (28)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 23 (23)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst1    ; cont        ; work         ;
+;    |cont:inst3|            ; 26 (26)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst3    ; cont        ; work         ;
+;    |cont:inst7|            ; 26 (26)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst7    ; cont        ; work         ;
 ;    |cont:inst|             ; 25 (25)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 20 (20)      ; 0 (0)             ; 5 (5)            ; |testecont|cont:inst     ; cont        ; work         ;
 ;    |display:inst6|         ; 72 (72)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 45 (45)      ; 0 (0)             ; 27 (27)          ; |testecont|display:inst6 ; display     ; work         ;
 ;    |divisor:inst4|         ; 35 (35)     ; 26 (26)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 9 (9)        ; 1 (1)             ; 25 (25)          ; |testecont|divisor:inst4 ; divisor     ; work         ;
@@ -651,34 +651,34 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------+-------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                 ;
-+---------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
-; Name                ; Location           ; Fan-Out ; Usage       ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
-; Clock_Placa         ; PIN_23             ; 53      ; Clock       ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; button3             ; PIN_90             ; 6       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; button4             ; PIN_91             ; 2       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst15|v1[0]~3 ; LCCOMB_X30_Y17_N4  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst15|v1[1]~2 ; LCCOMB_X30_Y17_N6  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst15|v1[2]~1 ; LCCOMB_X30_Y17_N28 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst15|v1[3]~0 ; LCCOMB_X30_Y17_N0  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst17|v1[0]~3 ; LCCOMB_X30_Y17_N2  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst17|v1[1]~2 ; LCCOMB_X30_Y17_N14 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst17|v1[2]~1 ; LCCOMB_X30_Y17_N26 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst17|v1[3]~0 ; LCCOMB_X30_Y17_N18 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst18|v1[0]~3 ; LCCOMB_X30_Y14_N10 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst18|v1[1]~2 ; LCCOMB_X30_Y14_N16 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst18|v1[2]~1 ; LCCOMB_X30_Y14_N0  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst18|v1[3]~0 ; LCCOMB_X30_Y14_N6  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst|v1[0]~3   ; LCCOMB_X25_Y14_N18 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst|v1[1]~2   ; LCCOMB_X25_Y14_N8  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst|v1[2]~1   ; LCCOMB_X25_Y14_N20 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; cont:inst|v1[3]~0   ; LCCOMB_X25_Y14_N16 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
-; display:inst6|_~12  ; LCCOMB_X25_Y21_N30 ; 27      ; Sync. clear ; no     ; --                   ; --               ; --                        ;
-; divisor:inst4|_~7   ; LCCOMB_X23_Y14_N30 ; 26      ; Sync. clear ; no     ; --                   ; --               ; --                        ;
-; divisor:inst4|fft   ; FF_X24_Y14_N7      ; 7       ; Clock       ; no     ; --                   ; --               ; --                        ;
-+---------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                ;
++--------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
+; Name               ; Location           ; Fan-Out ; Usage       ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++--------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
+; Clock_Placa        ; PIN_23             ; 53      ; Clock       ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; button3            ; PIN_90             ; 6       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; button4            ; PIN_91             ; 2       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst1|v1[0]~3 ; LCCOMB_X30_Y17_N4  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst1|v1[1]~2 ; LCCOMB_X30_Y17_N6  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst1|v1[2]~1 ; LCCOMB_X30_Y17_N28 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst1|v1[3]~0 ; LCCOMB_X30_Y17_N0  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst3|v1[0]~3 ; LCCOMB_X30_Y17_N2  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst3|v1[1]~2 ; LCCOMB_X30_Y17_N14 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst3|v1[2]~1 ; LCCOMB_X30_Y17_N26 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst3|v1[3]~0 ; LCCOMB_X30_Y17_N18 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst7|v1[0]~3 ; LCCOMB_X30_Y14_N10 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst7|v1[1]~2 ; LCCOMB_X30_Y14_N16 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst7|v1[2]~1 ; LCCOMB_X30_Y14_N0  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst7|v1[3]~0 ; LCCOMB_X30_Y14_N6  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst|v1[0]~3  ; LCCOMB_X25_Y14_N18 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst|v1[1]~2  ; LCCOMB_X25_Y14_N8  ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst|v1[2]~1  ; LCCOMB_X25_Y14_N20 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; cont:inst|v1[3]~0  ; LCCOMB_X25_Y14_N16 ; 1       ; Clock       ; no     ; --                   ; --               ; --                        ;
+; display:inst6|_~12 ; LCCOMB_X25_Y21_N30 ; 27      ; Sync. clear ; no     ; --                   ; --               ; --                        ;
+; divisor:inst4|_~7  ; LCCOMB_X23_Y14_N30 ; 26      ; Sync. clear ; no     ; --                   ; --               ; --                        ;
+; divisor:inst4|fft  ; FF_X24_Y14_N7      ; 7       ; Clock       ; no     ; --                   ; --               ; --                        ;
++--------------------+--------------------+---------+-------------+--------+----------------------+------------------+---------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -964,35 +964,35 @@ This will disable optimization of problematic paths and expose them for further 
 +----------------------+----------------------+-------------------+
 ; Source Register      ; Destination Register ; Delay Added in ns ;
 +----------------------+----------------------+-------------------+
-; switch1              ; cont:inst17|v1[2]    ; 5.743             ;
-; switch2              ; cont:inst17|v1[2]    ; 5.743             ;
-; seletor:inst5|ffd[0] ; cont:inst17|v1[2]    ; 5.743             ;
-; seletor:inst5|ffd[1] ; cont:inst17|v1[2]    ; 5.743             ;
-; button3              ; cont:inst17|v1[2]    ; 5.743             ;
-; seletor:inst5|fftd   ; cont:inst17|v1[2]    ; 5.743             ;
-; button4              ; cont:inst17|v1[2]    ; 5.743             ;
-; seletor:inst5|ffta   ; cont:inst17|v1[2]    ; 5.743             ;
+; switch1              ; cont:inst3|v1[2]     ; 5.743             ;
+; switch2              ; cont:inst3|v1[2]     ; 5.743             ;
+; seletor:inst5|ffd[0] ; cont:inst3|v1[2]     ; 5.743             ;
+; seletor:inst5|ffd[1] ; cont:inst3|v1[2]     ; 5.743             ;
+; button3              ; cont:inst3|v1[2]     ; 5.743             ;
+; seletor:inst5|fftd   ; cont:inst3|v1[2]     ; 5.743             ;
+; button4              ; cont:inst3|v1[2]     ; 5.743             ;
+; seletor:inst5|ffta   ; cont:inst3|v1[2]     ; 5.743             ;
 ; cont:inst|v1[3]      ; cont:inst|v1[3]      ; 3.472             ;
 ; cont:inst|v1[2]      ; cont:inst|v1[2]      ; 3.470             ;
 ; divisor:inst4|fft    ; divisor:inst4|fft    ; 3.453             ;
-; cont:inst17|fft      ; cont:inst17|v1[2]    ; 3.393             ;
+; cont:inst3|fft       ; cont:inst3|v1[2]     ; 3.393             ;
 ; cont:inst|v1[1]      ; cont:inst|v1[2]      ; 3.350             ;
 ; cont:inst|v1[0]      ; cont:inst|v1[2]      ; 3.324             ;
-; cont:inst15|fft      ; cont:inst15|v1[1]    ; 3.239             ;
-; cont:inst15|v1[1]    ; cont:inst15|v1[2]    ; 3.003             ;
-; cont:inst15|v1[3]    ; cont:inst15|v1[2]    ; 3.003             ;
-; cont:inst15|v1[2]    ; cont:inst15|v1[2]    ; 3.003             ;
-; cont:inst15|v1[0]    ; cont:inst15|v1[2]    ; 3.003             ;
-; cont:inst17|v1[0]    ; cont:inst17|v1[2]    ; 2.851             ;
-; cont:inst18|fft      ; cont:inst18|v1[1]    ; 2.453             ;
-; cont:inst17|v1[1]    ; cont:inst17|v1[2]    ; 2.419             ;
-; cont:inst17|v1[3]    ; cont:inst17|v1[2]    ; 2.419             ;
-; cont:inst17|v1[2]    ; cont:inst17|v1[2]    ; 2.419             ;
-; cont:inst18|v1[0]    ; cont:inst18|v1[1]    ; 2.357             ;
+; cont:inst1|fft       ; cont:inst1|v1[1]     ; 3.239             ;
+; cont:inst1|v1[1]     ; cont:inst1|v1[2]     ; 3.003             ;
+; cont:inst1|v1[3]     ; cont:inst1|v1[2]     ; 3.003             ;
+; cont:inst1|v1[2]     ; cont:inst1|v1[2]     ; 3.003             ;
+; cont:inst1|v1[0]     ; cont:inst1|v1[2]     ; 3.003             ;
+; cont:inst3|v1[0]     ; cont:inst3|v1[2]     ; 2.851             ;
+; cont:inst7|fft       ; cont:inst7|v1[1]     ; 2.453             ;
+; cont:inst3|v1[1]     ; cont:inst3|v1[2]     ; 2.419             ;
+; cont:inst3|v1[3]     ; cont:inst3|v1[2]     ; 2.419             ;
+; cont:inst3|v1[2]     ; cont:inst3|v1[2]     ; 2.419             ;
+; cont:inst7|v1[0]     ; cont:inst7|v1[1]     ; 2.357             ;
 ; cont:inst|fft        ; cont:inst|v1[2]      ; 2.259             ;
-; cont:inst18|v1[3]    ; cont:inst18|v1[1]    ; 2.128             ;
-; cont:inst18|v1[2]    ; cont:inst18|v1[1]    ; 2.128             ;
-; cont:inst18|v1[1]    ; cont:inst18|v1[1]    ; 2.128             ;
+; cont:inst7|v1[3]     ; cont:inst7|v1[1]     ; 2.128             ;
+; cont:inst7|v1[2]     ; cont:inst7|v1[1]     ; 2.128             ;
+; cont:inst7|v1[1]     ; cont:inst7|v1[1]     ; 2.128             ;
 ; divisor:inst4|ff[24] ; divisor:inst4|fft    ; 1.277             ;
 ; divisor:inst4|ff[22] ; divisor:inst4|fft    ; 1.277             ;
 ; divisor:inst4|ff[21] ; divisor:inst4|fft    ; 1.277             ;
@@ -1058,7 +1058,7 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "led[1]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "led[2]" is assigned to location or region, but does not exist in design
     Warning (15706): Node "led[3]" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (14896): Fitter has disabled Advanced Physical Optimization because it is not supported for the current family.
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
@@ -1071,7 +1071,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.69 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.74 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1080,10 +1080,10 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file D:/Estudo/Eletrônica Digital/P1/output_files/Projeto1.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 5495 megabytes
-    Info: Processing ended: Sun Mar 14 13:27:24 2021
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Peak virtual memory: 5497 megabytes
+    Info: Processing ended: Sun Mar 14 17:35:48 2021
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +----------------------------+
