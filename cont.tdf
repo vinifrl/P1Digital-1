@@ -1,0 +1,68 @@
+%SE CONTINUAR PULANDO DE 88.0 PRA 89.1 PODE TENTAR USAR UM AUXILIAR PRA RECEBER O .D DOS FF, ASSIM COMO NA UNIDADE%
+
+subdesign cont %modo quando sel == GND%
+(
+	modofav, clockmais, clockmenos		: INPUT;
+	s3, s4 					: input; %seletor de controle (decrescente/crescente)%
+	sw1, sw2, sel			: INPUT; %switches amfm, modo gravação e seletor de a/d%
+	dig[3..0], maisum, menosum: output; %valor de Saida, primeiro digito começando da direita%
+)
+
+VARIABLE
+	v1[3..0]						: DFF; %flip flops tipo D para os digitos%
+	d[3..0] 						: NODE; %entradas Ds dos Flip Flops%
+	q[3..0] 						: NODE;  %saidas Qs dos Flip Flops%
+	saida_aux[3..0]			: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
+	ena							: NODE;
+	fft							: TFF;
+
+BEGIN
+	%clock de entrada como clock dos flip flops%
+	v1[].d = d[]; %entradas dos flip flops%
+	q[] = v1[].q; %saidas dos flip flops%
+	fft.clk = s3;
+	fft.t = VCC;
+	ena = fft.q;
+	dig[] = saida_aux[]; %saida do 1o digito%
+	if (sw2 == GND & sw1 == GND & modofav == GND) then 	%só acontece caso fora do modo gravação e sw1 em fm%
+		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado%
+			v1[].clk = clockmais;
+			d[] = saida_aux[] + 1;
+			%if v4[].q == 0 & v3[].q < 8 then  limite inferior
+				v3[].d = 8;
+				if v2[].q < 7 then
+					v2[].d = 7;
+					if v1[].q < 5 then 
+						v1[].d = 5;
+					end if;
+				end if;%
+			IF v1[].q == 10 THEN %caso de contagem crescente de 9 -> 0%
+				saida_aux[] = 0;
+				maisum = VCC;
+			ELSE
+				saida_aux[] = v1[].q;
+				maisum = GND;
+			end if;
+		ELSE
+			IF ena == VCC THEN
+				v1[].clk = clockmenos;
+				%if v4[].q == 0 & v3[].q == 8 & v2[].q == 7 & v1[].q == 5 then 
+					v4[].d = 1;
+					v3[].d = 0;
+					v2[].d = 8;
+					v1[].d = 0;
+				end if;%
+				d[] = saida_aux[] - 1;
+				IF q[] == 15 THEN %caso de contagem decrescente de 0->9%
+					saida_aux[] = 9;
+					menosum = VCC;
+				ELSE %caso padrao%
+					saida_aux[] = q[];
+					menosum = GND;
+				end if;	
+			END IF;			
+		end if;
+	end if;
+
+	END;
+	

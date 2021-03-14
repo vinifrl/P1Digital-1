@@ -1,0 +1,25 @@
+subdesign divisormeio
+(
+	clkPlaca : input; %clock de 50MHz da placa%
+	clock1HZ : output;%clock de saida de 1Hz%
+)
+
+VARIABLE
+	ff[24..0] : DFF; %flip flops que irao fazer a contagem%
+	fft : TFF; %flip flop tipo t para gerar saida%
+	q[24..0] : NODE; %vetor para armazenar as saidas do flip flop e realizar a realimentacao com as entradas do mesmo%
+BEGIN
+	ff[].clk = clkPlaca;	%clock da placa como sendo o clock dos flip flops D e T%
+	fft.clk = clkPlaca; 
+	q[] = ff[].q;
+	clock1HZ = fft.q;
+	
+	CASE q[] IS
+		WHEN 19000000 => %depois de passar 25000000 ciclos(0.5s) em '0', a saida fica '1'%
+			fft.t = VCC;
+			ff[].d = 0;
+		WHEN OTHERS =>
+			fft.t = GND;
+			ff[].d = q[] + 1;
+	END CASE;
+END;
