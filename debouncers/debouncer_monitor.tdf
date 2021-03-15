@@ -1,0 +1,31 @@
+SUBDESIGN debouncer_monitor
+(
+	clock, button :INPUT;
+	saida :OUTPUT;
+)
+
+VARIABLE
+	COUNT[18..0] :DFF;
+	FF[1..0] : DFF;
+	aux : DFF;
+	COUNTER_SET: NODE;
+BEGIN
+	COUNTER_SET = FF[1].Q $ FF[0].Q; --XOR para controlar a contagem do debounce
+	COUNT[].CLK = clock;
+	FF[].CLK = clock;
+	aux.CLK = clock;
+	FF[0].D = button;
+	FF[1].D = FF[0].Q;
+	saida = aux.Q;
+	IF (COUNTER_SET == 1) THEN --se os valores dos FF's forem diferentes, a contagem começa de novo
+		COUNT[].D = 0;
+	ELSE --as saídas dos FlipFlops iguais indicam que a contagem pode começar (10ms para o debounce de um botão)
+		IF (COUNT[].Q == 500000) THEN
+			COUNT[].D = 0;
+			aux.D = FF[1].Q;
+		ELSE
+			COUNT[].D = COUNT[].Q + 1;
+			aux.D = aux.Q;
+		END IF;	
+	END IF;	
+END;

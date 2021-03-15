@@ -11,8 +11,8 @@ VARIABLE
 	d[3..0] 						: NODE; %entradas Ds dos Flip Flops%
 	q[3..0] 						: NODE;  %saidas Qs dos Flip Flops%
 	saida_aux[3..0]			: NODE; %vetor auxiliar usado para realimentar a saida quando necessario%
-	ena							: NODE;
-	fft							: TFF;
+	ena, cres					: NODE;
+	fft, ffts4					: TFF;
 
 BEGIN
 	%clock de entrada como clock dos flip flops%
@@ -21,9 +21,12 @@ BEGIN
 	fft.clk = s3;
 	fft.t = VCC;
 	ena = fft.q;
+	ffts4.clk = s4;
+	ffts4.t = VCC;
+	cres = ffts4.q;
 	dig[] = saida_aux[]; %saida do 1o digito%
-	if (sw2 == GND & sw1 == GND & modofav == GND) then 	%só acontece caso fora do modo gravação e sw1 em fm%
-		if sel == VCC then				%caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado%
+	if (sw2 == GND & sw1 == GND & modofav == GND & ena != cres) then 	%só acontece caso fora do modo gravação e sw1 em fm%
+		if sel == VCC & s3 == GND then				--caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado
 			v1[].clk = clockmais;
 			d[] = saida_aux[] + 1;
 			%if v4[].q == 0 & v3[].q < 8 then  limite inferior

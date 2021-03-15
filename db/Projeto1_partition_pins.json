@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "saidainf",
+					"strict" : false
+				},
+				{
 					"name" : "dig[3]",
 					"strict" : false
 				},
@@ -52,15 +56,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "button3",
+					"strict" : false
+				},
+				{
 					"name" : "switch2",
 					"strict" : false
 				},
 				{
 					"name" : "switch1",
-					"strict" : false
-				},
-				{
-					"name" : "button3",
 					"strict" : false
 				},
 				{
