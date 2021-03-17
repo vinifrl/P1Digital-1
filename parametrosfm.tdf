@@ -2,13 +2,16 @@ subdesign parametrosfm
 (
    v1[3..0], v2[3..0], v3[3..0], v4[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%
 	sel													: INPUT;
+	clock								: INPUT;
    out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
 	inferior							: OUTPUT;
 )
 BEGIN
+	
 	if sel == VCC then    %crescente% 
-		if v1[] < 5 and v2[] < 7 and v3[] < 8 then  %inicializador%
-			if v4[] == 0 then
+		if v1[] < 5 and v2[] < 5 and v3[] < 5 then  %inicializador%
+			if v4[] < 5  then
+				out1[] = 5;
 				inferior = VCC;
 			else
 				inferior = GND;
@@ -41,6 +44,7 @@ BEGIN
 			out3[] = v3[];
 			out4[] = v4[];
 		end if;
-	end if;		
+	end if;
+
 end;
 		

@@ -155,7 +155,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : 83        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : 84        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 85        :        :                   :         : 5         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : 86        :        :                   :         : 5         :                
-saidainf                     : 87        : output : 2.5 V             :         : 5         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : 87        :        :                   :         : 5         :                
 switch1                      : 88        : input  : 2.5 V             :         : 5         : Y              
 switch2                      : 89        : input  : 2.5 V             :         : 5         : Y              
 button3                      : 90        : input  : 2.5 V             :         : 6         : Y              

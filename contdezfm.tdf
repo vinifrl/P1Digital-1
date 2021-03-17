@@ -30,7 +30,7 @@ BEGIN
 			v1[].clk = clockmais;
 			if inferior == VCC then
 				--v1[].d = 7;
-				saida_aux[] = 7;
+				dig[] = 7;
 				maisum = GND;
 			else
 				d[] = saida_aux[] + 1;
