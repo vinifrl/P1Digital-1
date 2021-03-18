@@ -1,5 +1,5 @@
-Analysis & Elaboration report for Projeto1
-Tue Mar 16 18:10:52 2021
+Analysis & Synthesis report for Projeto1
+Thu Mar 18 19:05:58 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -7,10 +7,16 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -35,48 +41,32 @@ https://fpgasoftware.intel.com/eula.
 
 
 +----------------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                                   ;
+; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status      ; Failed - Tue Mar 16 18:10:52 2021           ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 18 19:05:58 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
-; Top-level Entity Name              ; contunifm                                   ;
+; Top-level Entity Name              ; sipo_ada                                    ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 182                                         ;
+;     Total combinational functions  ; 182                                         ;
+;     Dedicated logic registers      ; 75                                          ;
+; Total registers                    ; 75                                          ;
+; Total pins                         ; 17                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                            ;
+; Analysis & Synthesis Settings                                                                              ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; contunifm          ; Projeto1           ;
+; Top-level entity name                                            ; sipo_ada           ; Projeto1           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,16 +146,149 @@ https://fpgasoftware.intel.com/eula.
 +------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                 ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
+; intermed.tdf                     ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/intermed.tdf ;         ;
+; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf  ;         ;
+; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf  ;         ;
+; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf  ;         ;
+; sipo.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/sipo.tdf     ;         ;
+; sipo_ada.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/sipo_ada.bdf ;         ;
+; sipo.inc                         ; yes             ; Auto-Found AHDL File               ; D:/Estudo/Eletrônica Digital/P1/sipo.inc     ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 182               ;
+;                                             ;                   ;
+; Total combinational functions               ; 182               ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 101               ;
+;     -- 3 input functions                    ; 19                ;
+;     -- <=2 input functions                  ; 62                ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 136               ;
+;     -- arithmetic mode                      ; 46                ;
+;                                             ;                   ;
+; Total registers                             ; 75                ;
+;     -- Dedicated logic registers            ; 75                ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 17                ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; Clock_Placa~input ;
+; Maximum fan-out                             ; 53                ;
+; Total fan-out                               ; 807               ;
+; Average fan-out                             ; 2.77              ;
++---------------------------------------------+-------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
+; |sipo_ada                  ; 182 (0)             ; 75 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |sipo_ada                        ; sipo_ada    ; work         ;
+;    |display:inst6|         ; 79 (79)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|display:inst6          ; display     ; work         ;
+;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|divisor:inst4          ; divisor     ; work         ;
+;    |intermed:inst|         ; 66 (15)             ; 20 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst          ; intermed    ; work         ;
+;       |sipo:cem|           ; 14 (14)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:cem ; sipo        ; work         ;
+;       |sipo:dez|           ; 13 (13)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:dez ; sipo        ; work         ;
+;       |sipo:mil|           ; 11 (11)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:mil ; sipo        ; work         ;
+;       |sipo:uni|           ; 13 (13)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:uni ; sipo        ; work         ;
+;    |seletor:inst5|         ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|seletor:inst5          ; seletor     ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 75    ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 17                          ;
+; cycloneiii_ff         ; 75                          ;
+;     SCLR              ; 48                          ;
+;     plain             ; 27                          ;
+; cycloneiii_lcell_comb ; 187                         ;
+;     arith             ; 46                          ;
+;         2 data inputs ; 44                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 141                         ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 13                          ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 101                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.64                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Mar 16 18:10:44 2021
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1 --analysis_and_elaboration
+    Info: Processing started: Thu Mar 18 19:05:48 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file intermed.tdf
+    Info (12023): Found entity 1: intermed File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 2
 Warning (287002): Group MSB out7 overrides BIT0 = LSB in actual or default Options Statement File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file display.tdf
     Info (12023): Found entity 1: display File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 1
@@ -189,10 +312,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file paramet
     Info (12023): Found entity 1: parametrosfm File: D:/Estudo/Eletrônica Digital/P1/parametrosfm.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contfm.tdf
     Info (12023): Found entity 1: contfm File: D:/Estudo/Eletrônica Digital/P1/contfm.tdf Line: 1
-Error (287102): Input pin "v4" cannot be assigned a value File: D:/Estudo/Eletrônica Digital/P1/contunifm.tdf Line: 44
-Error (287102): Input pin "v3" cannot be assigned a value File: D:/Estudo/Eletrônica Digital/P1/contunifm.tdf Line: 45
-Error (287102): Input pin "v2" cannot be assigned a value File: D:/Estudo/Eletrônica Digital/P1/contunifm.tdf Line: 46
-Info (12021): Found 0 design units, including 0 entities, in source file contunifm.tdf
+Info (12021): Found 1 design units, including 1 entities, in source file contunifm.tdf
+    Info (12023): Found entity 1: contunifm File: D:/Estudo/Eletrônica Digital/P1/contunifm.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contdezfm.tdf
     Info (12023): Found entity 1: contdezfm File: D:/Estudo/Eletrônica Digital/P1/contdezfm.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contcemfm.tdf
@@ -203,12 +324,36 @@ Info (12021): Found 1 design units, including 1 entities, in source file debounc
     Info (12023): Found entity 1: debouncer_monitor File: D:/Estudo/Eletrônica Digital/P1/debouncers/debouncer_monitor.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testeparams.bdf
     Info (12023): Found entity 1: testeparams
+Warning (287013): Variable or input pin "maisum" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file contadorfm.tdf
     Info (12023): Found entity 1: contadorfm File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 3
-Error: Quartus Prime Analysis & Elaboration was unsuccessful. 3 errors, 2 warnings
-    Error: Peak virtual memory: 4715 megabytes
-    Error: Processing ended: Tue Mar 16 18:10:52 2021
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:18
+Info (12021): Found 1 design units, including 1 entities, in source file sipo.tdf
+    Info (12023): Found entity 1: sipo File: D:/Estudo/Eletrônica Digital/P1/sipo.tdf Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sipo_ada.bdf
+    Info (12023): Found entity 1: sipo_ada
+Info (12127): Elaborating entity "sipo_ada" for the top level hierarchy
+Info (12128): Elaborating entity "display" for hierarchy "display:inst6"
+Warning (287013): Variable or input pin "seletor" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 4
+Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst5"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
+Info (12128): Elaborating entity "intermed" for hierarchy "intermed:inst"
+Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:uni" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
+Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:dez" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
+Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:cem" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
+Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:mil" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "switch2"
+Info (21057): Implemented 199 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 12 output pins
+    Info (21061): Implemented 182 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 4767 megabytes
+    Info: Processing ended: Thu Mar 18 19:05:58 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:19
 
 

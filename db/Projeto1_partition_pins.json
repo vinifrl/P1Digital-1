@@ -52,7 +52,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "switch2",
+					"name" : "switch1",
+					"strict" : false
+				},
+				{
+					"name" : "Clock_Placa",
 					"strict" : false
 				},
 				{
@@ -61,14 +65,6 @@
 				},
 				{
 					"name" : "button4",
-					"strict" : false
-				},
-				{
-					"name" : "switch1",
-					"strict" : false
-				},
-				{
-					"name" : "Clock_Placa",
 					"strict" : false
 				}
 			]

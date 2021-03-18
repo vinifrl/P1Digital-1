@@ -1,0 +1,33 @@
+INCLUDE "sipo.inc";  --contador mod 10
+subdesign intermed
+(
+	clock, sel, ajuste, load[7..0]	: INPUT;
+	a[3..0], b[3..0]						:OUTPUT;
+)
+VARIABLE
+	mod10s	:sipo;
+	mod10m	:sipo;
+
+BEGIN
+	IF !ajuste THEN
+		mod10s.clock = clock;
+		mod10m.clock = mod10s.maisum;	
+		mod10s.load_ena=GND;
+		mod10m.load_ena=GND;
+	ELSE
+		mod10s.load_ena=VCC;	
+		mod10m.load_ena=VCC;
+		mod10s.clock=clock;
+		mod10m.clock=clock;
+	END IF;
+	
+	mod10s.load[]=GND;
+	mod10m.load[]=load[7..4];
+	
+	mod10s.updown=sel;
+	mod10m.updown=sel;
+	
+	a[]=mod10s.q[];
+	b[]=mod10m.q[];
+	
+END;

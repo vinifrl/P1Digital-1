@@ -1,0 +1,33 @@
+subdesign sipo
+(
+	clk,load_ena,updown,load[3..0]		:input;
+	q[3..0]										:output;
+)
+
+variable
+	count[3..0]	:dff;
+
+	
+begin
+	count[].clk = clk;
+	
+	
+	if load_ena then
+		count[].d = load;
+	elsif updown then
+		if count[].q == 0 then
+			count[].d = 9;
+		else
+			count[].d = count[].q-1;
+		end if;
+	else
+		if count[].q == 9 then
+			count[].d = 0;
+		else
+			count[].d = count[].q+1;
+		end if;
+	end if;
+	
+	q[] = count[].q;
+
+end;

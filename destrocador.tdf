@@ -1,0 +1,84 @@
+subdesign destrocador
+(
+	out1[3..0], out2[3..0], out3[3..0], out4[3..0]	: OUTPUT;
+)
+VARIABLE
+	v1[10..0] 	: NODE;
+BEGIN
+	v1[] = 351;
+	if v1[] >= 1000 then
+		out4[] = 1;
+		v1[] = v1[] - 1000;
+	else
+		out4[] = 0;
+	end if;
+	if v1[] >= 900 then
+		out3[] = 9;
+		v1[] = v1[] - 900;
+	elsif v1[] >= 800 then
+		out3[] = 8;
+		v1[] = v1[] - 800;
+	elsif v1[] >= 700 then
+		out3[] = 7;
+		v1[] = v1[] - 700;
+	elsif v1[] >= 600 then
+		out3[] = 6;
+		v1[] = v1[] - 600;
+	elsif v1[] >= 500 then
+		out3[] = 5;
+		v1[] = v1[] - 500;
+	elsif v1[] >= 400 then
+		out3[] = 4;
+		v1[] = v1[] - 400;
+	elsif v1[] >= 100 then
+		if v1[] >= 200 then
+			if v1[] >= 300 then
+				out3[] = 3;
+				v1[] = v1[] - 300;
+			else
+				out3[] = 2;
+				v1[] = v1[] - 200;
+			end if;
+		else
+			out3[] = 1;
+			v1[] = v1[] - 100;
+		end if;
+	else
+		out3[] = 0;
+	end if;
+	
+	if v1[] >= 90 then
+		out2[] = 9;
+		v1[] = v1[] - 90;
+	elsif v1[] >= 80 then
+		out2[] = 8;
+		v1[] = v1[] - 80;
+	elsif v1[] >= 70 then
+		out2[] = 7;
+		v1[] = v1[] - 70;
+	elsif v1[] >= 60 then
+		out2[] = 6;
+		v1[] = v1[] - 60;
+	elsif v1[] >= 50 then
+		out2[] = 5;
+		v1[] = v1[] - 50;
+	elsif v1[] >= 40 then
+		out2[] = 4;
+		v1[] = v1[] - 40;
+	elsif v1[] >= 30 then
+		out2[] = 3;
+		v1[] = v1[] - 30;
+	elsif v1[] >= 20 then
+		out2[] = 2;
+		v1[] = v1[] - 20;
+	elsif v1[] >= 10 then
+		out2[] = 1;
+		v1[] = v1[] - 10;
+	else
+		out2[] = 0;
+	end if;
+	out1[] = v1[3..0];
+END;
+	
+	
+	

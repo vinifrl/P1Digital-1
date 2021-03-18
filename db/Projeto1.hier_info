@@ -1,4 +1,4 @@
-|testeparams
+|sipo_ada
 dig[0] <= display:inst6.dig[0]
 dig[1] <= display:inst6.dig[1]
 dig[2] <= display:inst6.dig[2]
@@ -8,7 +8,6 @@ button4 => inst11.IN0
 switch2 => inst9.IN0
 Clock_Placa => divisor:inst4.clkPlaca
 Clock_Placa => display:inst6.clock
-Clock_Placa => contadorfm:inst7.clk_placa
 switch1 => inst8.IN0
 out[7] <= display:inst6.out[7]
 out[6] <= display:inst6.out[6]
@@ -20,7 +19,7 @@ out[1] <= display:inst6.out[1]
 out[0] <= display:inst6.out[0]
 
 
-|testeparams|display:inst6
+|sipo_ada|display:inst6
 a[0] => disp[0].IN1
 a[1] => disp[1].IN1
 a[2] => disp[2].IN1
@@ -48,6 +47,12 @@ sw1 => out[1]~6.IN0
 sw1 => out[3]~7.IN0
 sw1 => out[7]~8.IN0
 sw1 => out[4]~9.IN0
+sw1 => out[3]~10.IN0
+sw1 => out[0]~11.IN0
+sw1 => out[1]~12.IN0
+sw1 => out[0]~13.IN0
+sw1 => out[0]~14.IN0
+sw1 => out[0]~15.IN0
 sw1 => _.IN0
 clock => ff[24].CLK
 clock => ff[23].CLK
@@ -90,7 +95,7 @@ dig[2] <= dig[2].DB_MAX_OUTPUT_PORT_TYPE
 dig[3] <= dig[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testeparams|seletor:inst5
+|sipo_ada|seletor:inst5
 s3 => _.IN0
 s3 => _.IN0
 s3 => fftd.CLK
@@ -104,7 +109,7 @@ modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
 sel <= sel.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testeparams|divisor:inst4
+|sipo_ada|divisor:inst4
 clkPlaca => ff[24].CLK
 clkPlaca => ff[23].CLK
 clkPlaca => ff[22].CLK
@@ -134,53 +139,131 @@ clkPlaca => fft.CLK
 clock1HZ <= fft.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testeparams|contadorfm:inst7
-clock1s => _.IN1
-clock1s => _.IN0
-clock1s => v1[3].CLK
-clock1s => v1[2].CLK
-clock1s => v1[1].CLK
-clock1s => v1[0].CLK
-clk_placa => v3[3].CLK
-clk_placa => v3[2].CLK
-clk_placa => v3[1].CLK
-clk_placa => v3[0].CLK
-clk_placa => v4[3].CLK
-clk_placa => v4[2].CLK
-clk_placa => v4[1].CLK
-clk_placa => v4[0].CLK
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-s3 => _.IN0
-s3 => _.IN0
-s3 => fft.CLK
-s4 => _.IN0
-s4 => _.IN0
-sw1 => _.IN0
-sw1 => _.IN0
-sw2 => _.IN0
-sw2 => _.IN0
+|sipo_ada|intermed:inst
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+clock => _.IN1
+sel => _.IN0
+sel => sipo:uni.sel
+sel => sipo:dez.sel
+sel => sipo:cem.sel
+sel => sipo:mil.sel
+s4 => fft.CLK
+a[0] <= sipo:uni.q[0]
+a[1] <= sipo:uni.q[1]
+a[2] <= sipo:uni.q[2]
+a[3] <= sipo:uni.q[3]
+b[0] <= sipo:dez.q[0]
+b[1] <= sipo:dez.q[1]
+b[2] <= sipo:dez.q[2]
+b[3] <= sipo:dez.q[3]
+c[0] <= sipo:cem.q[0]
+c[1] <= sipo:cem.q[1]
+c[2] <= sipo:cem.q[2]
+c[3] <= sipo:cem.q[3]
+d[0] <= sipo:mil.q[0]
+d[1] <= sipo:mil.q[1]
+d[2] <= sipo:mil.q[2]
+d[3] <= sipo:mil.q[3]
+
+
+|sipo_ada|intermed:inst|sipo:uni
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => plusone.CLK
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
 sel => _.IN1
 sel => _.IN0
+load[0] => _.IN1
+load[1] => _.IN1
+load[2] => _.IN1
+load[3] => _.IN1
+q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|intermed:inst|sipo:dez
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => plusone.CLK
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+sel => _.IN1
 sel => _.IN0
-dig1[0] <= dig1[0].DB_MAX_OUTPUT_PORT_TYPE
-dig1[1] <= dig1[1].DB_MAX_OUTPUT_PORT_TYPE
-dig1[2] <= dig1[2].DB_MAX_OUTPUT_PORT_TYPE
-dig1[3] <= dig1[3].DB_MAX_OUTPUT_PORT_TYPE
-dig2[0] <= dig2[0].DB_MAX_OUTPUT_PORT_TYPE
-dig2[1] <= dig2[1].DB_MAX_OUTPUT_PORT_TYPE
-dig2[2] <= dig2[2].DB_MAX_OUTPUT_PORT_TYPE
-dig2[3] <= dig2[3].DB_MAX_OUTPUT_PORT_TYPE
-dig3[0] <= dig3[0].DB_MAX_OUTPUT_PORT_TYPE
-dig3[1] <= dig3[1].DB_MAX_OUTPUT_PORT_TYPE
-dig3[2] <= dig3[2].DB_MAX_OUTPUT_PORT_TYPE
-dig3[3] <= dig3[3].DB_MAX_OUTPUT_PORT_TYPE
-dig4[0] <= dig4[0].DB_MAX_OUTPUT_PORT_TYPE
-dig4[1] <= dig4[1].DB_MAX_OUTPUT_PORT_TYPE
-dig4[2] <= dig4[2].DB_MAX_OUTPUT_PORT_TYPE
-dig4[3] <= dig4[3].DB_MAX_OUTPUT_PORT_TYPE
+load[0] => _.IN1
+load[1] => _.IN1
+load[2] => _.IN1
+load[3] => _.IN1
+q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|intermed:inst|sipo:cem
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => plusone.CLK
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+sel => _.IN1
+sel => _.IN0
+load[0] => _.IN1
+load[1] => _.IN1
+load[2] => _.IN1
+load[3] => _.IN1
+q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|intermed:inst|sipo:mil
+clock => count[3].CLK
+clock => count[2].CLK
+clock => count[1].CLK
+clock => count[0].CLK
+clock => plusone.CLK
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+load_ena => _.IN0
+sel => _.IN1
+sel => _.IN0
+load[0] => _.IN1
+load[1] => _.IN1
+load[2] => _.IN1
+load[3] => _.IN1
+q[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+q[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
 
 

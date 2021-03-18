@@ -9,14 +9,21 @@ subdesign parametrosfm
 BEGIN
 	
 	if sel == VCC then    %crescente% 
-		if v1[] < 5 and v2[] < 5 and v3[] < 5 then  %inicializador%
-			if v4[] < 5  then
+		if v1[] < 5 and v2[] < 7 and v3[] < 8 then  %inicializador%
+			if v4[] == 0  then
+				out4[] = 0;
+				out3[] = 8;
+				out2[] = 7;
 				out1[] = 5;
 				inferior = VCC;
 			else
 				inferior = GND;
+				out1[] = v1[];
+				out2[] = v2[];
+				out3[] = v3[];
+				out4[] = v4[];
 			end if;
-		elsif v4[] == 1 & v3[] == 0 & v2[] == 8 & v1[] == 1 then %limite superior%
+		elsif v4[] == 1 & v3[] == 0 & v2[] == 8 & v1[] == 0 then %limite superior%
 			out4[] = 0;
 			out3[] = 8;
 			out2[] = 7;

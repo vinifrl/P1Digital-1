@@ -7,12 +7,12 @@ subdesign MUXamfm
 )
 BEGIN
     if sw1 == VCC then
-        out1[] = 1dam[];
+      out1[] = 1dam[];
 		out2[] = 2dam[];
 		out3[] = 3dam[];
 		out4[] = 4dam[];
     else
-        out1[] = 1dfm[];
+      out1[] = 1dfm[];
 		out2[] = 2dfm[];
 		out3[] = 3dfm[];
 		out4[] = 4dfm[];

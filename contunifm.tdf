@@ -3,7 +3,7 @@ subdesign contunifm
 	modofav, clockmais, clockmenos		: INPUT;
 	s3, s4, inferior		 					: input; %seletor de controle (decrescente/crescente)%
 	sw1, sw2, sel								: INPUT; %switches amfm, modo gravação e seletor de a/d%
-	v2[3..0], v3[3..0], v4[3..0]			: INPUT;
+	--v2[3..0]										: INPUT;
 	dig[3..0], maisum, menosum				: output; %valor de Saida, primeiro digito começando da direita%
 )
 
@@ -29,15 +29,9 @@ BEGIN
 	if (sw2 == GND & sw1 == GND & modofav == GND & ena != cres) then 	%só acontece caso fora do modo gravação e sw1 em fm%
 		if sel == VCC & s3 == GND then				--caso de acresimo 87.5 -> 108.0%   %adicionar condição de botão ser apertado
 			v1[].clk = clockmais;
-			if q[] <= 4 and v2[] < 7 and v3[] < 8 then  %inicializador%
-				if v4[] == 0  then
-					saida_aux[] = 5;
-					maisum = GND;
-				else
-					d[] = saida_aux[];
-					maisum = GND;
-				end if;
-			else
+--			if inferior == VCC then
+--				d[] = v2[];
+--			else
 				d[] = saida_aux[] + 1;
 					IF v1[].q == 10 THEN %caso de contagem crescente de 9 -> 0%
 						saida_aux[] = 0;
@@ -46,7 +40,7 @@ BEGIN
 						saida_aux[] = v1[].q;
 						maisum = GND;
 					end if;
-			end if;
+--			end if;
 		ELSE
 			IF ena == VCC THEN
 				v1[].clk = clockmenos;
