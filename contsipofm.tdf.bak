@@ -1,5 +1,5 @@
 INCLUDE "sipo.inc";  --contador mod 10
-subdesign intermed
+subdesign contfm
 (
 	clock, sel[1..0]								: INPUT;
 	a[3..0], b[3..0], c[3..0], d[3..0]		: OUTPUT;
@@ -7,7 +7,7 @@ subdesign intermed
 VARIABLE
 	uni, dez, cem, mil	: sipo;
 BEGIN
-	--if sw1 == GND then
+	if sw1 == GND then
 		if sel[] == B"10" then   --tá acrescendo em s3, era pra ser s4   entrando no modo acrescimo e ena age para confirmar que s4 foi apertado
 			uni.clock=clock;
 			if mil.q[] < 1 & cem.q[] <=7  then				-- caso de load
@@ -94,12 +94,12 @@ BEGIN
 			cem.load_ena=GND;
 			mil.load_ena=GND;
 		end if;
-	--else 
+	else 
 		uni.load_ena=GND;
 		dez.load_ena=GND;
 		cem.load_ena=GND;
 		mil.load_ena=GND;
-	--end if;	
+	end if;	
 		
 	
 	

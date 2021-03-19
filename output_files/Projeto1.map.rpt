@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Projeto1
-Thu Mar 18 19:05:58 2021
+Fri Mar 19 17:59:10 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -13,10 +13,11 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. Logic Cells Representing Combinational Loops
+  9. General Register Statistics
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +44,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 18 19:05:58 2021       ;
+; Analysis & Synthesis Status        ; Successful - Fri Mar 19 17:59:10 2021       ;
 ; Quartus Prime Version              ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                      ; Projeto1                                    ;
-; Top-level Entity Name              ; sipo_ada                                    ;
+; Top-level Entity Name              ; blocoproj                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 182                                         ;
-;     Total combinational functions  ; 182                                         ;
-;     Dedicated logic registers      ; 75                                          ;
-; Total registers                    ; 75                                          ;
-; Total pins                         ; 17                                          ;
+; Total logic elements               ; 397                                         ;
+;     Total combinational functions  ; 393                                         ;
+;     Dedicated logic registers      ; 139                                         ;
+; Total registers                    ; 139                                         ;
+; Total pins                         ; 18                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -66,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE6E22C8        ;                    ;
-; Top-level entity name                                            ; sipo_ada           ; Projeto1           ;
+; Top-level entity name                                            ; blocoproj          ; Projeto1           ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -164,19 +165,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                           ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                 ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
-; intermed.tdf                     ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/intermed.tdf ;         ;
-; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf  ;         ;
-; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf  ;         ;
-; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf  ;         ;
-; sipo.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/sipo.tdf     ;         ;
-; sipo_ada.bdf                     ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/sipo_ada.bdf ;         ;
-; sipo.inc                         ; yes             ; Auto-Found AHDL File               ; D:/Estudo/Eletrônica Digital/P1/sipo.inc     ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
+; display.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/display.tdf                      ;         ;
+; divisor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/divisor.tdf                      ;         ;
+; seletor.tdf                      ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/seletor.tdf                      ;         ;
+; blocoproj.bdf                    ; yes             ; User Block Diagram/Schematic File  ; D:/Estudo/Eletrônica Digital/P1/blocoproj.bdf                    ;         ;
+; debouncers/debouncer_monitor.tdf ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/debouncers/debouncer_monitor.tdf ;         ;
+; sipo.tdf                         ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/sipo.tdf                         ;         ;
+; contsipofm.tdf                   ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/contsipofm.tdf                   ;         ;
+; contsipoam.tdf                   ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/contsipoam.tdf                   ;         ;
+; MUXamfmfav.tdf                   ; yes             ; User AHDL File                     ; D:/Estudo/Eletrônica Digital/P1/MUXamfmfav.tdf                   ;         ;
+; sipo.inc                         ; yes             ; Auto-Found AHDL File               ; D:/Estudo/Eletrônica Digital/P1/sipo.inc                         ;         ;
++----------------------------------+-----------------+------------------------------------+------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------------+
@@ -184,49 +188,83 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 182               ;
+; Estimated Total logic elements              ; 397               ;
 ;                                             ;                   ;
-; Total combinational functions               ; 182               ;
+; Total combinational functions               ; 393               ;
 ; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 101               ;
-;     -- 3 input functions                    ; 19                ;
-;     -- <=2 input functions                  ; 62                ;
+;     -- 4 input functions                    ; 209               ;
+;     -- 3 input functions                    ; 76                ;
+;     -- <=2 input functions                  ; 108               ;
 ;                                             ;                   ;
 ; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 136               ;
-;     -- arithmetic mode                      ; 46                ;
+;     -- normal mode                          ; 313               ;
+;     -- arithmetic mode                      ; 80                ;
 ;                                             ;                   ;
-; Total registers                             ; 75                ;
-;     -- Dedicated logic registers            ; 75                ;
+; Total registers                             ; 139               ;
+;     -- Dedicated logic registers            ; 139               ;
 ;     -- I/O registers                        ; 0                 ;
 ;                                             ;                   ;
-; I/O pins                                    ; 17                ;
+; I/O pins                                    ; 18                ;
 ;                                             ;                   ;
 ; Embedded Multiplier 9-bit elements          ; 0                 ;
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; Clock_Placa~input ;
-; Maximum fan-out                             ; 53                ;
-; Total fan-out                               ; 807               ;
-; Average fan-out                             ; 2.77              ;
+; Maximum fan-out                             ; 97                ;
+; Total fan-out                               ; 1669              ;
+; Average fan-out                             ; 2.94              ;
 +---------------------------------------------+-------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
-; |sipo_ada                  ; 182 (0)             ; 75 (0)                    ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |sipo_ada                        ; sipo_ada    ; work         ;
-;    |display:inst6|         ; 79 (79)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|display:inst6          ; display     ; work         ;
-;    |divisor:inst4|         ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|divisor:inst4          ; divisor     ; work         ;
-;    |intermed:inst|         ; 66 (15)             ; 20 (1)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst          ; intermed    ; work         ;
-;       |sipo:cem|           ; 14 (14)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:cem ; sipo        ; work         ;
-;       |sipo:dez|           ; 13 (13)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:dez ; sipo        ; work         ;
-;       |sipo:mil|           ; 11 (11)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:mil ; sipo        ; work         ;
-;       |sipo:uni|           ; 13 (13)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|intermed:inst|sipo:uni ; sipo        ; work         ;
-;    |seletor:inst5|         ; 3 (3)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |sipo_ada|seletor:inst5          ; seletor     ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                  ; Entity Name       ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+-------------------+--------------+
+; |blocoproj                    ; 393 (0)             ; 139 (0)                   ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |blocoproj                           ; blocoproj         ; work         ;
+;    |MUXamfmfav:inst|          ; 34 (34)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|MUXamfmfav:inst           ; MUXamfmfav        ; work         ;
+;    |contsipoam:inst6|         ; 86 (27)             ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipoam:inst6          ; contsipoam        ; work         ;
+;       |sipo:cem|              ; 18 (18)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipoam:inst6|sipo:cem ; sipo              ; work         ;
+;       |sipo:dez|              ; 16 (16)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipoam:inst6|sipo:dez ; sipo              ; work         ;
+;       |sipo:mil|              ; 10 (10)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipoam:inst6|sipo:mil ; sipo              ; work         ;
+;       |sipo:uni|              ; 15 (15)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipoam:inst6|sipo:uni ; sipo              ; work         ;
+;    |contsipofm:inst7|         ; 93 (30)             ; 19 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipofm:inst7          ; contsipofm        ; work         ;
+;       |sipo:cem|              ; 18 (18)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipofm:inst7|sipo:cem ; sipo              ; work         ;
+;       |sipo:dez|              ; 19 (19)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipofm:inst7|sipo:dez ; sipo              ; work         ;
+;       |sipo:mil|              ; 12 (12)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipofm:inst7|sipo:mil ; sipo              ; work         ;
+;       |sipo:uni|              ; 14 (14)             ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|contsipofm:inst7|sipo:uni ; sipo              ; work         ;
+;    |debouncer_monitor:inst12| ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|debouncer_monitor:inst12  ; debouncer_monitor ; work         ;
+;    |debouncer_monitor:inst13| ; 27 (27)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|debouncer_monitor:inst13  ; debouncer_monitor ; work         ;
+;    |display:inst2|            ; 79 (79)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|display:inst2             ; display           ; work         ;
+;    |divisor:inst4|            ; 34 (34)             ; 26 (26)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|divisor:inst4             ; divisor           ; work         ;
+;    |seletor:inst3|            ; 13 (13)             ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |blocoproj|seletor:inst3             ; seletor           ; work         ;
++-------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; MUXamfmfav:inst|out1[0]~31                             ;    ;
+; MUXamfmfav:inst|out2[0]~31                             ;    ;
+; MUXamfmfav:inst|out3[0]~31                             ;    ;
+; MUXamfmfav:inst|out4[0]~31                             ;    ;
+; MUXamfmfav:inst|out1[1]~30                             ;    ;
+; MUXamfmfav:inst|out2[1]~30                             ;    ;
+; MUXamfmfav:inst|out3[1]~30                             ;    ;
+; MUXamfmfav:inst|out4[1]~30                             ;    ;
+; MUXamfmfav:inst|out1[2]~29                             ;    ;
+; MUXamfmfav:inst|out2[2]~29                             ;    ;
+; MUXamfmfav:inst|out3[2]~29                             ;    ;
+; MUXamfmfav:inst|out4[2]~29                             ;    ;
+; MUXamfmfav:inst|out1[3]~28                             ;    ;
+; MUXamfmfav:inst|out2[3]~28                             ;    ;
+; MUXamfmfav:inst|out3[3]~28                             ;    ;
+; MUXamfmfav:inst|out4[3]~28                             ;    ;
+; Number of logic cells representing combinational loops ; 16 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------+
@@ -234,12 +272,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 75    ;
-; Number of registers using Synchronous Clear  ; 48    ;
+; Total registers                              ; 139   ;
+; Number of registers using Synchronous Clear  ; 84    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 2     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -249,22 +287,23 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 17                          ;
-; cycloneiii_ff         ; 75                          ;
-;     SCLR              ; 48                          ;
-;     plain             ; 27                          ;
-; cycloneiii_lcell_comb ; 187                         ;
-;     arith             ; 46                          ;
-;         2 data inputs ; 44                          ;
-;         3 data inputs ; 2                           ;
-;     normal            ; 141                         ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 101                         ;
+; boundary_port         ; 18                          ;
+; cycloneiii_ff         ; 139                         ;
+;     ENA               ; 2                           ;
+;     SCLR              ; 84                          ;
+;     plain             ; 53                          ;
+; cycloneiii_lcell_comb ; 398                         ;
+;     arith             ; 80                          ;
+;         2 data inputs ; 76                          ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 318                         ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 72                          ;
+;         4 data inputs ; 209                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.64                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 4.01                        ;
 +-----------------------+-----------------------------+
 
 
@@ -273,7 +312,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -283,7 +322,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Mar 18 19:05:48 2021
+    Info: Processing started: Fri Mar 19 17:58:58 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Projeto1 -c Projeto1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -294,6 +333,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file display
     Info (12023): Found entity 1: display File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file divisor.tdf
     Info (12023): Found entity 1: divisor File: D:/Estudo/Eletrônica Digital/P1/divisor.tdf Line: 1
+Warning (287002): Group MSB sel1 overrides BIT0 = LSB in actual or default Options Statement File: D:/Estudo/Eletrônica Digital/P1/seletor.tdf Line: 6
 Info (12021): Found 1 design units, including 1 entities, in source file seletor.tdf
     Info (12023): Found entity 1: seletor File: D:/Estudo/Eletrônica Digital/P1/seletor.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file muxamfm.tdf
@@ -312,14 +352,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file paramet
     Info (12023): Found entity 1: parametrosfm File: D:/Estudo/Eletrônica Digital/P1/parametrosfm.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file contfm.tdf
     Info (12023): Found entity 1: contfm File: D:/Estudo/Eletrônica Digital/P1/contfm.tdf Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contunifm.tdf
-    Info (12023): Found entity 1: contunifm File: D:/Estudo/Eletrônica Digital/P1/contunifm.tdf Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contdezfm.tdf
-    Info (12023): Found entity 1: contdezfm File: D:/Estudo/Eletrônica Digital/P1/contdezfm.tdf Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contcemfm.tdf
-    Info (12023): Found entity 1: contcemfm File: D:/Estudo/Eletrônica Digital/P1/contcemfm.tdf Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file contmilfm.tdf
-    Info (12023): Found entity 1: contmilfm File: D:/Estudo/Eletrônica Digital/P1/contmilfm.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file debouncers/debouncer_monitor.tdf
     Info (12023): Found entity 1: debouncer_monitor File: D:/Estudo/Eletrônica Digital/P1/debouncers/debouncer_monitor.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testeparams.bdf
@@ -327,33 +359,40 @@ Info (12021): Found 1 design units, including 1 entities, in source file testepa
 Warning (287013): Variable or input pin "maisum" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file contadorfm.tdf
     Info (12023): Found entity 1: contadorfm File: D:/Estudo/Eletrônica Digital/P1/contadorfm.tdf Line: 3
+Warning (287002): Group MSB sel1 overrides BIT0 = LSB in actual or default Options Statement File: D:/Estudo/Eletrônica Digital/P1/sipo.tdf Line: 3
+Warning (287004): Group name "sel" is missing brackets ([ ]) File: D:/Estudo/Eletrônica Digital/P1/sipo.tdf Line: 24
 Info (12021): Found 1 design units, including 1 entities, in source file sipo.tdf
     Info (12023): Found entity 1: sipo File: D:/Estudo/Eletrônica Digital/P1/sipo.tdf Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sipo_ada.bdf
     Info (12023): Found entity 1: sipo_ada
-Info (12127): Elaborating entity "sipo_ada" for the top level hierarchy
-Info (12128): Elaborating entity "display" for hierarchy "display:inst6"
-Warning (287013): Variable or input pin "seletor" is defined but never used. File: D:/Estudo/Eletrônica Digital/P1/display.tdf Line: 4
-Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst5"
+Info (12021): Found 1 design units, including 1 entities, in source file contsipofm.tdf
+    Info (12023): Found entity 1: contsipofm File: D:/Estudo/Eletrônica Digital/P1/contsipofm.tdf Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file contsipoam.tdf
+    Info (12023): Found entity 1: contsipoam File: D:/Estudo/Eletrônica Digital/P1/contsipoam.tdf Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file muxamfmfav.tdf
+    Info (12023): Found entity 1: MUXamfmfav File: D:/Estudo/Eletrônica Digital/P1/MUXamfmfav.tdf Line: 1
+Info (12127): Elaborating entity "blocoproj" for the top level hierarchy
+Warning (275011): Block or symbol "NOT" of instance "inst11" overlaps another block or symbol
+Info (12128): Elaborating entity "seletor" for hierarchy "seletor:inst3"
+Info (12128): Elaborating entity "debouncer_monitor" for hierarchy "debouncer_monitor:inst12"
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:inst4"
-Info (12128): Elaborating entity "intermed" for hierarchy "intermed:inst"
-Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:uni" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
-Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:dez" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
-Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:cem" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
-Info (12128): Elaborating entity "sipo" for hierarchy "intermed:inst|sipo:mil" File: D:/Estudo/Eletrônica Digital/P1/intermed.tdf Line: 8
+Info (12128): Elaborating entity "display" for hierarchy "display:inst2"
+Info (12128): Elaborating entity "MUXamfmfav" for hierarchy "MUXamfmfav:inst"
+Info (12128): Elaborating entity "contsipoam" for hierarchy "contsipoam:inst6"
+Info (12128): Elaborating entity "sipo" for hierarchy "contsipoam:inst6|sipo:uni" File: D:/Estudo/Eletrônica Digital/P1/contsipoam.tdf Line: 8
+Info (12128): Elaborating entity "sipo" for hierarchy "contsipoam:inst6|sipo:mil" File: D:/Estudo/Eletrônica Digital/P1/contsipoam.tdf Line: 8
+Info (12128): Elaborating entity "contsipofm" for hierarchy "contsipofm:inst7"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "switch2"
-Info (21057): Implemented 199 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 415 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 12 output pins
-    Info (21061): Implemented 182 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4767 megabytes
-    Info: Processing ended: Thu Mar 18 19:05:58 2021
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21059): Implemented 13 output pins
+    Info (21061): Implemented 397 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 4768 megabytes
+    Info: Processing ended: Fri Mar 19 17:59:10 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:22
 
 

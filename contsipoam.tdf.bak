@@ -1,5 +1,5 @@
 INCLUDE "sipo.inc";  --contador mod 10
-subdesign intermed
+subdesign contsipoam
 (
 	clock, sel[1..0]								: INPUT;
 	a[3..0], b[3..0], c[3..0], d[3..0]		: OUTPUT;

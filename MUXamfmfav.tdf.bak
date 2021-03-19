@@ -1,4 +1,4 @@
-subdesign MUXamfm
+subdesign MUXamfmfav
 (
 	sw1	: INPUT; %switches amfm%
    1dfm[3..0], 2dfm[3..0], 3dfm[3..0], 4dfm[3..0] 	: INPUT; %valor de Saida, primeiro digito começando da direita%

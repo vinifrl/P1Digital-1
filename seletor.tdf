@@ -3,41 +3,43 @@ subdesign seletor
     s3, s4, sw2          : input;       %seletor crescente decrescente e switch modo gravação% 
     clock1s              : input;       %clock de 1 s para entrar no modo dos favoritos%
     modofav              : output;      %saber se o modo favoritos está ativado%
-    sel                  : output;      %define se é a/d%
+    sel[0..1]            : output;      %define se é a/d, ac e dec  indicam se o acrescimo ou decrescimo estao ativados%
 )
 VARIABLE
     ffta , fftd         :TFF;          %fft usado para criar sinal constante após apertar botão(acresimo e decrescimo)%
     ffd[1..0]           :DFF;          %flip flops que irao fazer a contagem%
     %q[10..0]             :NODE;%
-	 dec, ac					:NODE;   %indicam se o acrescimo ou decrescimo estao ativados%
+	ac, dec 					: node;%indicam se o acrescimo ou decrescimo estao ativados%
 begin
-   fftd.clk = s3;
-	fftd.t = VCC;
-   %saidafftd = !fftd.q;  %              %começa a contagem em VCC%
-   dec = !fftd.q;                      %ativado o sinal decrescente%
-    
-   ffta.clk = s4;
-	ffta.t = VCC;
-   %saidaffta = !ffta.q;%                %começa a contagem em VCC%
-   ac = !ffta.q;                       %ativado o sinal crescente%
+	if sw2 == GND then   -- verificando que não está no modo gravação
+		fftd.clk = s3;
+		fftd.t = VCC;
+		%saidafftd = !fftd.q;  %              %começa a contagem em VCC%
+		dec = !fftd.q;                      %ativado o sinal decrescente%
+		 
+		ffta.clk = s4;
+		ffta.t = VCC;
+		%saidaffta = !ffta.q;%                %começa a contagem em VCC%
+		ac = !ffta.q;                       %ativado o sinal crescente%
 
-   ffd[].clk = clock1s;
-   %q[] = ffd[].q;%
-    
-   IF (dec == VCC & ac == GND) THEN                  %seletor para os casos decrescentes%
-		sel = VCC;
-	ELSIF (ac == VCC & dec == GND) THEN               %seletor para os casos crescentes%
-		sel = GND;
-   ELSIF (s3 & s4 == VCC & sw2 == GND) THEN                     %caso para entrar na memória%
-		if ffd[].q > 2 then
-			modofav = VCC;
-			ffd[].d = ffd[].q;
-		else
-			ffd[].d = ffd[].q + 1;
+		ffd[].clk = clock1s;
+		%q[] = ffd[].q;%
+		 
+		IF (dec == VCC & ac == GND) THEN                  --seletor para os casos decrescentes, mas na prática esta crescendo
+			sel[] = 1;
+		ELSIF (ac == VCC & dec == GND) THEN               --seletor para os casos crescentes, mas na prática esta decrescendo
+			sel[] = 2;
+		ELSIF (s3 & s4 == VCC) THEN                     %caso para entrar na memória%
+			if ffd[].q > 2 then
+				modofav = VCC;
+				ffd[].d = ffd[].q;
+			else
+				ffd[].d = ffd[].q + 1;
+			end if;
+		elsif (s3 # s4 == GND) then
+				ffd[].d = 0;
+				modofav = GND;
 		end if;
-	elsif (s3 # s4 == GND) then
-			ffd[].d = 0;
-			modofav = GND;
-   end if;
+	end if;
 
  END;

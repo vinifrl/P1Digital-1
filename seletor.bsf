@@ -62,9 +62,9 @@ https://fpgasoftware.intel.com/eula.
 	(port
 		(pt 168 48)
 		(output)
-		(text "sel" (rect 0 0 10 12)(font "Arial" ))
-		(text "sel" (rect 137 43 147 55)(font "Arial" ))
-		(line (pt 168 48)(pt 152 48)(line_width 1))
+		(text "sel[1..0]" (rect 0 0 29 12)(font "Arial" ))
+		(text "sel[1..0]" (rect 118 43 147 55)(font "Arial" ))
+		(line (pt 168 48)(pt 152 48)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 152 96)(line_width 1))

@@ -2,148 +2,76 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'divisor:inst4|fft'
-Slack : -7.930
-TNS   : -133.924
+Type  : Slow 1200mV 85C Model Setup 'switch2'
+Slack : -8.947
+TNS   : -331.554
 
 Type  : Slow 1200mV 85C Model Setup 'Clock_Placa'
-Slack : -4.582
-TNS   : -177.249
+Slack : -3.675
+TNS   : -308.345
 
-Type  : Slow 1200mV 85C Model Setup 'button3'
-Slack : 0.114
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Setup 'button4'
-Slack : 0.114
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'divisor:inst4|fft'
-Slack : 0.314
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Hold 'switch2'
+Slack : -0.056
+TNS   : -0.056
 
 Type  : Slow 1200mV 85C Model Hold 'Clock_Placa'
-Slack : 0.434
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'button3'
-Slack : 0.497
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'button4'
-Slack : 0.497
+Slack : 0.432
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -81.811
+TNS   : -147.239
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button4'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -5.974
+TNS   : -139.506
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'button3'
-Slack : -3.000
-TNS   : -4.487
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'divisor:inst4|fft'
-Slack : -1.487
-TNS   : -28.911
-
-Type  : Slow 1200mV 0C Model Setup 'divisor:inst4|fft'
-Slack : -7.431
-TNS   : -125.427
+Type  : Slow 1200mV 0C Model Setup 'switch2'
+Slack : -8.452
+TNS   : -311.209
 
 Type  : Slow 1200mV 0C Model Setup 'Clock_Placa'
-Slack : -4.294
-TNS   : -161.964
+Slack : -3.360
+TNS   : -281.415
 
-Type  : Slow 1200mV 0C Model Setup 'button3'
-Slack : 0.210
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'button4'
-Slack : 0.210
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'divisor:inst4|fft'
-Slack : 0.141
-TNS   : 0.000
+Type  : Slow 1200mV 0C Model Hold 'switch2'
+Slack : -0.189
+TNS   : -0.189
 
 Type  : Slow 1200mV 0C Model Hold 'Clock_Placa'
-Slack : 0.383
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'button3'
-Slack : 0.447
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Hold 'button4'
-Slack : 0.447
+Slack : 0.382
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -81.811
+TNS   : -147.239
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button4'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -5.974
+TNS   : -128.536
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'button3'
-Slack : -3.000
-TNS   : -4.487
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'divisor:inst4|fft'
-Slack : -1.487
-TNS   : -31.400
-
-Type  : Fast 1200mV 0C Model Setup 'divisor:inst4|fft'
-Slack : -2.763
-TNS   : -46.068
+Type  : Fast 1200mV 0C Model Setup 'switch2'
+Slack : -3.430
+TNS   : -122.250
 
 Type  : Fast 1200mV 0C Model Setup 'Clock_Placa'
-Slack : -1.370
-TNS   : -44.278
+Slack : -0.959
+TNS   : -74.677
 
-Type  : Fast 1200mV 0C Model Setup 'button3'
-Slack : 0.624
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'button4'
-Slack : 0.624
+Type  : Fast 1200mV 0C Model Hold 'switch2'
+Slack : 0.118
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'Clock_Placa'
-Slack : 0.179
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'divisor:inst4|fft'
-Slack : 0.193
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'button3'
-Slack : 0.206
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'button4'
-Slack : 0.206
+Slack : 0.160
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -59.402
+TNS   : -106.281
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button4'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -5.081
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'button3'
-Slack : -3.000
-TNS   : -4.057
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'divisor:inst4|fft'
-Slack : -1.000
-TNS   : -19.000
+TNS   : -73.282
 
 ------------------------------------------------------------

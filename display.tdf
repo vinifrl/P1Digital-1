@@ -1,7 +1,7 @@
 SUBDESIGN display
 (
 a[3..0], b[3..0], c[3..0], d[3..0]	: INPUT;
-seletor, sw1 								: INPUT; 
+sw1 								: INPUT; 
 clock											: INPUT;
 out[0..7]									: OUTPUT;
 dig[3..0]									: OUTPUT;
