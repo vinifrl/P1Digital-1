@@ -4,17 +4,9 @@
 
 ->no modo gravação (sw2 on) s3 e s4 simultaneos por 2 segundos deve salvar a estação atual que está sendo exibida no display.
 
-#Funções necessárias
+#Bugs
+- Limites, principalmente os superiores
 
--contador baseado em chave 540/1600 e 87.5->108.0 crescente e decrescente(0.5s)
-
--conectar com display 7seg
-
--modo de gravação
-
--gravação de memória 2 estação para cada switch
-
--navegação na mémoria
 
 -substituir memória baseado na estação
 ![image](https://user-images.githubusercontent.com/65169791/110365148-6fa18880-8023-11eb-9f69-09cf61254200.png)
