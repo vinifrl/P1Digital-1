@@ -1,0 +1,84 @@
+subdesign testmux --pode estar dando erro pq tá dando erro na gravação ou no display dos favoritos
+(
+	sw1, sw2, s3, s4, modofav, clock1s, clockplaca	: INPUT; %switches amfm e indicador de modo favorito%
+   out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
+	teste[0..2] : output;
+)
+variable
+	fav31fm[3..0], fav32fm[3..0], fav33fm[3..0], fav34fm[3..0]	: dff; %valor armazenado do favorito 3 fm%
+	fav41fm[3..0], fav42fm[3..0], fav43fm[3..0], fav44fm[3..0]	: dff; %valor armazenado do favorito 4 fm%
+	fav31am[3..0], fav32am[3..0], fav33am[3..0], fav34am[3..0]	: dff; %valor armazenado do favorito 3 am%
+	fav41am[3..0], fav42am[3..0], fav43am[3..0], fav44am[3..0]	: dff; %valor armazenado do favorito 4 am%
+BEGIN
+	fav41am[].clk = clockplaca;
+	fav42am[].clk = clockplaca;
+	fav43am[].clk = clockplaca;
+	fav44am[].clk = clockplaca;
+	fav31am[].clk = clockplaca;
+	fav32am[].clk = clockplaca;
+	fav33am[].clk = clockplaca;
+	fav34am[].clk = clockplaca;
+	fav41fm[].clk = clockplaca;
+	fav42fm[].clk = clockplaca;
+	fav43fm[].clk = clockplaca;
+	fav44fm[].clk = clockplaca;
+	fav31fm[].clk = clockplaca;
+	fav32fm[].clk = clockplaca;
+	fav33fm[].clk = clockplaca;
+	fav34fm[].clk = clockplaca;
+	
+	fav41am[].d = 9;
+	fav42am[].d = 9;
+	fav43am[].d = 8;
+	fav44am[].d = 0;
+	fav31am[].d = 1;
+	fav32am[].d = 5;
+	fav33am[].d = 0;
+	fav34am[].d = 1;
+ 
+	if sw2 == VCC  & modofav == GND then %entrando no modo de gravação%
+			if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
+				fav31fm[].d = 1dfm[];
+				fav32fm[].d = 2dfm[];
+				fav33fm[].d = 3dfm[];
+				fav34fm[].d = 4dfm[];
+				teste[2] = GND;
+				teste[1] = VCC;
+			elsif s4 == VCC & s3 == GND then 	%botão s4 apertado para gravar um favorito%
+				fav41fm[].d = 1dfm[];
+				fav42fm[].d = 2dfm[];
+				fav43fm[].d = 3dfm[];
+				fav44fm[].d = 4dfm[];
+				teste[1] = GND;
+				teste[2] = VCC;
+			end if;  						--talvez tenha q criar o else com os favs recebendo eles mesmos
+	
+	elsif modofav == VCC & sw2 == gnd then    			%entrando no modo favorito%
+		teste[0] = VCC;
+		if clock1s == VCC then						--alternará qual favorito será mostrado a cada 1s
+			out1[] = fav31fm[].q;
+			out2[] = fav32fm[].q;
+			out3[] = fav33fm[].q;
+			out4[] = fav34fm[].q;
+		else
+			out1[] = fav41fm[].q;
+			out2[] = fav42fm[].q;
+			out3[] = fav43fm[].q;
+			out4[] = fav44fm[].q;
+		end if;
+	
+	else 
+		out1[] = out1[];
+		out2[] = out2[];
+		out3[] = out3[];
+		out4[] = out4[];
+		fav41fm[].d = fav41fm[].q;
+		fav42fm[].d = fav42fm[].q;
+		fav43fm[].d = fav43fm[].q;
+		fav44fm[].d = fav44fm[].q;
+		fav31fm[].d = fav31fm[].q;
+		fav32fm[].d = fav32fm[].q;
+		fav33fm[].d = fav33fm[].q;
+		fav34fm[].d = fav34fm[].q;
+	end if;
+end;

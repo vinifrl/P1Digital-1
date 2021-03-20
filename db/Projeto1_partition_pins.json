@@ -4,10 +4,6 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "led0",
-					"strict" : false
-				},
-				{
 					"name" : "dig[3]",
 					"strict" : false
 				},
@@ -21,6 +17,18 @@
 				},
 				{
 					"name" : "dig[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
 					"strict" : false
 				},
 				{
