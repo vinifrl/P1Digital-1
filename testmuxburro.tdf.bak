@@ -1,4 +1,4 @@
-subdesign testmux --pode estar dando erro pq tá dando erro na gravação ou no display dos favoritos
+subdesign testmuxburro --pode estar dando erro pq tá dando erro na gravação ou no display dos favoritos
 (
 	sw1, sw2, s3, s4, modofav, clock1s, clockplaca	: INPUT; %switches amfm e indicador de modo favorito%
 	in1[3..0], in2[3..0], in3[3..0], in4[3..0]   	: INPUT;
@@ -51,8 +51,8 @@ BEGIN
 	elsif sw2 == VCC  & modofav == GND then %entrando no modo de gravação%
 			if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
 				fav31fm[] = burroino1[];
-				fav32fm[] = burroino2[];		-- recebendo um auxiliar ligado aos inputs, que é o contador
-				fav33fm[] = burroino3[]; 		-- tentamos com e sem auxiliar e n funcionou
+				fav32fm[] = burroino2[];
+				fav33fm[] = burroino3[];
 				fav34fm[] = burroino4[];
 				teste[2] = GND;
 				teste[1] = VCC;
@@ -69,12 +69,12 @@ BEGIN
 		teste[0] = VCC;
 		if clock1s == VCC then						--alternará qual favorito será mostrado a cada 1s
 			out1[] = burroino1[];
-			out2[] = burroino2[];  -- para esse caso, dá o resultado esperado
+			out2[] = burroino2[];
 			out3[] = burroino3[];
 			out4[] = burroino4[];
 		else
 			out1[] = fav31fm[];
-			out2[] = fav32fm[];			-- no entanto, pra esse caso, resulta em 0000
+			out2[] = fav32fm[];
 			out3[] = fav33fm[];
 			out4[] = fav34fm[];
 		end if;

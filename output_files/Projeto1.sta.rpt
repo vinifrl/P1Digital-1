@@ -1,5 +1,5 @@
 Timing Analyzer report for Projeto1
-Sat Mar 20 15:57:53 2021
+Sun Mar 21 14:05:55 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -105,14 +105,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.16        ;
+; Average used               ; 1.15        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   6.3%      ;
-;     Processor 3            ;   5.2%      ;
-;     Processor 4            ;   4.7%      ;
+;     Processor 2            ;   5.9%      ;
+;     Processor 3            ;   4.7%      ;
+;     Processor 4            ;   4.3%      ;
 +----------------------------+-------------+
 
 
@@ -1011,9 +1011,9 @@ No paths to report.
 ; 0.417 ; debouncer_monitor:inst13|COUNT[0]  ; debouncer_monitor:inst13|COUNT[0]  ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.072      ; 0.684      ;
 ; 0.417 ; debouncer_monitor:inst12|COUNT[0]  ; debouncer_monitor:inst12|COUNT[0]  ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.072      ; 0.684      ;
 ; 0.417 ; display:inst2|ff[0]                ; display:inst2|ff[0]                ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.072      ; 0.684      ;
-; 0.430 ; divisor:inst4|fft                  ; divisor:inst4|fft                  ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.044      ; 0.669      ;
 ; 0.430 ; debouncer_monitor:inst12|aux       ; debouncer_monitor:inst12|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.044      ; 0.669      ;
 ; 0.430 ; debouncer_monitor:inst13|aux       ; debouncer_monitor:inst13|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.044      ; 0.669      ;
+; 0.430 ; divisor:inst4|fft                  ; divisor:inst4|fft                  ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.044      ; 0.669      ;
 ; 0.451 ; debouncer_monitor:inst13|COUNT[18] ; debouncer_monitor:inst13|COUNT[18] ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.091      ; 0.737      ;
 ; 0.457 ; debouncer_monitor:inst12|COUNT[18] ; debouncer_monitor:inst12|COUNT[18] ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.072      ; 0.724      ;
 ; 0.469 ; debouncer_monitor:inst13|FF[0]     ; debouncer_monitor:inst13|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.470      ; 1.134      ;
@@ -1386,9 +1386,9 @@ No paths to report.
 ; 0.194 ; display:inst2|ff[0]                ; display:inst2|ff[0]                ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.036      ; 0.314      ;
 ; 0.197 ; debouncer_monitor:inst13|COUNT[18] ; debouncer_monitor:inst13|COUNT[18] ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.044      ; 0.325      ;
 ; 0.198 ; debouncer_monitor:inst12|COUNT[18] ; debouncer_monitor:inst12|COUNT[18] ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.036      ; 0.318      ;
+; 0.201 ; debouncer_monitor:inst13|aux       ; debouncer_monitor:inst13|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; debouncer_monitor:inst12|aux       ; debouncer_monitor:inst12|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.201 ; divisor:inst4|fft                  ; divisor:inst4|fft                  ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.022      ; 0.307      ;
-; 0.201 ; debouncer_monitor:inst13|aux       ; debouncer_monitor:inst13|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.022      ; 0.307      ;
 ; 0.223 ; debouncer_monitor:inst12|FF[1]     ; debouncer_monitor:inst12|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.289      ; 0.596      ;
 ; 0.230 ; debouncer_monitor:inst13|FF[1]     ; debouncer_monitor:inst13|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.289      ; 0.603      ;
 ; 0.247 ; debouncer_monitor:inst12|FF[0]     ; debouncer_monitor:inst12|aux       ; Clock_Placa  ; Clock_Placa ; 0.000        ; 0.288      ; 0.619      ;
@@ -1860,7 +1860,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Mar 20 15:57:51 2021
+    Info: Processing started: Sun Mar 21 14:05:53 2021
 Info: Command: quartus_sta Projeto1 -c Projeto1
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -2070,8 +2070,8 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 133 warnings
-    Info: Peak virtual memory: 4764 megabytes
-    Info: Processing ended: Sat Mar 20 15:57:53 2021
+    Info: Peak virtual memory: 4763 megabytes
+    Info: Processing ended: Sun Mar 21 14:05:55 2021
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
