@@ -1,0 +1,117 @@
+INCLUDE "continc.inc";  --contador mod 10 am
+subdesign contincam
+(
+	clock, sel[1..0], sw1, sw2					: INPUT;
+	a[3..0], b[3..0], c[3..0], d[3..0]		: OUTPUT;
+)
+VARIABLE
+	uni, dez, cem, mil	: continc;
+BEGIN
+	if sw1 == VCC & sw2 == gnd then
+		if sel[] == B"10" then   --caso crescente
+			uni.clock=clock;
+			if mil.q[] < 1 & cem.q[] <=4  then				-- caso de load
+				IF dez.q[] <= 3 THEN								-- limite inferior
+					if uni.q[] <= 0 then
+						uni.load_ena=VCC;	
+						dez.load_ena=VCC;
+						cem.load_ena=VCC;
+						mil.load_ena=VCC;
+						dez.clock=clock;
+						cem.clock=clock;
+						mil.clock=clock;
+					end if;
+				end if;
+			elsif mil.q[] >= 1 & cem.q[] >= 6 & dez.q[] == 0 & uni.q[] == 1 then
+		--		if cem.q[] >= 0 then
+		--			if dez.q[] >= 8 & uni.q[] >= 1 then
+							uni.load_ena=VCC;	
+							dez.load_ena=VCC;
+							cem.load_ena=VCC;
+							mil.load_ena=VCC;
+							dez.clock=clock;
+							cem.clock=clock;
+							mil.clock=clock;
+		--			end if;
+		--		end if;
+
+			ELSE									-- caso de contar normal
+				dez.clock = uni.maisum;	
+				cem.clock = dez.maisum;
+				mil.clock = cem.maisum;
+				uni.load_ena=GND;
+				dez.load_ena=GND;
+				cem.load_ena=GND;
+				mil.load_ena=GND;
+			END IF;
+			
+			uni.load[]= 0;
+			dez.load[]= 4;
+			cem.load[]= 5;
+			mil.load[]= 0;
+		
+		elsif sel[] == B"01" then			--caso descrescente
+			if mil.q[] < 1 & cem.q[] <=5 & dez.q[] <= 3 & uni.q[] <= 9 then				-- caso de load,  limite inferior
+						uni.load_ena=VCC;	
+						dez.load_ena=VCC;
+						cem.load_ena=VCC;
+						mil.load_ena=VCC;
+						dez.clock=clock;
+						cem.clock=clock;
+						mil.clock=clock;
+
+			elsif mil.q[] >= 1 & cem.q[] >= 6 & dez.q[] == 0 & uni.q[] >= 1 then
+		--		if cem.q[] >= 0 then
+		--			if dez.q[] >= 8 & uni.q[] >= 1 then
+							uni.load_ena=VCC;	
+							dez.load_ena=VCC;
+							cem.load_ena=VCC;
+							mil.load_ena=VCC;
+							dez.clock=clock;
+							cem.clock=clock;
+							mil.clock=clock;
+		--			end if;
+		--		end if;
+
+			ELSE	
+				uni.clock=clock;
+				dez.clock = uni.maisum;	
+				cem.clock = dez.maisum;
+				mil.clock = cem.maisum;
+				uni.load_ena=GND;
+				dez.load_ena=GND;
+				cem.load_ena=GND;
+				mil.load_ena=GND;
+				end if;
+				
+				uni.load[]= 0;
+				dez.load[]= 0;
+				cem.load[]= 6;
+				mil.load[]= 1;
+			
+		else
+			uni.load_ena=GND;
+			dez.load_ena=GND;
+			cem.load_ena=GND;
+			mil.load_ena=GND;
+		end if;
+	else 
+		uni.load_ena=GND;
+		dez.load_ena=GND;
+		cem.load_ena=GND;
+		mil.load_ena=GND;
+	end if;	
+		
+	
+	
+	uni.sel[] = sel[];
+	dez.sel[] = sel[];
+	cem.sel[] = sel[];
+	mil.sel[] = sel[];
+	
+	a[]=uni.q[];
+	b[]=dez.q[];
+	c[]=cem.q[];
+	d[]=mil.q[];
+	
+END;

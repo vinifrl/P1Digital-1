@@ -521,7 +521,7 @@ https://fpgasoftware.intel.com/eula.
 	)
 )
 (symbol
-	(rect 32 232 176 312)
+	(rect 24 232 168 312)
 	(text "debouncer_monitor" (rect 5 0 98 12)(font "Arial" ))
 	(text "inst12" (rect 8 64 36 81)(font "Intel Clear" ))
 	(port
@@ -1023,15 +1023,15 @@ https://fpgasoftware.intel.com/eula.
 	(pt 240 264)
 )
 (connector
-	(pt 192 264)
-	(pt 176 264)
+	(text "clock" (rect -24 248 0 265)(font "Intel Clear" ))
+	(pt -32 264)
+	(pt 24 264)
 )
 (connector
-	(text "clock" (rect -16 248 8 265)(font "Intel Clear" ))
-	(pt -24 264)
-	(pt 32 264)
-)
-(connector
-	(pt 32 280)
 	(pt 16 280)
+	(pt 24 280)
+)
+(connector
+	(pt 168 264)
+	(pt 192 264)
 )

@@ -48,6 +48,15 @@ BEGIN
 				fav44fm[] = 7;
 				teste[1] = GND;
 				teste[2] = VCC;
+			else
+				fav41fm[] = fav41fm[];
+				fav42fm[] = fav42fm[];
+				fav43fm[] = fav43fm[];
+				fav44fm[] = fav44fm[];
+				fav31fm[] = fav31fm[];
+				fav32fm[] = fav32fm[];
+				fav33fm[] = fav33fm[];
+				fav34fm[] = fav34fm[];
 			end if;  						--talvez tenha q criar o else com os favs recebendo eles mesmos
 	
 	elsif modofav == VCC & sw2 == gnd then    			%entrando no modo favorito%
@@ -63,27 +72,27 @@ BEGIN
 			out3[] = fav33fm[];
 			out4[] = fav34fm[];
 		end if;
-		fav41fm[] = fav41fm[];				-- tentativa de usar como buffer, para caso estivesse zerando sem
-		fav42fm[] = fav42fm[];
-		fav43fm[] = fav43fm[];				-- tentamos com e sem o buffer, nenhum funcionou 
-		fav44fm[] = fav44fm[];
-		fav31fm[] = fav31fm[];
-		fav32fm[] = fav32fm[];
-		fav33fm[] = fav33fm[];
-		fav34fm[] = fav34fm[];
+--		fav41fm[] = fav41fm[];				-- tentativa de usar como buffer, para caso estivesse zerando sem
+--		fav42fm[] = fav42fm[];
+--		fav43fm[] = fav43fm[];				-- tentamos com e sem o buffer, nenhum funcionou 
+--		fav44fm[] = fav44fm[];
+--		fav31fm[] = fav31fm[];
+--		fav32fm[] = fav32fm[];
+--		fav33fm[] = fav33fm[];
+--		fav34fm[] = fav34fm[];
 	
 	else 
 		out1[] = out1[];
 		out2[] = out2[];
 		out3[] = out3[];
 		out4[] = out4[];
-		fav41fm[] = fav41fm[];
-		fav42fm[] = fav42fm[];
-		fav43fm[] = fav43fm[];
-		fav44fm[] = fav44fm[];
-		fav31fm[] = fav31fm[];
-		fav32fm[] = fav32fm[];
-		fav33fm[] = fav33fm[];
-		fav34fm[] = fav34fm[];
+--		fav41fm[] = fav41fm[];
+--		fav42fm[] = fav42fm[];
+--		fav43fm[] = fav43fm[];
+--		fav44fm[] = fav44fm[];
+--		fav31fm[] = fav31fm[];
+--		fav32fm[] = fav32fm[];
+--		fav33fm[] = fav33fm[];
+--		fav34fm[] = fav34fm[];
 	end if;
 end;

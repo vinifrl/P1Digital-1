@@ -6,8 +6,8 @@ subdesign testmux --pode estar dando erro pq tá dando erro na gravação ou no 
 	teste[0..2] : output;
 )
 variable
-	fav31fm[3..0], fav32fm[3..0], fav33fm[3..0], fav34fm[3..0]	: node; %valor armazenado do favorito 3 fm%
-	fav41fm[3..0], fav42fm[3..0], fav43fm[3..0], fav44fm[3..0]	: node; %valor armazenado do favorito 4 fm%
+	fav31fm[3..0], fav32fm[3..0], fav33fm[3..0], fav34fm[3..0]	: dff; %valor armazenado do favorito 3 fm%
+	fav41fm[3..0], fav42fm[3..0], fav43fm[3..0], fav44fm[3..0]	: dff; %valor armazenado do favorito 4 fm%
 --	fav31am[3..0], fav32am[3..0], fav33am[3..0], fav34am[3..0]	: NODE; %valor armazenado do favorito 3 am%
 --	fav41am[3..0], fav42am[3..0], fav43am[3..0], fav44am[3..0]	: NODE; %valor armazenado do favorito 4 am%
 	burroino1[3..0], burroino2[3..0], burroino3[3..0], burroino4[3..0] : NODE;
@@ -20,14 +20,14 @@ BEGIN
 --	fav32am[].clk = clockplaca;
 --	fav33am[].clk = clockplaca;
 --	fav34am[].clk = clockplaca;
---	fav41fm[].clk = clockplaca;
---	fav42fm[].clk = clockplaca;
---	fav43fm[].clk = clockplaca;
---	fav44fm[].clk = clockplaca;
---	fav31fm[].clk = clockplaca;
---	fav32fm[].clk = clockplaca;
---	fav33fm[].clk = clockplaca;
---	fav34fm[].clk = clockplaca;
+	fav41fm[].clk = clockplaca;
+	fav42fm[].clk = clockplaca;
+	fav43fm[].clk = clockplaca;
+	fav44fm[].clk = clockplaca;
+	fav31fm[].clk = clockplaca;
+	fav32fm[].clk = clockplaca;
+	fav33fm[].clk = clockplaca;
+	fav34fm[].clk = clockplaca;
 	
 	burroino1[] = in1[];
 	burroino2[] = in2[];
@@ -40,29 +40,38 @@ BEGIN
 		out2[] = in2[];
 		out3[] = in3[];
 		out4[] = in4[];
-		fav41fm[] = fav41fm[];
-		fav42fm[] = fav42fm[];
-		fav43fm[] = fav43fm[];
-		fav44fm[] = fav44fm[];
-		fav31fm[] = fav31fm[];
-		fav32fm[] = fav32fm[];
-		fav33fm[] = fav33fm[];
-		fav34fm[] = fav34fm[];
+--		fav41fm[].d = fav41fm[].q;
+--		fav42fm[].d = fav42fm[].q;
+--		fav43fm[].d = fav43fm[].q;
+--		fav44fm[].d = fav44fm[].q;
+--		fav31fm[].d = fav31fm[].q;
+--		fav32fm[].d = fav32fm[].q;
+--		fav33fm[].d = fav33fm[].q;
+--		fav34fm[].d = fav34fm[].q;
 	elsif sw2 == VCC  & modofav == GND then %entrando no modo de gravação%
 			if s3 == VCC & s4 == GND then 	%botão s3 apertado para gravar um favorito%
-				fav31fm[] = burroino1[];
-				fav32fm[] = burroino2[];		-- recebendo um auxiliar ligado aos inputs, que é o contador
-				fav33fm[] = burroino3[]; 		-- tentamos com e sem auxiliar e n funcionou
-				fav34fm[] = burroino4[];
+				fav31fm[].d = burroino1[];
+				fav32fm[].d = burroino2[];		-- recebendo um auxiliar ligado aos inputs, que é o contador
+				fav33fm[].d = burroino3[]; 		-- tentamos com e sem auxiliar e n funcionou
+				fav34fm[].d = burroino4[];
 				teste[2] = GND;
 				teste[1] = VCC;
 			elsif s4 == VCC & s3 == GND then 	%botão s4 apertado para gravar um favorito%
-				fav41fm[] = burroino1[];
-				fav42fm[] = burroino2[];
-				fav43fm[] = burroino3[];
-				fav44fm[] = burroino4[];
+				fav41fm[].d = burroino1[];
+				fav42fm[].d = burroino2[];
+				fav43fm[].d = burroino3[];
+				fav44fm[].d = burroino4[];
 				teste[1] = GND;
 				teste[2] = VCC;
+			else
+				fav41fm[].d = fav41fm[].q;
+				fav42fm[].d = fav42fm[].q;
+				fav43fm[].d = fav43fm[].q;
+				fav44fm[].d = fav44fm[].q;
+				fav31fm[].d = fav31fm[].q;
+				fav32fm[].d = fav32fm[].q;
+				fav33fm[].d = fav33fm[].q;
+				fav34fm[].d = fav34fm[].q;
 			end if;  						--talvez tenha q criar o else com os favs recebendo eles mesmos
 	
 	elsif modofav == VCC & sw2 == gnd then    			%entrando no modo favorito%
@@ -73,32 +82,32 @@ BEGIN
 			out3[] = burroino3[];
 			out4[] = burroino4[];
 		else
-			out1[] = fav31fm[];
-			out2[] = fav32fm[];			-- no entanto, pra esse caso, resulta em 0000
-			out3[] = fav33fm[];
-			out4[] = fav34fm[];
+			out1[] = fav31fm[].q;
+			out2[] = fav32fm[].q;			-- no entanto, pra esse caso, resulta em 0000
+			out3[] = fav33fm[].q;
+			out4[] = fav34fm[].q;
 		end if;
-		fav41fm[] = fav41fm[];
-		fav42fm[] = fav42fm[];
-		fav43fm[] = fav43fm[];
-		fav44fm[] = fav44fm[];
-		fav31fm[] = fav31fm[];
-		fav32fm[] = fav32fm[];
-		fav33fm[] = fav33fm[];
-		fav34fm[] = fav34fm[];
+--		fav41fm[].d = fav41fm[].q;
+--		fav42fm[].d = fav42fm[].q;
+--		fav43fm[].d = fav43fm[].q;
+--		fav44fm[].d = fav44fm[].q;
+--		fav31fm[].d = fav31fm[].q;
+--		fav32fm[].d = fav32fm[].q;
+--		fav33fm[].d = fav33fm[].q;
+--		fav34fm[].d = fav34fm[].q;
 	
 	else 
 		out1[] = out1[];
 		out2[] = out2[];
 		out3[] = out3[];
 		out4[] = out4[];
-		fav41fm[] = fav41fm[];
-		fav42fm[] = fav42fm[];
-		fav43fm[] = fav43fm[];
-		fav44fm[] = fav44fm[];
-		fav31fm[] = fav31fm[];
-		fav32fm[] = fav32fm[];
-		fav33fm[] = fav33fm[];
-		fav34fm[] = fav34fm[];
+--		fav41fm[].d = fav41fm[].q;
+--		fav42fm[].d = fav42fm[].q;
+--		fav43fm[].d = fav43fm[].q;
+--		fav44fm[].d = fav44fm[].q;
+--		fav31fm[].d = fav31fm[].q;
+--		fav32fm[].d = fav32fm[].q;
+--		fav33fm[].d = fav33fm[].q;
+--		fav34fm[].d = fav34fm[].q;
 	end if;
 end;

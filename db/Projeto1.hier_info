@@ -1,31 +1,128 @@
-|testemux
-dig[0] <= display:inst2.dig[0]
-dig[1] <= display:inst2.dig[1]
-dig[2] <= display:inst2.dig[2]
-dig[3] <= display:inst2.dig[3]
-switch1 => inst8.IN0
-Clock_Placa => display:inst2.clock
+|sipo_ada
+led0 <= sel[0].DB_MAX_OUTPUT_PORT_TYPE
 Clock_Placa => debouncer_monitor:inst12.clock
 Clock_Placa => debouncer_monitor:inst13.clock
 Clock_Placa => divisor:inst4.clkPlaca
-Clock_Placa => testmux:inst.clockplaca
+Clock_Placa => display:inst1.clock
+button3 => inst10.IN0
+button4 => inst11.IN0
 switch2 => inst9.IN0
-button3 => debouncer_monitor:inst12.button
-button4 => debouncer_monitor:inst13.button
-led[2] <= test[2].DB_MAX_OUTPUT_PORT_TYPE
-led[1] <= test[1].DB_MAX_OUTPUT_PORT_TYPE
-led[0] <= test[0].DB_MAX_OUTPUT_PORT_TYPE
-out[7] <= display:inst2.out[7]
-out[6] <= display:inst2.out[6]
-out[5] <= display:inst2.out[5]
-out[4] <= display:inst2.out[4]
-out[3] <= display:inst2.out[3]
-out[2] <= display:inst2.out[2]
-out[1] <= display:inst2.out[1]
-out[0] <= display:inst2.out[0]
+led1 <= sel[1].DB_MAX_OUTPUT_PORT_TYPE
+dig[0] <= display:inst1.dig[0]
+dig[1] <= display:inst1.dig[1]
+dig[2] <= display:inst1.dig[2]
+dig[3] <= display:inst1.dig[3]
+switch1 => inst8.IN0
+out[7] <= display:inst1.out[7]
+out[6] <= display:inst1.out[6]
+out[5] <= display:inst1.out[5]
+out[4] <= display:inst1.out[4]
+out[3] <= display:inst1.out[3]
+out[2] <= display:inst1.out[2]
+out[1] <= display:inst1.out[1]
+out[0] <= display:inst1.out[0]
 
 
-|testemux|display:inst2
+|sipo_ada|seletor:inst3
+s3 => fftd.IN1
+s3 => _.IN0
+s3 => _.IN0
+s4 => ffta.IN1
+s4 => _.IN1
+s4 => _.IN0
+sw2 => dec.IN0
+clock1s => ffd[1].IN1
+clock1s => ffd[0].IN1
+modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
+sel[1] <= sel[1].DB_MAX_OUTPUT_PORT_TYPE
+sel[0] <= sel[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|debouncer_monitor:inst12
+clock => COUNT[18].CLK
+clock => COUNT[17].CLK
+clock => COUNT[16].CLK
+clock => COUNT[15].CLK
+clock => COUNT[14].CLK
+clock => COUNT[13].CLK
+clock => COUNT[12].CLK
+clock => COUNT[11].CLK
+clock => COUNT[10].CLK
+clock => COUNT[9].CLK
+clock => COUNT[8].CLK
+clock => COUNT[7].CLK
+clock => COUNT[6].CLK
+clock => COUNT[5].CLK
+clock => COUNT[4].CLK
+clock => COUNT[3].CLK
+clock => COUNT[2].CLK
+clock => COUNT[1].CLK
+clock => COUNT[0].CLK
+clock => FF[1].CLK
+clock => FF[0].CLK
+clock => aux.CLK
+button => FF[0].DATAIN
+saida <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|debouncer_monitor:inst13
+clock => COUNT[18].CLK
+clock => COUNT[17].CLK
+clock => COUNT[16].CLK
+clock => COUNT[15].CLK
+clock => COUNT[14].CLK
+clock => COUNT[13].CLK
+clock => COUNT[12].CLK
+clock => COUNT[11].CLK
+clock => COUNT[10].CLK
+clock => COUNT[9].CLK
+clock => COUNT[8].CLK
+clock => COUNT[7].CLK
+clock => COUNT[6].CLK
+clock => COUNT[5].CLK
+clock => COUNT[4].CLK
+clock => COUNT[3].CLK
+clock => COUNT[2].CLK
+clock => COUNT[1].CLK
+clock => COUNT[0].CLK
+clock => FF[1].CLK
+clock => FF[0].CLK
+clock => aux.CLK
+button => FF[0].DATAIN
+saida <= aux.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|divisor:inst4
+clkPlaca => ff[24].CLK
+clkPlaca => ff[23].CLK
+clkPlaca => ff[22].CLK
+clkPlaca => ff[21].CLK
+clkPlaca => ff[20].CLK
+clkPlaca => ff[19].CLK
+clkPlaca => ff[18].CLK
+clkPlaca => ff[17].CLK
+clkPlaca => ff[16].CLK
+clkPlaca => ff[15].CLK
+clkPlaca => ff[14].CLK
+clkPlaca => ff[13].CLK
+clkPlaca => ff[12].CLK
+clkPlaca => ff[11].CLK
+clkPlaca => ff[10].CLK
+clkPlaca => ff[9].CLK
+clkPlaca => ff[8].CLK
+clkPlaca => ff[7].CLK
+clkPlaca => ff[6].CLK
+clkPlaca => ff[5].CLK
+clkPlaca => ff[4].CLK
+clkPlaca => ff[3].CLK
+clkPlaca => ff[2].CLK
+clkPlaca => ff[1].CLK
+clkPlaca => ff[0].CLK
+clkPlaca => fft.CLK
+clock1HZ <= fft.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|sipo_ada|display:inst1
 a[0] => disp[0].IN1
 a[1] => disp[1].IN1
 a[2] => disp[2].IN1
@@ -100,206 +197,7 @@ dig[2] <= dig[2].DB_MAX_OUTPUT_PORT_TYPE
 dig[3] <= dig[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testemux|testmux:inst
-sw1 => _.IN0
-sw2 => _.IN0
-sw2 => _.IN0
-sw2 => _.IN0
-s3 => _.IN0
-s3 => _.IN0
-s4 => _.IN0
-s4 => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-modofav => _.IN0
-clock1s => _.IN1
-clock1s => _.IN0
-clockplaca => ~NO_FANOUT~
-in1[0] => out1[0]~3.IN1
-in1[0] => fav31fm[0].IN1
-in1[0] => fav41fm[0].IN1
-in1[0] => out1[0]~7.IN1
-in1[1] => out1[1]~2.IN1
-in1[1] => fav31fm[1].IN1
-in1[1] => fav41fm[1].IN1
-in1[1] => out1[1]~6.IN1
-in1[2] => out1[2]~1.IN1
-in1[2] => fav31fm[2].IN1
-in1[2] => fav41fm[2].IN1
-in1[2] => out1[2]~5.IN1
-in1[3] => out1[3]~0.IN1
-in1[3] => fav31fm[3].IN1
-in1[3] => fav41fm[3].IN1
-in1[3] => out1[3]~4.IN1
-in2[0] => out2[0]~3.IN1
-in2[0] => fav32fm[0].IN1
-in2[0] => fav42fm[0].IN1
-in2[0] => out2[0]~7.IN1
-in2[1] => out2[1]~2.IN1
-in2[1] => fav32fm[1].IN1
-in2[1] => fav42fm[1].IN1
-in2[1] => out2[1]~6.IN1
-in2[2] => out2[2]~1.IN1
-in2[2] => fav32fm[2].IN1
-in2[2] => fav42fm[2].IN1
-in2[2] => out2[2]~5.IN1
-in2[3] => out2[3]~0.IN1
-in2[3] => fav32fm[3].IN1
-in2[3] => fav42fm[3].IN1
-in2[3] => out2[3]~4.IN1
-in3[0] => out3[0]~3.IN1
-in3[0] => fav33fm[0].IN1
-in3[0] => fav43fm[0].IN1
-in3[0] => out3[0]~7.IN1
-in3[1] => out3[1]~2.IN1
-in3[1] => fav33fm[1].IN1
-in3[1] => fav43fm[1].IN1
-in3[1] => out3[1]~6.IN1
-in3[2] => out3[2]~1.IN1
-in3[2] => fav33fm[2].IN1
-in3[2] => fav43fm[2].IN1
-in3[2] => out3[2]~5.IN1
-in3[3] => out3[3]~0.IN1
-in3[3] => fav33fm[3].IN1
-in3[3] => fav43fm[3].IN1
-in3[3] => out3[3]~4.IN1
-in4[0] => out4[0]~3.IN1
-in4[0] => fav34fm[0].IN1
-in4[0] => fav44fm[0].IN1
-in4[0] => out4[0]~7.IN1
-in4[1] => out4[1]~2.IN1
-in4[1] => fav34fm[1].IN1
-in4[1] => fav44fm[1].IN1
-in4[1] => out4[1]~6.IN1
-in4[2] => out4[2]~1.IN1
-in4[2] => fav34fm[2].IN1
-in4[2] => fav44fm[2].IN1
-in4[2] => out4[2]~5.IN1
-in4[3] => out4[3]~0.IN1
-in4[3] => fav34fm[3].IN1
-in4[3] => fav44fm[3].IN1
-in4[3] => out4[3]~4.IN1
-out1[0] <= out1[0].DB_MAX_OUTPUT_PORT_TYPE
-out1[1] <= out1[1].DB_MAX_OUTPUT_PORT_TYPE
-out1[2] <= out1[2].DB_MAX_OUTPUT_PORT_TYPE
-out1[3] <= out1[3].DB_MAX_OUTPUT_PORT_TYPE
-out2[0] <= out2[0].DB_MAX_OUTPUT_PORT_TYPE
-out2[1] <= out2[1].DB_MAX_OUTPUT_PORT_TYPE
-out2[2] <= out2[2].DB_MAX_OUTPUT_PORT_TYPE
-out2[3] <= out2[3].DB_MAX_OUTPUT_PORT_TYPE
-out3[0] <= out3[0].DB_MAX_OUTPUT_PORT_TYPE
-out3[1] <= out3[1].DB_MAX_OUTPUT_PORT_TYPE
-out3[2] <= out3[2].DB_MAX_OUTPUT_PORT_TYPE
-out3[3] <= out3[3].DB_MAX_OUTPUT_PORT_TYPE
-out4[0] <= out4[0].DB_MAX_OUTPUT_PORT_TYPE
-out4[1] <= out4[1].DB_MAX_OUTPUT_PORT_TYPE
-out4[2] <= out4[2].DB_MAX_OUTPUT_PORT_TYPE
-out4[3] <= out4[3].DB_MAX_OUTPUT_PORT_TYPE
-teste[2] <= teste[2].DB_MAX_OUTPUT_PORT_TYPE
-teste[1] <= teste[1].DB_MAX_OUTPUT_PORT_TYPE
-teste[0] <= teste[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|testemux|debouncer_monitor:inst12
-clock => COUNT[18].CLK
-clock => COUNT[17].CLK
-clock => COUNT[16].CLK
-clock => COUNT[15].CLK
-clock => COUNT[14].CLK
-clock => COUNT[13].CLK
-clock => COUNT[12].CLK
-clock => COUNT[11].CLK
-clock => COUNT[10].CLK
-clock => COUNT[9].CLK
-clock => COUNT[8].CLK
-clock => COUNT[7].CLK
-clock => COUNT[6].CLK
-clock => COUNT[5].CLK
-clock => COUNT[4].CLK
-clock => COUNT[3].CLK
-clock => COUNT[2].CLK
-clock => COUNT[1].CLK
-clock => COUNT[0].CLK
-clock => FF[1].CLK
-clock => FF[0].CLK
-clock => aux.CLK
-button => FF[0].DATAIN
-saida <= aux.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|testemux|debouncer_monitor:inst13
-clock => COUNT[18].CLK
-clock => COUNT[17].CLK
-clock => COUNT[16].CLK
-clock => COUNT[15].CLK
-clock => COUNT[14].CLK
-clock => COUNT[13].CLK
-clock => COUNT[12].CLK
-clock => COUNT[11].CLK
-clock => COUNT[10].CLK
-clock => COUNT[9].CLK
-clock => COUNT[8].CLK
-clock => COUNT[7].CLK
-clock => COUNT[6].CLK
-clock => COUNT[5].CLK
-clock => COUNT[4].CLK
-clock => COUNT[3].CLK
-clock => COUNT[2].CLK
-clock => COUNT[1].CLK
-clock => COUNT[0].CLK
-clock => FF[1].CLK
-clock => FF[0].CLK
-clock => aux.CLK
-button => FF[0].DATAIN
-saida <= aux.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|testemux|seletor:inst1
-s3 => fftd.IN1
-s3 => _.IN0
-s3 => _.IN0
-s4 => ffta.IN1
-s4 => _.IN1
-s4 => _.IN0
-sw2 => dec.IN0
-clock1s => ffd[1].IN1
-clock1s => ffd[0].IN1
-modofav <= modofav.DB_MAX_OUTPUT_PORT_TYPE
-sel[1] <= sel[1].DB_MAX_OUTPUT_PORT_TYPE
-sel[0] <= sel[0].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|testemux|divisor:inst4
-clkPlaca => ff[24].CLK
-clkPlaca => ff[23].CLK
-clkPlaca => ff[22].CLK
-clkPlaca => ff[21].CLK
-clkPlaca => ff[20].CLK
-clkPlaca => ff[19].CLK
-clkPlaca => ff[18].CLK
-clkPlaca => ff[17].CLK
-clkPlaca => ff[16].CLK
-clkPlaca => ff[15].CLK
-clkPlaca => ff[14].CLK
-clkPlaca => ff[13].CLK
-clkPlaca => ff[12].CLK
-clkPlaca => ff[11].CLK
-clkPlaca => ff[10].CLK
-clkPlaca => ff[9].CLK
-clkPlaca => ff[8].CLK
-clkPlaca => ff[7].CLK
-clkPlaca => ff[6].CLK
-clkPlaca => ff[5].CLK
-clkPlaca => ff[4].CLK
-clkPlaca => ff[3].CLK
-clkPlaca => ff[2].CLK
-clkPlaca => ff[1].CLK
-clkPlaca => ff[0].CLK
-clkPlaca => fft.CLK
-clock1HZ <= fft.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|testemux|contsipofm:inst3
+|sipo_ada|contincfm:inst
 clock => _.IN1
 clock => _.IN1
 clock => _.IN1
@@ -316,37 +214,37 @@ clock => _.IN1
 clock => _.IN1
 sel[0] => _.IN0
 sel[0] => _.IN1
-sel[0] => sipo:uni.sel[0]
-sel[0] => sipo:dez.sel[0]
-sel[0] => sipo:cem.sel[0]
-sel[0] => sipo:mil.sel[0]
+sel[0] => continc:uni.sel[1]
+sel[0] => continc:dez.sel[1]
+sel[0] => continc:cem.sel[1]
+sel[0] => continc:mil.sel[1]
 sel[1] => _.IN0
 sel[1] => _.IN0
-sel[1] => sipo:uni.sel[1]
-sel[1] => sipo:dez.sel[1]
-sel[1] => sipo:cem.sel[1]
-sel[1] => sipo:mil.sel[1]
+sel[1] => continc:uni.sel[0]
+sel[1] => continc:dez.sel[0]
+sel[1] => continc:cem.sel[0]
+sel[1] => continc:mil.sel[0]
 sw1 => _.IN0
 sw2 => _.IN0
-a[0] <= sipo:uni.q[0]
-a[1] <= sipo:uni.q[1]
-a[2] <= sipo:uni.q[2]
-a[3] <= sipo:uni.q[3]
-b[0] <= sipo:dez.q[0]
-b[1] <= sipo:dez.q[1]
-b[2] <= sipo:dez.q[2]
-b[3] <= sipo:dez.q[3]
-c[0] <= sipo:cem.q[0]
-c[1] <= sipo:cem.q[1]
-c[2] <= sipo:cem.q[2]
-c[3] <= sipo:cem.q[3]
-d[0] <= sipo:mil.q[0]
-d[1] <= sipo:mil.q[1]
-d[2] <= sipo:mil.q[2]
-d[3] <= sipo:mil.q[3]
+a[0] <= continc:uni.q[0]
+a[1] <= continc:uni.q[1]
+a[2] <= continc:uni.q[2]
+a[3] <= continc:uni.q[3]
+b[0] <= continc:dez.q[0]
+b[1] <= continc:dez.q[1]
+b[2] <= continc:dez.q[2]
+b[3] <= continc:dez.q[3]
+c[0] <= continc:cem.q[0]
+c[1] <= continc:cem.q[1]
+c[2] <= continc:cem.q[2]
+c[3] <= continc:cem.q[3]
+d[0] <= continc:mil.q[0]
+d[1] <= continc:mil.q[1]
+d[2] <= continc:mil.q[2]
+d[3] <= continc:mil.q[3]
 
 
-|testemux|contsipofm:inst3|sipo:uni
+|sipo_ada|contincfm:inst|continc:uni
 clock => count[3].CLK
 clock => count[2].CLK
 clock => count[1].CLK
@@ -357,8 +255,8 @@ load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
-sel[1] => _.IN0
 sel[1] => _.IN1
+sel[1] => _.IN0
 sel[0] => _.IN0
 sel[0] => _.IN0
 load[0] => _.IN1
@@ -372,7 +270,7 @@ q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
 maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testemux|contsipofm:inst3|sipo:dez
+|sipo_ada|contincfm:inst|continc:dez
 clock => count[3].CLK
 clock => count[2].CLK
 clock => count[1].CLK
@@ -383,8 +281,8 @@ load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
-sel[1] => _.IN0
 sel[1] => _.IN1
+sel[1] => _.IN0
 sel[0] => _.IN0
 sel[0] => _.IN0
 load[0] => _.IN1
@@ -398,7 +296,7 @@ q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
 maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testemux|contsipofm:inst3|sipo:cem
+|sipo_ada|contincfm:inst|continc:cem
 clock => count[3].CLK
 clock => count[2].CLK
 clock => count[1].CLK
@@ -409,8 +307,8 @@ load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
-sel[1] => _.IN0
 sel[1] => _.IN1
+sel[1] => _.IN0
 sel[0] => _.IN0
 sel[0] => _.IN0
 load[0] => _.IN1
@@ -424,7 +322,7 @@ q[3] <= q[3].DB_MAX_OUTPUT_PORT_TYPE
 maisum <= plusone.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|testemux|contsipofm:inst3|sipo:mil
+|sipo_ada|contincfm:inst|continc:mil
 clock => count[3].CLK
 clock => count[2].CLK
 clock => count[1].CLK
@@ -435,8 +333,8 @@ load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
 load_ena => _.IN0
-sel[1] => _.IN0
 sel[1] => _.IN1
+sel[1] => _.IN0
 sel[0] => _.IN0
 sel[0] => _.IN0
 load[0] => _.IN1

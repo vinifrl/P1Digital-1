@@ -1,0 +1,38 @@
+subdesign continc
+(
+	clock, load_ena, sel[0..1], load[3..0]		:input;  -- load_ena vai ditar se vai dar load do parametro, sel indica ac/dec/nada
+	q[3..0], maisum									:output;
+)
+
+variable
+	count[3..0]	: dff;
+	plusone		: dff;	
+begin
+	count[].clk = clock;
+	plusone.clk = clock;
+	
+	if load_ena then   --receber o valor correto
+		count[].d = load[];
+	elsif sel[] == 2 then  --decrescente
+		if count[].q == 0 then
+			count[].d = 9;
+			plusone.d = VCC;
+		else
+			count[].d = count[].q-1;
+			plusone.d = GND;
+		end if;
+	elsif sel == 1 then	-- crescente
+		if count[].q == 9 then
+			count[].d = 0;
+			plusone.d = VCC;
+		else
+			count[].d = count[].q+1;
+			plusone.d = GND;
+		end if;
+	else
+		q[] = count[].q;
+	end if;
+	maisum = plusone.q;
+	q[] = count[].q;
+
+end;

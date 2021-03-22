@@ -22,7 +22,7 @@ BEGIN
 						mil.clock=clock;
 					end if;
 				end if;
-			elsif mil.q[] >= 1 & cem.q[] >= 0 & dez.q[] == 8 & uni.q[] == 1 then
+			elsif mil.q[] >= 1 & cem.q[] >= 0 & dez.q[] >= 8 & uni.q[] >= 1 then -- limite superior
 		--		if cem.q[] >= 0 then
 		--			if dez.q[] >= 8 & uni.q[] >= 1 then
 							uni.load_ena=VCC;	
@@ -50,7 +50,8 @@ BEGIN
 			cem.load[]= 8;
 			mil.load[]= 0;
 		elsif sel[] == B"01" then			--caso descrescente
-			if mil.q[] < 1 & cem.q[] <=8 & dez.q[] <= 7 & uni.q[] <= 4 then				-- caso de load,  limite inferior
+			uni.clock=clock;
+			if mil.q[] < 1 & cem.q[] <=8 & dez.q[] <= 7 & uni.q[] < 5 then				-- caso de load,  limite inferior
 						uni.load_ena=VCC;	
 						dez.load_ena=VCC;
 						cem.load_ena=VCC;
@@ -73,7 +74,6 @@ BEGIN
 		--		end if;
 
 			ELSE	
-				uni.clock=clock;
 				dez.clock = uni.maisum;	
 				cem.clock = dez.maisum;
 				mil.clock = cem.maisum;

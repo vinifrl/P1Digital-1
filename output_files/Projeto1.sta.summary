@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'switch2'
-Slack : -9.100
-TNS   : -166.838
+Slack : -9.128
+TNS   : -162.231
 
 Type  : Slow 1200mV 85C Model Setup 'Clock_Placa'
-Slack : -3.826
-TNS   : -313.762
+Slack : -3.938
+TNS   : -308.944
 
 Type  : Slow 1200mV 85C Model Hold 'switch2'
-Slack : -0.092
-TNS   : -0.142
+Slack : 0.069
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'Clock_Placa'
-Slack : 0.454
+Slack : 0.433
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Clock_Placa'
@@ -24,54 +24,54 @@ TNS   : -147.239
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -60.502
+TNS   : -119.386
 
 Type  : Slow 1200mV 0C Model Setup 'switch2'
-Slack : -8.597
-TNS   : -157.475
+Slack : -8.409
+TNS   : -150.843
 
 Type  : Slow 1200mV 0C Model Setup 'Clock_Placa'
-Slack : -3.558
-TNS   : -287.848
+Slack : -3.660
+TNS   : -283.591
 
 Type  : Slow 1200mV 0C Model Hold 'switch2'
-Slack : -0.168
-TNS   : -0.340
+Slack : 0.049
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'Clock_Placa'
-Slack : 0.401
+Slack : 0.383
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -147.243
+TNS   : -147.239
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -60.134
+TNS   : -109.568
 
 Type  : Fast 1200mV 0C Model Setup 'switch2'
-Slack : -3.523
-TNS   : -62.128
+Slack : -3.439
+TNS   : -61.111
 
 Type  : Fast 1200mV 0C Model Setup 'Clock_Placa'
-Slack : -1.001
-TNS   : -76.622
-
-Type  : Fast 1200mV 0C Model Hold 'Clock_Placa'
-Slack : 0.129
-TNS   : 0.000
+Slack : -1.049
+TNS   : -75.587
 
 Type  : Fast 1200mV 0C Model Hold 'switch2'
-Slack : 0.131
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'Clock_Placa'
+Slack : 0.138
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Clock_Placa'
 Slack : -3.000
-TNS   : -106.091
+TNS   : -106.614
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'switch2'
 Slack : -3.000
-TNS   : -36.560
+TNS   : -49.973
 
 ------------------------------------------------------------

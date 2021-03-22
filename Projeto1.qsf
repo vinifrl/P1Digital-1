@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE6E22C8
-set_global_assignment -name TOP_LEVEL_ENTITY testemux
+set_global_assignment -name TOP_LEVEL_ENTITY sipo_ada
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "17:13:23  MARCH 01, 2021"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -83,17 +83,18 @@ set_global_assignment -name AHDL_FILE contfm.tdf
 set_global_assignment -name AHDL_FILE debouncers/debouncer_monitor.tdf
 set_global_assignment -name BDF_FILE testeparams.bdf
 set_global_assignment -name AHDL_FILE contadorfm.tdf
-set_global_assignment -name AHDL_FILE sipo.tdf
 set_global_assignment -name BDF_FILE sipo_ada.bdf
-set_global_assignment -name AHDL_FILE contsipofm.tdf
-set_global_assignment -name AHDL_FILE contsipoam.tdf
 set_global_assignment -name AHDL_FILE MUXamfmfav.tdf
 set_location_assignment PIN_87 -to led[0]
 set_location_assignment PIN_86 -to led[1]
 set_global_assignment -name AHDL_FILE testmux.tdf
 set_global_assignment -name BDF_FILE testemux.bdf
+set_global_assignment -name AHDL_FILE testmuxburro.tdf
+set_global_assignment -name AHDL_FILE testmuxdff.tdf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name AHDL_FILE contincam.tdf
+set_global_assignment -name AHDL_FILE contincfm.tdf
+set_global_assignment -name AHDL_FILE continc.tdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name AHDL_FILE testmuxburro.tdf
