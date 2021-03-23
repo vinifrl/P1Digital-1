@@ -1,13 +1,13 @@
 INCLUDE "continc.inc";  --contador mod 10 am
 subdesign contincam
 (
-	clock, sel[1..0], sw1, sw2					: INPUT;
+	clock, sel[1..0], sw1, sw2, ena			: INPUT;
 	a[3..0], b[3..0], c[3..0], d[3..0]		: OUTPUT;
 )
 VARIABLE
 	uni, dez, cem, mil	: continc;
 BEGIN
-	if sw1 == VCC & sw2 == gnd then
+	if sw1 == VCC & sw2 == gnd & ena == gnd then
 		if sel[] == B"10" then   --caso crescente
 			uni.clock=clock;
 			if mil.q[] < 1 & cem.q[] <=4  then				-- caso de load

@@ -15,7 +15,7 @@ BEGIN
 	clock1HZ = fft.q;
 	
 	CASE q[] IS
-		WHEN 2500000 => %depois de passar 25000000 ciclos(0.5s) em '0', a saida fica '1'%
+		WHEN 12500000 => %depois de passar 25000000 ciclos(0.5s) em '0', a saida fica '1'%
 			fft.t = VCC;
 			ff[].d = 0;
 		WHEN OTHERS =>

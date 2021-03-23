@@ -1,0 +1,12 @@
+subdesign enablecont
+(	
+	sw2, s3, s4		: input;
+	enaf3, enaf4	: output;
+)
+begin
+	if sw2 & s3 == VCC then
+		enaf3 == VCC;
+	elsif sw2 & s4 then
+		enaf4 == VCC;
+	end if;
+end;

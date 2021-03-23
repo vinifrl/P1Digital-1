@@ -21,9 +21,9 @@ https://fpgasoftware.intel.com/eula.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 168 128)
+	(rect 16 16 168 160)
 	(text "contincfm" (rect 5 0 43 12)(font "Arial" ))
-	(text "inst" (rect 8 96 20 108)(font "Arial" ))
+	(text "inst" (rect 8 128 20 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -51,6 +51,13 @@ https://fpgasoftware.intel.com/eula.
 		(text "sw2" (rect 0 0 15 12)(font "Arial" ))
 		(text "sw2" (rect 21 75 36 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "ena" (rect 0 0 14 12)(font "Arial" ))
+		(text "ena" (rect 21 91 35 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
 		(pt 152 32)
@@ -81,6 +88,6 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 152 80)(pt 136 80)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 136 96)(line_width 1))
+		(rectangle (rect 16 16 136 128)(line_width 1))
 	)
 )

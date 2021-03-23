@@ -1,15 +1,15 @@
 INCLUDE "continc.inc";  --contador mod 10
 subdesign contincfm
 (
-	clock, sel[1..0], sw1, sw2					: INPUT;
+	clock, sel[1..0], sw1, sw2, ena			: INPUT;
 	a[3..0], b[3..0], c[3..0], d[3..0]		: OUTPUT;
 )
 VARIABLE
 	uni, dez, cem, mil	: continc;
 BEGIN
-	if sw1 == GND & sw2 == gnd then
+	if sw1 == GND & sw2 == gnd & ena == gnd then
 		if sel[] == B"10" then   --tá acrescendo em s3, era pra ser s4   entrando no modo acrescimo e ena age para confirmar que s4 foi apertado
-			uni.clock=clock;
+			
 			if mil.q[] < 1 & cem.q[] <=7  then				-- caso de load
 				IF dez.q[] <= 6 THEN								-- limite inferior
 					if uni.q[] <= 4 then
@@ -20,22 +20,25 @@ BEGIN
 						dez.clock=clock;
 						cem.clock=clock;
 						mil.clock=clock;
+						uni.clock=clock;
 					end if;
 				end if;
-			elsif mil.q[] >= 1 & cem.q[] >= 0 & dez.q[] >= 8 & uni.q[] >= 1 then -- limite superior
+			elsif mil.q[] == 1 & cem.q[] == 0 & dez.q[] == 8 & uni.q[] == 1 then -- limite superior
 		--		if cem.q[] >= 0 then
 		--			if dez.q[] >= 8 & uni.q[] >= 1 then
 							uni.load_ena=VCC;	
 							dez.load_ena=VCC;
 							cem.load_ena=VCC;
 							mil.load_ena=VCC;
+							uni.clock=clock;
 							dez.clock=clock;
 							cem.clock=clock;
 							mil.clock=clock;
 		--			end if;
 		--		end if;
 
-			ELSE									-- caso de contar normal
+			ELSE								-- caso de contar normal
+				uni.clock=clock;
 				dez.clock = uni.maisum;	
 				cem.clock = dez.maisum;
 				mil.clock = cem.maisum;
@@ -81,12 +84,12 @@ BEGIN
 				dez.load_ena=GND;
 				cem.load_ena=GND;
 				mil.load_ena=GND;
-				end if;
+			end if;
 				
-				uni.load[]= 0;
-				dez.load[]= 8;
-				cem.load[]= 0;
-				mil.load[]= 1;
+			uni.load[]= 0;
+			dez.load[]= 8;
+			cem.load[]= 0;
+			mil.load[]= 1;
 			
 		else
 			uni.load_ena=GND;

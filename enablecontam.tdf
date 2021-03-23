@@ -1,0 +1,15 @@
+subdesign enablecontam
+(	
+	sw1, sw2, s3, clock	: input;
+	enaf						: output;
+)
+variable
+	aux	: dff; 
+begin 
+	if sw2 & s3 & sw1 == vcc then
+		aux.clk = clock;
+		aux.d = vcc;
+	end if;
+	aux.clk = gnd;
+	enaf = aux.q;
+end;

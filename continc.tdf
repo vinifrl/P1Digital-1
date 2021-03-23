@@ -13,7 +13,8 @@ begin
 	
 	if load_ena then   --receber o valor correto
 		count[].d = load[];
-	elsif sel[] == 1 then  --decrescente
+		
+	elsif sel[] == 1 & load_ena == gnd then  --decrescente
 		if count[].q == 0 then
 			count[].d = 9;
 			plusone.d = VCC;
@@ -21,7 +22,7 @@ begin
 			count[].d = count[].q-1;
 			plusone.d = GND;
 		end if;
-	elsif sel[] == 2 then	-- crescente
+	elsif sel[] == 2 & load_ena == gnd then	-- crescente
 		if count[].q == 9 then
 			count[].d = 0;
 			plusone.d = VCC;

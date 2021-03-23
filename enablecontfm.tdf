@@ -1,0 +1,15 @@
+subdesign enablecontfm
+(	
+	sw1, sw2, s3, clock	: input;
+	enaf						: output;
+)
+variable
+	aux	: dff; 
+begin 
+	if sw2 & s3 == vcc & sw1 == gnd then
+		aux.clk = clock;
+		aux.d = vcc;
+	end if;
+	aux.clk = gnd;
+	enaf = aux.q;
+end;

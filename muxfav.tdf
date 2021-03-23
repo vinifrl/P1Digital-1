@@ -1,0 +1,34 @@
+subdesign muxfav --pode estar dando erro pq tá dando erro na gravação ou no display dos favoritos
+(
+	sw2, modofav, clock1s	: INPUT; %switches amfm e indicador de modo favorito%
+	in1[3..0], in2[3..0], in3[3..0], in4[3..0]   	: INPUT;
+	fav31fm[3..0], fav32fm[3..0], fav33fm[3..0], fav34fm[3..0]	: input; %valor armazenado do favorito 3 fm%
+	fav41fm[3..0], fav42fm[3..0], fav43fm[3..0], fav44fm[3..0]	: input; %valor armazenado do favorito 4 fm%
+   out1[3..0], out2[3..0], out3[3..0], out4[3..0]  : OUTPUT;
+)
+BEGIN
+
+	if modofav == GND & sw2 == GND then	--modo fm
+      out1[] = in1[];
+		out2[] = in2[];
+		out3[] = in3[];
+		out4[] = in4[];
+	elsif modofav == VCC & sw2 == gnd then    			%entrando no modo favorito%
+		if clock1s == VCC then						--alternará qual favorito será mostrado a cada 1s
+			out1[] = fav41fm[];
+			out2[] = fav42fm[];  -- para esse caso, dá o resultado esperado
+			out3[] = fav43fm[];
+			out4[] = fav44fm[];
+		else
+			out1[] = fav31fm[];
+			out2[] = fav32fm[];			-- no entanto, pra esse caso, resulta em 0000
+			out3[] = fav33fm[];
+			out4[] = fav34fm[];
+		end if;	
+	else 
+      out1[] = in1[];
+		out2[] = in2[];
+		out3[] = in3[];
+		out4[] = in4[];
+	end if;
+end;
